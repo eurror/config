@@ -331,9 +331,8 @@
   "debug.openDebug": "neverOpen",
   "debug.inlineValues": "on",
   "security.promptForLocalFileProtocolHandling": false,
-  "diffEditor.renderSideBySide": true,
+  "diffEditor.renderSideBySide": false,
   "diffEditor.experimental.showMoves": true,
-  "diffEditor.hideUnchangedRegions.enabled": true,
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml",
     "editor.tabSize": 2
@@ -366,4 +365,6 @@
       ".continue/**/*.yaml"
     ]
   },
+  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.hideUnchangedRegions.enabled": true
 }
