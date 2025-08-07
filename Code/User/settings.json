@@ -1,0 +1,377 @@
+{
+  // Telemetry and Updates
+  "telemetry.telemetryLevel": "off",
+  "redhat.telemetry.enabled": false,
+  "extensions.autoUpdate": "onlyEnabledExtensions",
+
+  // Editor Behavior
+  "editor.suggestSelection": "first",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 0,
+  "editor.formatOnPaste": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.cursorStyle": "block",
+  "editor.cursorBlinking": "solid",
+  "editor.cursorSmoothCaretAnimation": "off",
+  "editor.fontLigatures": false,
+  "editor.linkedEditing": true,
+  "editor.renderWhitespace": "none",
+  "editor.renderControlCharacters": false,
+  "editor.stickyScroll.enabled": true,
+  "editor.accessibilitySupport": "off",
+  "editor.unicodeHighlight.allowedLocales": { "ru": true },
+  "editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+  },
+  "editor.parameterHints.enabled": false,
+  "editor.codeLens": false,
+  "editor.inlayHints.enabled": "off",
+  "editor.largeFileOptimizations": true,
+  "editor.smoothScrolling": false,
+  "editor.wordWrap": "on",
+
+  // Editor Formatting (Language Specific)
+  "[django-html]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    },
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingQuotes": "always",
+    "editor.autoClosingOvertype": "always",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[django-txt]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[html]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.indentSize": 4,
+    "editor.tabSize": 4
+  },
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace"
+  },
+  "[css]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.suggest.insertMode": "replace",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "ruff.enable": true,
+  "python.languageServer": "Pylance",
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "always",
+      "source.fixAll": "always"
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "python.formatting.provider": "charliermarsh.ruff"
+  },
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.organizeImports": "always"
+  },
+  "html.format.indentInnerHtml": true,
+  "html.format.indentHandlebars": true,
+  "html.format.templating": true,
+
+  // Files and Explorer
+  "files.associations": {
+    "*.html": "django-html"
+  },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/.git/**": true,
+    "**/target/**": true,
+    "**/.cache/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/env/**": true,
+    "**/venv/**": true,
+    "env-*": true
+  },
+  "files.maxMemoryForLargeFilesMB": 8192,
+  "search.followSymlinks": true,
+  "search.useGlobalIgnoreFiles": false,
+  // Git
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "gitlens.currentLine.scrollable": false,
+  "gitblame.statusBarMessageClickAction": "Open tool URL",
+
+  // Terminal
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "/bin/zsh",
+      "args": []
+    }
+    // "bash": null,
+    // "JavaScript Debug Terminal": null
+  },
+  "debug.javascript.terminalOptions": {
+    "enabled": false,
+    "customProfile": null
+  },
+  "terminal.integrated.profiles.includeCommonProfiles": false,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.profiles.linux": {},
+  "terminal.integrated.profiles.windows": {},
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.localEchoExcludePrograms": [
+    "vim",
+    "vi",
+    "nano",
+    "tmux",
+    "nvim"
+  ],
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1",
+    "PYTHONUNBUFFERED": "1"
+  },
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+
+  // Debugging
+  "debug.javascript.enabled": false, // If present in original, keep this. Otherwise, consider removing.
+  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+  "lldb.launch.expressions": "native",
+
+  // Jupyter Notebook
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+
+  // Window and Workbench
+  "window.openFilesInNewWindow": "off",
+  // "window.titleBarStyle": "native",
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Black Modern",
+  "workbench.editor.empty.hint": "hidden",
+  // "window.customTitleBarVisibility": "never",
+
+  // Diff Editor
+  "diffEditor.codeLens": true,
+
+  // Emmet
+  "emmet.includeLanguages": {
+    "django-html": "html",
+    "django-txt": "html"
+  },
+
+  // Security
+  "security.workspace.trust.untrustedFiles": "open",
+
+  // Other Extensions/Features
+  "codeium.enableConfig": {
+    "*": true,
+    "properties": true
+  },
+  "amazonQ.workspaceIndex": true,
+  "chat.editor.wordWrap": "on",
+  "gitlab.duoCodeSuggestions.enabledSupportedLanguages": {
+    "c": true,
+    "cpp": true,
+    "csharp": true,
+    "go": true,
+    "haml": true,
+    "handlebars": true,
+    "java": true,
+    "javascript": true,
+    "javascriptreact": true,
+    "kotlin": true,
+    "python": true,
+    "php": true,
+    "ruby": true,
+    "rust": true,
+    "scala": true,
+    "shellscript": true,
+    "sql": true,
+    "swift": true,
+    "typescript": true,
+    "typescriptreact": true,
+    "svelte": true,
+    "terraform": true,
+    "terragrunt": true,
+    "vue": true
+  },
+  "gitlab.duoChat.enabled": false,
+  "gitlab.duoCodeSuggestions.enabled": false,
+  // "editor.minimap.enabled": false,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.size": "fill",
+  "python.analysis.autoImportCompletions": true,
+  "python.linting.lintOnSave": true,
+  "python.linting.enabled": true,
+  // "python.analysis.typeCheckingMode": "basic",
+  // "editor.rulers": [
+  //       80,
+  //       120
+  //   ],
+  //   "workbench.colorCustomizations": {
+  //       "editorRuler.foreground": "#ff4081"
+  //   },
+  "workbench.enableExperiments": false,
+  "editor.fontSize": 13,
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "codeium.aggressiveShutdown": true,
+  "codeium.enableSearch": true,
+  "codeium.indexingRetentionPeriod": 5,
+  "codeium.languageServerStartupTimeout": 30,
+  "workbench.commandPalette.history": 10,
+  "workbench.localHistory.maxFileEntries": 10,
+  "workbench.localHistory.maxFileSize": 10,
+  "continue.enableTabAutocomplete": false,
+  "workbench.editor.enablePreview": false,
+  "gitlens.views.scm.grouped.views": {
+    "commits": true,
+    "branches": true,
+    "remotes": true,
+    "stashes": true,
+    "tags": true,
+    "worktrees": true,
+    "contributors": true,
+    "repositories": false,
+    "searchAndCompare": false,
+    "launchpad": true
+  },
+  "tabby.endpoint": "",
+  "geminicodeassist.project": "gen-lang-client-0356026420",
+  "search.exclude": {
+    "**/node_modules/**": true,
+    "**/.git/**": true,
+    "**/target/**": true,
+    "**/.cache/**": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/env": true,
+    "**/venv": true
+  },
+  "editor.symbols.searchEverywhere": true,
+  "roo-cline.allowedCommands": [
+    "npm test",
+    "npm install",
+    "tsc",
+    "git log",
+    "git diff",
+    "git show"
+  ],
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    // "**/.vscode": true,
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/node_modules": true,
+    "venv": true,
+    "*.sublime-*": true,
+    "env*": true,
+    "**/.idea": true,
+    "**/.ruff_cache": true,
+    "**/.ropeproject": true,
+    "**/.mypy_cache": true
+  },
+  "github.copilot.advanced": {
+    "useLanguageServer": true
+  },
+  "github.copilot.chat.localeOverride": "en",
+  "github.copilot.chat.codesearch.enabled": true,
+  "notebook.defaultFormatter": "charliermarsh.ruff",
+  "editor.defaultFormatter": "charliermarsh.ruff",
+  "window.newWindowProfile": "Default",
+  "workbench.secondarySideBar.showLabels": false,
+  "workbench.activityBar.location": "top",
+  "vim.cursorStylePerMode": {
+    "normal": "block",
+    "insert": "block",
+    "visual": "block",
+    "visualline": "block",
+    "visualblock": "block",
+    "replace": "block",
+    "inactive": "block"
+  },
+  "terminal.integrated.cursorStyleInactive": "block",
+
+  "editor.tabCompletion": "on",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.inlineSuggest.enabled": true,
+  "editor.fastScrollSensitivity": 3,
+  "debug.console.wordWrap": true,
+  "debug.openDebug": "neverOpen",
+  "debug.inlineValues": "on",
+  "security.promptForLocalFileProtocolHandling": false,
+  "diffEditor.renderSideBySide": true,
+  "diffEditor.experimental.showMoves": true,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.tabSize": 2
+  },
+  "editor.defaultFoldingRangeProvider": "redhat.vscode-yaml",
+
+  // Go language
+  "go.useLanguageServer": true,
+  "go.lintTool": "golangci-lint",
+  "go.formatTool": "goimports",
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.snippetSuggestions": "none",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "always",
+      "source.fixAll": "always"
+    }
+  },
+  "basedpyright.analysis.ignore": [
+    "**venv/",
+    "*venv/",
+    "venv/"
+  ],
+  "mypy-type-checker.ignorePatterns": [
+    "venv/",
+    "**venv/",
+    "*venv/"
+  ],
+  "workbench.panel.showLabels": false,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "yaml.schemas": {
+    "/Users/evr/.vscode/extensions/continue.continue-1.0.15-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml"
+    ]
+  }
+}
