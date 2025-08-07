@@ -352,16 +352,8 @@
       "source.fixAll": "always"
     }
   },
-  "basedpyright.analysis.ignore": [
-    "**venv/",
-    "*venv/",
-    "venv/"
-  ],
-  "mypy-type-checker.ignorePatterns": [
-    "venv/",
-    "**venv/",
-    "*venv/"
-  ],
+  "basedpyright.analysis.ignore": ["**venv/", "*venv/", "venv/"],
+  "mypy-type-checker.ignorePatterns": ["venv/", "**venv/", "*venv/"],
   "workbench.panel.showLabels": false,
   "github.copilot.enable": {
     "*": false,
@@ -370,8 +362,8 @@
     "scminput": false
   },
   "yaml.schemas": {
-    "/Users/evr/.vscode/extensions/continue.continue-1.0.15-darwin-arm64/config-yaml-schema.json": [
+    "/Users/evr/.vscode/extensions/continue.continue-1.0.20-darwin-arm64/config-yaml-schema.json": [
       ".continue/**/*.yaml"
     ]
-  }
+  },
 }
