@@ -16,8 +16,10 @@ zed/conversations/
 */User/workspaceStorage
 */User/tasks.json
 fish/
+neofetch/
 yamusic-tui/
 configstore/
 btop/
 */kitty.conf.bak
+kitty/*theme*
 nvim/*json
