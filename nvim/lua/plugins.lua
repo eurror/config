@@ -40,7 +40,29 @@ require("lazy").setup({
     { "neovim/nvim-lspconfig" },
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
-    { "hrsh7th/nvim-cmp" },
+    {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+            "hrsh7th/cmp-cmdline",
+        },
+        config = function()
+            local cmp = require("cmp")
+
+            cmp.setup.cmdline(":", {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = {
+                    { name = "cmdline" },
+                }
+            })
+
+            cmp.setup.cmdline({ "/", "?" }, {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = {
+                    { name = "buffer" },
+                }
+            })
+        end,
+    },
     { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/cmp-buffer" },     -- Add buffer completion
     { "hrsh7th/cmp-path" },       -- Add path completion

@@ -366,5 +366,8 @@
     ]
   },
   "diffEditor.ignoreTrimWhitespace": true,
-  "diffEditor.hideUnchangedRegions.enabled": true
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua"
+  }
 }
