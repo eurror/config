@@ -38,6 +38,7 @@ require("lazy").setup({
     },
     -- LSP and completion (Essential)
     { "neovim/nvim-lspconfig" },
+    { "nvim-lua/plenary.nvim" },
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
     {
@@ -73,7 +74,6 @@ require("lazy").setup({
     -- Telescope
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.8", -- Use stable version
         dependencies = {
             "nvim-lua/plenary.nvim",
             { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -169,13 +169,7 @@ require("lazy").setup({
         "nvim-lualine/lualine.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
-            require("lualine").setup {
-                options = {
-                    theme = "auto",
-                    section_separators = '',
-                    component_separators = '',
-                },
-            }
+            require("lualine").setup()
         end
     },
 
