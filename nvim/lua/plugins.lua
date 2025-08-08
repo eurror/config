@@ -296,32 +296,18 @@ require("lazy").setup({
         },
         config = function()
             require("noice").setup({
-                cmdline = {
-                    enabled = true,
-                    view = "cmdline", -- Classic cmdline position
-                },
-                popupmenu = {
-                    enabled = false, -- Disable to avoid conflicts
-                },
-                messages = {
-                    enabled = true,
-                    view = "notify",
-                },
                 lsp = {
                     override = {
                         ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
                         ["vim.lsp.util.stylize_markdown"] = true,
                         ["cmp.entry.get_documentation"] = true,
                     },
-                    progress = {
-                        enabled = true, -- LSP progress notifications
-                    },
                 },
                 presets = {
-                    bottom_search = true,
-                    command_palette = false,
+                    command_palette = true,
                     long_message_to_split = true,
-                },
+                    lsp_doc_border = true,
+                }
             })
         end,
     },
