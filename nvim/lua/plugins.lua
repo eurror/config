@@ -430,22 +430,6 @@ require("lazy").setup({
         end,
     },
 
-    -- {
-    --     "pwntester/octo.nvim",
-    --     event = "VeryLazy",
-    --     dependencies = {
-    --         "nvim-lua/plenary.nvim",
-    --         "nvim-telescope/telescope.nvim",
-    --         "nvim-tree/nvim-web-devicons", -- optional, for icons
-    --     },
-    --     config = function()
-    --         require("octo").setup()
-    --     end,
-    -- },
-
-    -- REMOVED: conform.nvim (empty config, LSP formatting already configured)
-    -- REMOVED: fidget.nvim (redundant with noice.nvim LSP progress)
-
     {
         "folke/trouble.nvim",
         event = "VeryLazy",
