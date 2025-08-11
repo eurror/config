@@ -49,8 +49,8 @@ map("n", "<C-b>", ":NvimTreeToggle<CR>", { silent = true, desc = "Toggle NvimTre
 
 -- Telescope (only if available)
 if telescope then
-    map("n", "<leader>ff", telescope.find_files, { desc = "Find Files" })
-    map("n", "<leader>fg", telescope.live_grep, { desc = "Live grep" })
+    map("n", "<C-t>", telescope.find_files, { desc = "Find Files" })
+    map("n", "<C-p>", telescope.live_grep, { desc = "Live grep" })
     map("n", "<leader>fb", telescope.buffers, { desc = "Find buffers" })
     map("n", "<leader>fh", telescope.help_tags, { desc = "Find help" })
     map("n", "<leader>fp", telescope.git_files, { desc = "Find Git files" })
@@ -92,3 +92,7 @@ map("c", "<C-a>", "<Home>", { desc = "Beginning of line" })
 map("c", "<C-e>", "<End>", { desc = "End of line" })
 map("c", "<C-f>", "<Right>", { desc = "Forward char" })
 map("c", "<C-b>", "<Left>", { desc = "Backward char" })
+
+
+map("n", "<C-`>", "<cmd>ToggleTerm<CR>", { desc = "Toggle terminal" })
+map("t", "<C-`>", [[<C-\><C-n><cmd>ToggleTerm<CR>]], { desc = "Toggle terminal" })
