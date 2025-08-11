@@ -97,3 +97,10 @@ map("c", "<C-b>", "<Left>", { desc = "Backward char" })
 
 map("n", "<C-`>", "<cmd>ToggleTerm<CR>", { desc = "Toggle terminal" })
 map("t", "<C-`>", [[<C-\><C-n><cmd>ToggleTerm<CR>]], { desc = "Toggle terminal" })
+
+map("n", "<leader>gs", "<cmd>Git<CR>", { desc = "Git status" })
+map("n", "<leader>gc", "<cmd>Git commit<CR>", { desc = "Git commit" })
+map("n", "<leader>gp", "<cmd>Git push<CR>", { desc = "Git push" })
+map("n", "<leader>gP", "<cmd>Git pull<CR>", { desc = "Git pull" })
+map("n", "<leader>gb", "<cmd>Git blame<CR>", { desc = "Git blame" })
+map("n", "<leader>gd", "<cmd>Gdiffsplit<CR>", { desc = "Git diff" })

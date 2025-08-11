@@ -16,9 +16,9 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Plugin setup
 require("lazy").setup({
-    -- ============================================================================
-    -- CORE PLUGINS (Essential for basic functionality)
-    -- ============================================================================
+    -- ============
+    -- CORE PLUGINS
+    -- ============
 
     -- Theme and UI
     {
@@ -29,7 +29,6 @@ require("lazy").setup({
             vim.cmd("colorscheme vscode")
         end,
     },
-
     -- Neovim Lua development support
     {
         "folke/neodev.nvim",
@@ -37,22 +36,8 @@ require("lazy").setup({
         priority = 900, -- Load before LSP
     },
     -- LSP and completion (Essential)
-    { "neovim/nvim-lspconfig" },
-    {
-        "tpope/vim-fugitive",
-        event = "VeryLazy",
-        config = function()
-            -- Key mappings for vim-fugitive
-            vim.keymap.set("n", "<leader>gs", ":Git<CR>", { desc = "Git status" })
-            vim.keymap.set("n", "<leader>gc", ":Git commit<CR>", { desc = "Git commit" })
-            vim.keymap.set("n", "<leader>gp", ":Git push<CR>", { desc = "Git push" })
-            vim.keymap.set("n", "<leader>gl", ":Git pull<CR>", { desc = "Git pull" })
-            vim.keymap.set("n", "<leader>gb", ":Git blame<CR>", { desc = "Git blame" })
-            vim.keymap.set("n", "<leader>gd", ":Gdiffsplit<CR>", { desc = "Git diff split" })
-            vim.keymap.set("n", "<leader>gh", ":0Gclog<CR>", { desc = "Git log for current file" })
-        end,
-    },
     { "nvim-lua/plenary.nvim" },
+    { "neovim/nvim-lspconfig" },
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
     {
@@ -77,13 +62,18 @@ require("lazy").setup({
                 }
             })
         end,
-    },
-    { "hrsh7th/cmp-nvim-lsp" },
+    }, -- Add cmdline completion and suggestions
+    { "hrsh7th/cmp-nvim-lsp" },   -- LSP completion
     { "hrsh7th/cmp-buffer" },     -- Add buffer completion
     { "hrsh7th/cmp-path" },       -- Add path completion
-    { "L3MON4D3/LuaSnip" },
+    { "L3MON4D3/LuaSnip" },       -- LuaSnip
     { "saadparwaiz1/cmp_luasnip" }, -- Add snippet completion
-    { 'b0o/schemastore.nvim' },
+    { 'b0o/schemastore.nvim' },    -- SchemaStore
+    -- Git integration
+    {
+        "tpope/vim-fugitive",
+        event = "VeryLazy",
+    },
 
     -- Telescope
     {
@@ -179,6 +169,7 @@ require("lazy").setup({
             })
         end,
     },
+
     -- Lualine (Status bar)
     {
         "nvim-lualine/lualine.nvim",
