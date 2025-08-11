@@ -38,6 +38,20 @@ require("lazy").setup({
     },
     -- LSP and completion (Essential)
     { "neovim/nvim-lspconfig" },
+    {
+        "tpope/vim-fugitive",
+        event = "VeryLazy",
+        config = function()
+            -- Key mappings for vim-fugitive
+            vim.keymap.set("n", "<leader>gs", ":Git<CR>", { desc = "Git status" })
+            vim.keymap.set("n", "<leader>gc", ":Git commit<CR>", { desc = "Git commit" })
+            vim.keymap.set("n", "<leader>gp", ":Git push<CR>", { desc = "Git push" })
+            vim.keymap.set("n", "<leader>gl", ":Git pull<CR>", { desc = "Git pull" })
+            vim.keymap.set("n", "<leader>gb", ":Git blame<CR>", { desc = "Git blame" })
+            vim.keymap.set("n", "<leader>gd", ":Gdiffsplit<CR>", { desc = "Git diff split" })
+            vim.keymap.set("n", "<leader>gh", ":0Gclog<CR>", { desc = "Git log for current file" })
+        end,
+    },
     { "nvim-lua/plenary.nvim" },
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
@@ -76,6 +90,7 @@ require("lazy").setup({
         "nvim-telescope/telescope.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
+            "BurntSushi/ripgrep",
             { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
         },
         config = function()
@@ -173,6 +188,66 @@ require("lazy").setup({
         end
     },
 
+    -- Bufferline (Tab bar)
+    {
+        "akinsho/bufferline.nvim",
+        version = "*",
+        dependencies = "nvim-tree/nvim-web-devicons",
+        config = function()
+            require("bufferline").setup({
+                options = {
+                    mode = "buffers", -- set to "tabs" to only show tabpages instead
+                    style_preset = require("bufferline").style_preset.default,
+                    themable = true,
+                    numbers = "none",
+                    close_command = "bdelete! %d",
+                    right_mouse_command = "bdelete! %d",
+                    left_mouse_command = "buffer %d",
+                    middle_mouse_command = nil,
+                    indicator = {
+                        icon = '▎',
+                        style = 'icon',
+                    },
+                    buffer_close_icon = '󰅖',
+                    modified_icon = '●',
+                    close_icon = '',
+                    left_trunc_marker = '',
+                    right_trunc_marker = '',
+                    max_name_length = 30,
+                    max_prefix_length = 30,
+                    truncate_names = true,
+                    tab_size = 21,
+                    diagnostics = "nvim_lsp",
+                    diagnostics_update_in_insert = false,
+                    color_icons = true,
+                    show_buffer_icons = true,
+                    show_buffer_close_icons = true,
+                    show_close_icon = true,
+                    show_tab_indicators = true,
+                    show_duplicate_prefix = true,
+                    persist_buffer_sort = true,
+                    separator_style = "slant",
+                    enforce_regular_tabs = false,
+                    always_show_bufferline = true,
+                    hover = {
+                        enabled = true,
+                        delay = 200,
+                        reveal = {'close'}
+                    },
+                    sort_by = 'insert_after_current',
+                    offsets = {
+                        {
+                            filetype = "NvimTree",
+                            text = "File Explorer",
+                            text_align = "left",
+                            separator = true
+                        }
+                    },
+                }
+            })
+        end,
+    },
+
     {
         "kylechui/nvim-surround",
         config = function()
@@ -184,10 +259,6 @@ require("lazy").setup({
         version = "*",
         config = true
     },
-
-    -- Dashboard
-
-    -- REMOVED: lspsaga.nvim (redundant with built-in LSP + trouble.nvim)
 
     {
         "echasnovski/mini.ai",
@@ -337,8 +408,8 @@ require("lazy").setup({
             { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
             { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
             { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-            { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-        },
+            { "R", mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+            { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" }, },
         config = function()
             require("flash").setup()
         end,
@@ -425,4 +496,5 @@ require("lazy").setup({
             { "<Leader>l",     "<Cmd>MultipleCursorsLock<CR>",             mode = { "n", "x" },      desc = "Lock virtual cursors" },
         },
     },
+    -- { "junegunn/fzf.vim" }
 })
