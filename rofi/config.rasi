@@ -1,0 +1,24 @@
+configuration {
+    modi: "run,drun,window,filebrowser";
+    font: "JetBrainsMono Nerd Font Mono 12";
+    icon-theme: "Papirus";
+    show-icons: true;
+    terminal: "alacritty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: "Apps";
+    display-run: "Run";
+    display-window: "Window";
+    display-filebrowser: "Files";
+    sidebar-mode: true;
+
+    filebrowser {
+        directories-first: true;
+        sorting-method: "name";
+    }
+}
+
+@theme "gruvbox-dark"
+
