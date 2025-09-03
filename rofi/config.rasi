@@ -8,10 +8,10 @@ configuration {
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
-    display-drun: "Apps";
-    display-run: "Run";
-    display-window: "Window";
-    display-filebrowser: "Files";
+    display-drun: " Apps";
+    display-run: " Run";
+    display-window: "󱂬 Window";
+    display-filebrowser: "󰀶 Files";
     sidebar-mode: true;
 
     filebrowser {
@@ -21,4 +21,3 @@ configuration {
 }
 
 @theme "gruvbox-dark"
-
