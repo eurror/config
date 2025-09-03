@@ -8,7 +8,7 @@ default_border pixel 2
 default_floating_border pixel 2
 
 # Gaps
-gaps inner 10
+gaps inner 5
 gaps outer 5
 smart_gaps on
 smart_borders on
@@ -185,7 +185,7 @@ exec --no-startup-id redshift
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id picom
+exec --no-startup-id picom --vsync --backend glx --glx-no-stencil --glx-no-rebind-pixmap
 exec --no-startup-id dunst
 exec --no-startup-id copyq
 exec --no-startup-id udiskie -t
