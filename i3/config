@@ -19,7 +19,7 @@ bindsym $mod+Shift+r restart
 bindsym ctrl+$alt+Delete exec "i3-nagbar -t warning -m 'System Action:' -b 'Logout' 'i3-msg exit' -b 'Lock' 'i3lock -c 04090e' -b 'Reboot' 'systemctl reboot' -b 'Shutdown' 'systemctl poweroff'"
 
 # app shortcuts
-bindsym $mod+Shift+x exec --no-startup-id i3lock
+bindsym $mod+Shift+x exec --no-startup-id i3lock -c 04090e
 bindsym $mod+Return exec $term
 bindsym $alt+space exec --no-startup-id rofi -show drun
 bindsym $alt+Tab exec --no-startup-id rofi -show window
@@ -141,7 +141,25 @@ client.focused_inactive $darkgray  $darkgray  $yellow    $purple    $darkgray
 client.unfocused        $darkgray  $darkgray  $yellow    $purple    $darkgray
 client.urgent           $red       $red       $bg        $red       $red
 client.placeholder      $blue      $blue      $blue      $blue      $blue
-client.background       $blue      $blue      $blue      $blue      $blue
+client.background       $bg
+
+# Window rules
+for_window [title="Calculator"] floating enable
+for_window [title="Timer"] floating enable
+for_window [class="firefox"] border none
+for_window [class="mpv"] floating enable
+for_window [class="imv"] floating enable
+for_window [class="zenity"] floating enable
+for_window [class="cachyos-welcome"] floating enable
+for_window [class="Arandr"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="copyq"] floating enable
+for_window [class="Blueman-manager"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [title="Preferences$"] floating enable
+for_window [class="i3-nagbar"] floating enable, move position center, border pixel 2
 
 # Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -160,27 +178,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 exec xrandr --output HDMI-1 --mode 1920x1080 --rate 60 --scale 1x1
 #exec xrandr --auto --output HDMI-1 --mode 1920x1080 --above HDMI-2
 
-# Window rules
-for_window [title="Calculator"] floating enable
-for_window [title="Timer"] floating enable
-for_window [class="^.*"] border pixel 1
-for_window [class="librewolf"] border none
-for_window [class="firefox"] border none
-for_window [class="mpv"] floating enable
-for_window [class="imv"] floating enable
-for_window [class="zenity"] floating enable
-for_window [class="cachyos-welcome"] floating enable
-for_window [class="Arandr"] floating enable
-for_window [class="Lxappearance"] floating enable
-for_window [class="Pavucontrol"] floating enable
-for_window [class="copyq"] floating enable
-for_window [class="Blueman-manager"] floating enable
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [title="Preferences$"] floating enable
-for_window [class="i3-nagbar"] floating enable, move position center, border pixel 2
-
-# Autostart
+# autostart
 exec --no-startup-id dex --autostart --environment i3
 #exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 exec --no-startup-id redshift
