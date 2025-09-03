@@ -16,7 +16,7 @@ smart_borders on
 # i3
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym ctrl+$alt+Delete exec "i3-nagbar -t warning -m 'System Action:' -b 'Logout' 'i3-msg exit' -b 'Lock' 'i3lock -c 04090e' -b 'Reboot' 'systemctl reboot' -b 'Shutdown' 'systemctl poweroff'"
+bindsym ctrl+$alt+Delete exec --no-startup-id "echo '󰍃 Lock\n󰗼 Logout\n󰜉 Reboot\n⏻ Shutdown' | rofi -dmenu -i -p 'System Action:' -theme-str 'window {location: center;}' | xargs -I {} sh -c 'case {} in Logout) i3-msg exit;; Lock) i3lock -c 04090e;; Reboot) systemctl reboot;; Shutdown) systemctl poweroff;; esac'"
 
 # app shortcuts
 bindsym $mod+Shift+x exec --no-startup-id i3lock -c 04090e
@@ -159,7 +159,6 @@ for_window [class="Blueman-manager"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [title="Preferences$"] floating enable
-for_window [class="i3-nagbar"] floating enable, move position center, border pixel 2
 
 # Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
