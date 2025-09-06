@@ -23,3 +23,8 @@ btop/
 */kitty.conf.bak
 kitty/*theme*
 nvim/*json
+micro/
+lazygit/
+go/
+Code*/
+!Code/User/
