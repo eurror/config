@@ -39,6 +39,15 @@ for _, server in ipairs(servers) do
         capabilities = capabilities,
     })
 end
+lspconfig.lua_ls.setup {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+}
 
 require("mason").setup(
     {
