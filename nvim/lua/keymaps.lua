@@ -1,6 +1,3 @@
--- lua/core/keymaps.lua
-
--- Python interpreter selection
 local function select_python_interpreter()
     local venv_python = vim.fn.getcwd() .. "/venv/bin/python"
     if vim.fn.filereadable(venv_python) == 1 then
@@ -11,26 +8,10 @@ local function select_python_interpreter()
     end
 end
 
--- Auto-setup Python interpreter on startup
-vim.api.nvim_create_autocmd("VimEnter", {
-    callback = select_python_interpreter,
-})
-
--- Helper function to safely require plugins
-local function safe_require(module)
-    local ok, result = pcall(require, module)
-    if not ok then
-        vim.notify("Failed to load " .. module .. ": " .. result, vim.log.levels.ERROR)
-        return nil
-    end
-    return result
-end
-
--- Initialize
 local map = vim.keymap.set
-local telescope = safe_require("telescope.builtin")
-local dap = safe_require("dap")
-local nvim_tree_api = safe_require("nvim-tree.api")
+local telescope = require("telescope.builtin")
+local dap = require("dap")
+local nvim_tree = require("nvim-tree.api")
 
 -- Navigation - Line movement
 map("n", "<A-Down>", ":m .+1<CR>==", { noremap = true, silent = true, desc = "Move line down" })
@@ -45,23 +26,22 @@ map("n", "<D-CR>", "o<Esc>", { desc = "Insert empty line below (VSCode style)" }
 -- General file operations
 map("n", "<C-s>", ":w<CR>", { silent = true, desc = "Save file" })
 map("n", "<C-w>", function() vim.cmd("bd") end, { desc = "Close buffer" })
-map("n", "<C-b>", ":NvimTreeToggle<CR>", { silent = true, desc = "Toggle NvimTree" })
 
 -- Telescope (only if available)
 if telescope then
     map("n", "<C-t>", telescope.find_files, { desc = "Find Files" })
     map("n", "<C-p>", telescope.live_grep, { desc = "Live grep" })
+    map("n", "<C-r>", telescope.lsp_document_symbols, { desc = "Search symbol" })
+    map("n", "<C-S-p>", telescope.commands, { desc = "Find commands" })
     map("n", "<leader>fb", telescope.buffers, { desc = "Find buffers" })
     map("n", "<leader>fh", telescope.help_tags, { desc = "Find help" })
     map("n", "<leader>fp", telescope.git_files, { desc = "Find Git files" })
-    map("n", "<C-r>", telescope.lsp_document_symbols, { desc = "Search symbol" })
-    map("n", "<C-S-p>", telescope.commands, { desc = "Find commands" })
     map("n", "<leader>fd", telescope.diagnostics, { desc = "Find diagnostics" })
     map("n", "<leader>fr", telescope.oldfiles, { desc = "Find recent files" })
     map("n", "<leader>fs", telescope.grep_string, { desc = "Find string under cursor" })
 end
 
--- File manager
+-- Yazi
 map("n", "<leader>y", "<cmd>TermExec cmd='yazi' direction=float<CR>", { desc = "Open Yazi file manager" })
 
 -- Debugger (only if DAP is available)
@@ -77,10 +57,10 @@ if dap then
 end
 
 -- NvimTree (only if available)
-if nvim_tree_api then
-    map("n", "<leader>tf", function() nvim_tree_api.toggle() end, { desc = "Toggle file tree" })
-    map("n", "<leader>tr", function() nvim_tree_api.tree.reload() end, { desc = "Reload file tree" })
-    map("n", "<leader>tc", function() nvim_tree_api.tree.collapse_all() end, { desc = "Collapse all tree nodes" })
+if nvim_tree then
+    map("n", "<C-b>", function() nvim_tree.tree.toggle() end, { desc = "Toggle file tree" })
+    map("n", "<leader>tr", function() nvim_tree.tree.reload() end, { desc = "Reload file tree" })
+    map("n", "<leader>tc", function() nvim_tree.tree.collapse_all() end, { desc = "Collapse all tree nodes" })
 end
 
 -- Command line completion control
@@ -93,10 +73,6 @@ map("c", "<C-a>", "<Home>", { desc = "Beginning of line" })
 map("c", "<C-e>", "<End>", { desc = "End of line" })
 map("c", "<C-f>", "<Right>", { desc = "Forward char" })
 map("c", "<C-b>", "<Left>", { desc = "Backward char" })
-
-
-map("n", "<C-`>", "<cmd>ToggleTerm<CR>", { desc = "Toggle terminal" })
-map("t", "<C-`>", [[<C-\><C-n><cmd>ToggleTerm<CR>]], { desc = "Toggle terminal" })
 
 map("n", "<leader>gs", "<cmd>Git<CR>", { desc = "Git status" })
 map("n", "<leader>gc", "<cmd>Git commit<CR>", { desc = "Git commit" })
