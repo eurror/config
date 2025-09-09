@@ -1,6 +1,3 @@
--- plugins.lua
-
--- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -14,13 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Plugin setup
 require("lazy").setup({
-    -- ============
-    -- CORE PLUGINS
-    -- ============
-
-    -- Theme and UI
     {
         "Mofiqul/vscode.nvim",
         lazy = false,
@@ -29,13 +20,12 @@ require("lazy").setup({
             vim.cmd("colorscheme vscode")
         end,
     },
-    -- Neovim Lua development support
+
     {
         "folke/neodev.nvim",
         lazy = false,
-        priority = 900, -- Load before LSP
+        priority = 900,
     },
-    -- LSP and completion (Essential)
     { "nvim-lua/plenary.nvim" },
     { "neovim/nvim-lspconfig" },
     { "williamboman/mason.nvim" },
@@ -62,20 +52,14 @@ require("lazy").setup({
                 }
             })
         end,
-    }, -- Add cmdline completion and suggestions
-    { "hrsh7th/cmp-nvim-lsp" },   -- LSP completion
-    { "hrsh7th/cmp-buffer" },     -- Add buffer completion
-    { "hrsh7th/cmp-path" },       -- Add path completion
-    { "L3MON4D3/LuaSnip" },       -- LuaSnip
-    { "saadparwaiz1/cmp_luasnip" }, -- Add snippet completion
-    { 'b0o/schemastore.nvim' },    -- SchemaStore
-    -- Git integration
-    {
-        "tpope/vim-fugitive",
-        event = "VeryLazy",
     },
+    { "hrsh7th/cmp-nvim-lsp" },
+    { "hrsh7th/cmp-buffer" },
+    { "hrsh7th/cmp-path" },
+    { "L3MON4D3/LuaSnip" },
+    { "saadparwaiz1/cmp_luasnip" },
+    { 'b0o/schemastore.nvim' },
 
-    -- Telescope
     {
         "nvim-telescope/telescope.nvim",
         dependencies = {
@@ -88,24 +72,12 @@ require("lazy").setup({
                 defaults = {
                     prompt_prefix = "🔍 ",
                     selection_caret = " ",
-                    file_ignore_patterns = { "venv", "node_modules" },
-                    layout_strategy = 'horizontal',
+                    file_ignore_patterns = { "venv", "venv/", ".venv/", ".venv", "node_modules", ".git" },
                     layout_config = {
-                        preview_cutoff = 120,
                         prompt_position = "top",
                     },
                     sorting_strategy = "ascending",
                     winblend = 10,
-                },
-                pickers = {
-                    find_files = {
-                        theme = "ivy",
-                        previewer = false,
-                    },
-                    buffers = {
-                        theme = "ivy",
-                        previewer = false,
-                    },
                 },
                 extensions = {
                     fzf = {
@@ -120,7 +92,6 @@ require("lazy").setup({
         end,
     },
 
-    -- Treesitter
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
@@ -133,7 +104,10 @@ require("lazy").setup({
         end,
     },
 
-    -- Git integration (Essential)
+    {
+        "tpope/vim-fugitive",
+        event = "VeryLazy",
+    },
     {
         "lewis6991/gitsigns.nvim",
         event = "BufReadPre",
@@ -146,22 +120,16 @@ require("lazy").setup({
                     topdelete = { text = "‾" },
                     changedelete = { text = "~" },
                 },
-                current_line_blame = false, -- Toggle with :Gitsigns toggle_current_line_blame
-                current_line_blame_opts = {
-                    virt_text = true,
-                    virt_text_pos = 'eol',
-                    delay = 1000,
-                },
+                current_line_blame = false,
             })
         end,
     },
 
-    -- File explorer
     {
         "nvim-tree/nvim-tree.lua",
+        event  = "VeryLazy",
         config = function()
             require("nvim-tree").setup()
-
             vim.api.nvim_create_autocmd("QuitPre", {
                 callback = function()
                     require("nvim-tree.api").tree.close()
@@ -170,7 +138,6 @@ require("lazy").setup({
         end,
     },
 
-    -- Lualine (Status bar)
     {
         "nvim-lualine/lualine.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -179,59 +146,21 @@ require("lazy").setup({
         end
     },
 
-    -- Bufferline (Tab bar)
     {
         "akinsho/bufferline.nvim",
-        version = "*",
         dependencies = "nvim-tree/nvim-web-devicons",
         config = function()
             require("bufferline").setup({
                 options = {
-                    mode = "buffers", -- set to "tabs" to only show tabpages instead
-                    style_preset = require("bufferline").style_preset.default,
-                    themable = true,
-                    numbers = "none",
-                    close_command = "bdelete! %d",
-                    right_mouse_command = "bdelete! %d",
-                    left_mouse_command = "buffer %d",
-                    middle_mouse_command = nil,
-                    indicator = {
-                        icon = '▎',
-                        style = 'icon',
-                    },
-                    buffer_close_icon = '󰅖',
-                    modified_icon = '●',
-                    close_icon = '',
-                    left_trunc_marker = '',
-                    right_trunc_marker = '',
-                    max_name_length = 30,
-                    max_prefix_length = 30,
-                    truncate_names = true,
-                    tab_size = 21,
                     diagnostics = "nvim_lsp",
-                    diagnostics_update_in_insert = false,
-                    color_icons = true,
-                    show_buffer_icons = true,
-                    show_buffer_close_icons = true,
-                    show_close_icon = true,
-                    show_tab_indicators = true,
                     show_duplicate_prefix = true,
-                    persist_buffer_sort = true,
-                    separator_style = "slant",
-                    enforce_regular_tabs = false,
-                    always_show_bufferline = true,
-                    hover = {
-                        enabled = true,
-                        delay = 200,
-                        reveal = {'close'}
-                    },
-                    sort_by = 'insert_after_current',
                     offsets = {
                         {
                             filetype = "NvimTree",
                             text = "File Explorer",
                             text_align = "left",
-                            separator = true
+                            separator = true,
+                            highlight = "Directory",
                         }
                     },
                 }
@@ -274,7 +203,6 @@ require("lazy").setup({
         end,
     },
 
-    -- Which Key
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
@@ -285,43 +213,26 @@ require("lazy").setup({
         config = function()
             require("which-key").setup({
                 preset = "modern",
-                delay = 300,
-                plugins = {
-                    marks = true,
-                    registers = true,
-                    spelling = {
-                        enabled = true,
-                        suggestions = 20,
-                    },
-                },
                 win = {
-                    border = "single",
-                    padding = { 1, 2 },
-                },
-                layout = {
-                    width = { min = 20 },
-                    spacing = 3,
+                    border = "rounded",
                 },
             })
         end
     },
 
-    -- Debug Adapter Protocol (Essential for Python development)
     {
         "mfussenegger/nvim-dap",
         lazy = true,
         dependencies = {
             "rcarriga/nvim-dap-ui",
-            "nvim-neotest/nvim-nio", -- Required dependency for nvim-dap-ui
+            "nvim-neotest/nvim-nio",
         },
         config = function()
             local dap = require("dap")
             local dapui = require("dapui")
 
-            -- Setup DAP UI
             dapui.setup()
 
-            -- Auto open/close DAP UI
             dap.listeners.after.event_initialized["dapui_config"] = function()
                 dapui.open()
             end
@@ -348,7 +259,6 @@ require("lazy").setup({
         dependencies = { "mfussenegger/nvim-dap" },
         config = function()
             local dap_python = require("dap-python")
-            -- Automatically use venv if available, else fallback to system python
             local venv_python = vim.fn.getcwd() .. "/venv/bin/python"
             if vim.fn.filereadable(venv_python) == 1 then
                 dap_python.setup(venv_python)
@@ -369,7 +279,6 @@ require("lazy").setup({
         end,
     },
 
-    -- Enhanced UI and notifications (Essential)
     {
         "folke/noice.nvim",
         event = "VeryLazy",
@@ -395,23 +304,13 @@ require("lazy").setup({
         end,
     },
 
-    { "tpope/vim-sleuth",      event = "VeryLazy" },
-
-    -- Enhanced navigation (Useful - keep if you use it)
     {
         "folke/flash.nvim",
-        keys = {
-            { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-            { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-            { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-            { "R", mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-            { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" }, },
         config = function()
             require("flash").setup()
         end,
     },
 
-    -- Git diff viewer (Useful - only loads when needed)
     {
         "sindrets/diffview.nvim",
         cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
@@ -435,19 +334,10 @@ require("lazy").setup({
         event = "VeryLazy",
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
-            -- Optional: set a keymap for convenience
             vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "Open LazyGit" })
         end,
     },
 
-    -- "github/copilot.vim",
-
-
-    -- ============================================================================
-    -- EDITING ENHANCEMENTS
-    -- ============================================================================
-
-    -- Auto-close brackets and quotes
     {
         "echasnovski/mini.pairs",
         version = "*",
@@ -457,24 +347,8 @@ require("lazy").setup({
         end,
     },
 
-    -- Multiple cursors support (Advanced editing)
-    {
-        "brenton-leighton/multiple-cursors.nvim",
-        version = "*",
-        opts = {},
-        keys = {
-            { "<C-j>",         "<Cmd>MultipleCursorsAddDown<CR>",          mode = { "n", "x" },      desc = "Add cursor and move down" },
-            { "<C-k>",         "<Cmd>MultipleCursorsAddUp<CR>",            mode = { "n", "x" },      desc = "Add cursor and move up" },
-            { "<C-Up>",        "<Cmd>MultipleCursorsAddUp<CR>",            mode = { "n", "i", "x" }, desc = "Add cursor and move up" },
-            { "<C-Down>",      "<Cmd>MultipleCursorsAddDown<CR>",          mode = { "n", "i", "x" }, desc = "Add cursor and move down" },
-            { "<C-LeftMouse>", "<Cmd>MultipleCursorsMouseAddDelete<CR>",   mode = { "n", "i" },      desc = "Add or remove cursor" },
-            { "<Leader>m",     "<Cmd>MultipleCursorsAddVisualArea<CR>",    mode = { "x" },           desc = "Add cursors to the lines of the visual area" },
-            { "<Leader>a",     "<Cmd>MultipleCursorsAddMatches<CR>",       mode = { "n", "x" },      desc = "Add cursors to cword" },
-            { "<Leader>A",     "<Cmd>MultipleCursorsAddMatchesV<CR>",      mode = { "n", "x" },      desc = "Add cursors to cword in previous area" },
-            { "<Leader>d",     "<Cmd>MultipleCursorsAddJumpNextMatch<CR>", mode = { "n", "x" },      desc = "Add cursor and jump to next cword" },
-            { "<Leader>D",     "<Cmd>MultipleCursorsJumpNextMatch<CR>",    mode = { "n", "x" },      desc = "Jump to next cword" },
-            { "<Leader>l",     "<Cmd>MultipleCursorsLock<CR>",             mode = { "n", "x" },      desc = "Lock virtual cursors" },
-        },
-    },
+    { "mg979/vim-visual-multi" }
+
+    -- "github/copilot.vim",
     -- { "junegunn/fzf.vim" }
 })
