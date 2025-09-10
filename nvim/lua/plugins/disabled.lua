@@ -1,2 +1,4 @@
--- "github/copilot.vim",
--- { "junegunn/fzf.vim" }
+return {
+    -- { "github/copilot.vim" },
+    -- { "junegunn/fzf.vim" },
+}

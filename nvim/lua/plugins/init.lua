@@ -11,6 +11,27 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-    
-})
+-- Собираем все модули из папки plugins
+local plugins = {}
+local plugin_files = {
+    "plugins.ui",
+    "plugins.lsp",
+    "plugins.git",
+    "plugins.cmp",
+    "plugins.files",
+    "plugins.debug",
+    "plugins.notifications",
+    "plugins.ux",
+    "plugins.disabled",
+}
+
+for _, file in ipairs(plugin_files) do
+    local ok, mod = pcall(require, file)
+    if ok and type(mod) == "table" then
+        for _, plugin in ipairs(mod) do
+            table.insert(plugins, plugin)
+        end
+    end
+end
+
+require("lazy").setup(plugins)
