@@ -33,31 +33,7 @@ return {
             "hrsh7th/cmp-nvim-lsp",
         },
         config = function()
-            local servers = {
-                pyright = {
-                    settings = {
-                        python = {
-                            pythonPath = vim.fn.exepath("python3"),
-                        },
-                    },
-                },
-                ruff = {},
-                lua_ls = {
-                    settings = {
-                        Lua = {
-                            diagnostics = { globals = { "vim" } },
-                            workspace = { checkThirdParty = false },
-                        },
-                    },
-                },
-            }
-
             require("neodev").setup({})
-
-            local lspconfig = require("lspconfig")
-            local capabilities = require("cmp_nvim_lsp").default_capabilities()
-            capabilities.textDocument.positionEncoding = { "utf-8" }
-
             require("mason").setup({
                 ui = {
                     border = "rounded",
@@ -69,6 +45,26 @@ return {
                 },
             })
 
+            local servers = {
+                pyright = {
+                    settings = {
+                        python = {
+                            pythonPath = "./venv/bin/python3",
+                            venvPath = ".",
+                            venv = "venv",
+                        },
+                    },
+                },
+                lua_ls = {
+                    settings = {
+                        Lua = {
+                            diagnostics = { globals = { "vim" } },
+                            workspace = { checkThirdParty = false },
+                        },
+                    },
+                },
+                ruff = {},
+            }
             require("mason-lspconfig").setup({
                 ensure_installed = vim.tbl_keys(servers),
                 automatic_installation = true,
@@ -87,6 +83,11 @@ return {
                 underline = true,
                 update_in_insert = false,
             })
+
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            local lspconfig = require("lspconfig")
+            capabilities.textDocument.positionEncoding = { "utf-8" }
+
 
             local on_attach = function(_, bufnr)
                 local opts = { buffer = bufnr, silent = true }
@@ -129,6 +130,6 @@ return {
                     end
                 end,
             })
-        end,
+        end, 
     },
 }
