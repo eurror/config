@@ -25,7 +25,7 @@ map("n", "<D-CR>", "o<Esc>", { desc = "Insert empty line below (VSCode style)" }
 
 -- General file operations
 map("n", "<C-s>", ":w<CR>", { silent = true, desc = "Save file" })
-map("n", "<C-w>", function() vim.cmd("bd") end, { desc = "Close buffer" })
+-- map("n", "<C-w>", function() vim.cmd("bd") end, { desc = "Close buffer" })
 
 -- Telescope (only if available)
 if telescope then
