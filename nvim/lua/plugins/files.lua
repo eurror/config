@@ -7,11 +7,26 @@ return {
         event  = "VeryLazy",
         config = function()
             require("nvim-tree").setup({
-                view = { side = "left", width = 35 },
+                view = {
+                    side = "left",
+                    width = 35,
+                    adaptive_size = true,
+                    relativenumber = true,
+                    number = true,
+                    float = {
+                        enable = false
+                    }
+                },
                 hijack_cursor = true,
                 hijack_unnamed_buffer_when_opening = true,
                 sync_root_with_cwd = true,
                 respect_buf_cwd = true,
+                diagnostics = { enable = true },
+                git = {
+                    enable = true,
+                    ignore = true,
+                    timeout = 200,
+                },
                 renderer = {
                     highlight_git = true,
                     highlight_opened_files = "all",
@@ -43,11 +58,14 @@ return {
             })
             vim.api.nvim_create_autocmd("QuitPre", {
                 callback = function()
-                    require("nvim-tree.api").tree.close()
+                    if require("nvim-tree.api").tree.is_visible() then
+                        require("nvim-tree.api").tree.close()
+                    end
                 end,
             })
         end,
     },
+
     {
         "nvim-telescope/telescope.nvim",
         dependencies = {
