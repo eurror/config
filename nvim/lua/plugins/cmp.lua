@@ -57,7 +57,7 @@ return {
                     expand = function(args) luasnip.lsp_expand(args.body) end,
                 },
                 mapping = cmp.mapping.preset.insert({
-                    ["<CR>"] = cmp.mapping.confirm({ select = false }),
+                    ["<CR>"] = cmp.mapping.confirm({ select = true }),
                     ["<Tab>"] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             cmp.select_next_item()
@@ -76,12 +76,14 @@ return {
                             fallback()
                         end
                     end, { "i", "s" }),
+                    ["<C-n>"] = cmp.mapping.select_next_item(),
+                    ["<C-p>"] = cmp.mapping.select_prev_item(),
                 }),
                 sources = cmp.config.sources({
-                    { name = "nvim_lsp" },
-                    { name = "luasnip" },
-                    { name = "buffer" },
-                    { name = "path" },
+                    { name = "nvim_lsp", priority = 1000 },
+                    { name = "luasnip", priority = 750 },
+                    { name = "buffer", priority = 500 },
+                    { name = "path", priority = 250 },
                 }),
                 formatting = {
                     format = function(entry, vim_item)
@@ -101,15 +103,16 @@ return {
                     completion = cmp.config.window.bordered(),
                     documentation = cmp.config.window.bordered(),
                 },
+                performance = {
+                    debounce = 60,
+                    throttle = 30,
+                    max_view_entries = 20,
+                }
             })
 
-            cmp.setup.cmdline(":", {
+            cmp.setup.cmdline({ ":", "/", "?" }, {
                 mapping = cmp.mapping.preset.cmdline(),
-                sources = { { name = "path" }, { name = "cmdline" } },
-            })
-            cmp.setup.cmdline({ "/", "?" }, {
-                mapping = cmp.mapping.preset.cmdline(),
-                sources = { { name = "buffer" } },
+                sources = cmp.config.sources({ { name = "path" }, { name = "cmdline" }, { name = "buffer" } }),
             })
         end,
     },
