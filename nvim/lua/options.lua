@@ -31,3 +31,6 @@ opt.timeoutlen = 400
 
 opt.splitright = true
 opt.splitbelow = true
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
