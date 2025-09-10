@@ -4,19 +4,28 @@ return {
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd("colorscheme vscode")
+            vim.o.background = "dark"
+            vim.cmd.colorscheme("vscode")
         end,
     },
     {
         "nvim-lualine/lualine.nvim",
+        event = "VeryLazy",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
-            require("lualine").setup()
+            require("lualine").setup({
+                options = {
+                    theme = "vscode",
+                    section_separators = "",
+                    component_separators = "|",
+                },
+            })
         end,
     },
     {
         "akinsho/bufferline.nvim",
-        dependencies = "nvim-tree/nvim-web-devicons",
+        event = "BufAdd",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
             require("bufferline").setup({
                 options = {
@@ -29,9 +38,9 @@ return {
                             text_align = "left",
                             separator = true,
                             highlight = "Directory",
-                        }
+                        },
                     },
-                }
+                },
             })
         end,
     },

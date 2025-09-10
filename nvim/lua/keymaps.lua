@@ -10,7 +10,6 @@ end
 
 local map = vim.keymap.set
 local telescope = require("telescope.builtin")
-local dap = require("dap")
 local nvim_tree = require("nvim-tree.api")
 
 -- Navigation - Line movement
@@ -44,24 +43,23 @@ end
 -- Yazi
 map("n", "<leader>y", "<cmd>TermExec cmd='yazi' direction=float<CR>", { desc = "Open Yazi file manager" })
 
--- Debugger (only if DAP is available)
-if dap then
-    map("n", "<F5>", function() dap.continue() end, { desc = "DAP Continue" })
-    map("n", "<F10>", function() dap.step_over() end, { desc = "DAP Step Over" })
-    map("n", "<F11>", function() dap.step_into() end, { desc = "DAP Step Into" })
-    map("n", "<F12>", function() dap.step_out() end, { desc = "DAP Step Out" })
-    map("n", "<leader>db", function() dap.toggle_breakpoint() end, { desc = "DAP Toggle Breakpoint" })
-    map("n", "<leader>dr", function() dap.repl.open() end, { desc = "DAP REPL" })
-    map("n", "<leader>dc", function() dap.clear_breakpoints() end, { desc = "DAP Clear Breakpoints" })
-    map("n", "<leader>dt", function() dap.terminate() end, { desc = "DAP Terminate" })
-end
-
 -- NvimTree (only if available)
 if nvim_tree then
     map("n", "<C-b>", function() nvim_tree.tree.toggle() end, { desc = "Toggle file tree" })
     map("n", "<leader>tr", function() nvim_tree.tree.reload() end, { desc = "Reload file tree" })
     map("n", "<leader>tc", function() nvim_tree.tree.collapse_all() end, { desc = "Collapse all tree nodes" })
 end
+
+vim.keymap.set("n", "<A-,>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Prev buffer" })
+vim.keymap.set("n", "<A-.>", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
+for i = 1, 9 do
+    vim.keymap.set("n", "<A-" .. i .. ">", "<Cmd>BufferLineGoToBuffer " .. i .. "<CR>", {
+        desc = "Go to buffer " .. i,
+    })
+end
+vim.keymap.set("n", "<A-<>", "<Cmd>BufferLineMovePrev<CR>", { desc = "Move buffer left" })
+vim.keymap.set("n", "<A->>", "<Cmd>BufferLineMoveNext<CR>", { desc = "Move buffer right" })
+vim.keymap.set("n", "<A-q>", "<Cmd>bdelete<CR>", { desc = "Close buffer" })
 
 -- Command line completion control
 map("c", "<C-i>", "<C-d>", { desc = "Show command completions" })
