@@ -28,10 +28,10 @@ map("n", "<C-s>", ":w<CR>", { silent = true, desc = "Save file" })
 
 -- Telescope (only if available)
 if telescope then
-    map("n", "<C-t>", telescope.find_files, { desc = "Find Files" })
-    map("n", "<C-p>", telescope.live_grep, { desc = "Live grep" })
+    map("", "<C-t>", telescope.find_files, { desc = "Find Files" })
+    map("", "<C-p>", telescope.live_grep, { desc = "Live grep" })
     map("n", "<C-r>", telescope.lsp_document_symbols, { desc = "Search symbol" })
-    map("n", "<C-S-p>", telescope.commands, { desc = "Find commands" })
+    map("", "<leader>p", telescope.commands, { desc = "Find commands" })
     map("n", "<leader>fb", telescope.buffers, { desc = "Find buffers" })
     map("n", "<leader>fh", telescope.help_tags, { desc = "Find help" })
     map("n", "<leader>fp", telescope.git_files, { desc = "Find Git files" })
@@ -49,6 +49,8 @@ if nvim_tree then
     map("n", "<leader>tr", function() nvim_tree.tree.reload() end, { desc = "Reload file tree" })
     map("n", "<leader>tc", function() nvim_tree.tree.collapse_all() end, { desc = "Collapse all tree nodes" })
 end
+
+map({ "n", "t", "i" }, "<leader>`", "<cmd>ToggleTerm<CR>", { desc = "Toggle terminal"} )
 
 vim.keymap.set("n", "<A-,>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Prev buffer" })
 vim.keymap.set("n", "<A-.>", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
