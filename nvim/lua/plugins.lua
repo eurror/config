@@ -347,8 +347,99 @@ require("lazy").setup({
         end,
     },
 
-    { "mg979/vim-visual-multi" }
+    { "mg979/vim-visual-multi" },
 
     -- "github/copilot.vim",
     -- { "junegunn/fzf.vim" }
+
+    {
+        "neovim/nvim-lspconfig",
+        dependencies = {
+            "williamboman/mason.nvim",
+            "williamboman/mason-lspconfig.nvim",
+            "folke/neodev.nvim",
+            "hrsh7th/cmp-nvim-lsp",
+        },
+        config = function()
+            local servers = {
+                "pyright",
+                "lua_ls",
+                "jsonls",
+                "html",
+                "cssls",
+                "ruff",
+                "bashls",
+                "marksman",
+            }
+
+            require("neodev").setup({})
+
+            local lspconfig = require("lspconfig")
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+            require("mason").setup({
+                ui = {
+                    border = "rounded",
+                    icons = {
+                        package_installed = "✓",
+                        package_pending = "➜",
+                        package_uninstalled = "✗",
+                    },
+                },
+            })
+
+            require("mason-lspconfig").setup({
+                ensure_installed = servers,
+                automatic_installation = true,
+            })
+
+            for _, server in ipairs(servers) do
+                lspconfig[server].setup({ capabilities = capabilities })
+            end
+
+            lspconfig.lua_ls.setup({
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = { "vim" },
+                        },
+                    },
+                },
+            })
+        end,
+    },
+
+    -- CMP
+    {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+            "L3MON4D3/LuaSnip",
+            "saadparwaiz1/cmp_luasnip",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "rafamadriz/friendly-snippets",
+        },
+        config = function()
+            local cmp = require("cmp")
+            local luasnip = require("luasnip")
+
+            luasnip.config.set_config({
+                history = true,
+                updateevents = "TextChanged,TextChangedI",
+            })
+            require("luasnip.loaders.from_vscode").lazy_load()
+
+            cmp.setup({
+                sources = {
+                    { name = "nvim_lsp" },
+                    { name = "luasnip" },
+                    { name = "buffer" },
+                    { name = "path" },
+                },
+                mapping = cmp.mapping.preset.insert({
+                    ["<CR>"] = cmp.mapping.confirm({ select = false }),
+                }),
+            })
+        end,
+    },
 })
