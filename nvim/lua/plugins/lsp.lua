@@ -52,6 +52,11 @@ return {
                             pythonPath = "./venv/bin/python3",
                             venvPath = ".",
                             venv = "venv",
+                            analysis = {
+                                autoSearchPaths = true,
+                                diagnosticMode = "openFilesOnly",
+                                useLibraryCodeForTypes = true,
+                            }
                         },
                     },
                 },
@@ -63,7 +68,11 @@ return {
                         },
                     },
                 },
-                ruff = {},
+                ruff = {
+                    settings = {
+                        workspace = vim.fn.expand(".")
+                    }
+                },
             }
             require("mason-lspconfig").setup({
                 ensure_installed = vim.tbl_keys(servers),
@@ -108,28 +117,29 @@ return {
     },
 
     {
-        "nvimtools/none-ls.nvim",
+        "stevearc/conform.nvim",
         event = { "BufReadPre", "BufNewFile" },
         dependencies = { "williamboman/mason.nvim" },
-        config = function()
-            local null_ls = require("null-ls")
-            null_ls.setup({
-                sources = {
-                    -- null_ls.builtins.diagnostics.ruff,
-                    null_ls.builtins.formatting.black,
-                    null_ls.builtins.formatting.isort,
-                    null_ls.builtins.formatting.stylua,
-                    null_ls.builtins.formatting.prettier,
+        opts = {
+            formatters_by_ft = {
+                python = { "isort", "black", "ruff" },
+                lua = { "stylua" },
+            },
+            format_on_save = {
+                timeout_ms = 500,
+                lsp_fallback = true,
+            },
+            formatters = {
+                black = {
+                    prepend_args = { "--fast" },
                 },
-                on_attach = function(client, bufnr)
-                    if client.supports_method("textDocument/formatting") then
-                        vim.api.nvim_create_autocmd("BufWritePre", {
-                            buffer = bufnr,
-                            callback = function() vim.lsp.buf.format({ bufnr = bufnr }) end,
-                        })
-                    end
-                end,
-            })
-        end, 
-    },
+                isort = {
+                    prepend_args = { "--profile", "black" },
+                },
+            },
+        },
+        config = function(_, opts)
+            require("conform").setup(opts)
+        end,
+    }
 }
