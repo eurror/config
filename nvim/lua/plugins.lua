@@ -92,7 +92,20 @@ require("lazy").setup({
         "nvim-tree/nvim-tree.lua",
         event  = "VeryLazy",
         config = function()
-            require("nvim-tree").setup()
+            require("nvim-tree").setup({
+                view = {
+                    side = "left",
+                    width = 35,
+                },
+                hijack_cursor = true,
+                hijack_unnamed_buffer_when_opening = true,
+                sync_root_with_cwd = true,
+                respect_buf_cwd = true,
+                renderer = {
+                    highlight_opened_files = "all",
+                    root_folder_label = false,
+                },
+            })
             vim.api.nvim_create_autocmd("QuitPre", {
                 callback = function()
                     require("nvim-tree.api").tree.close()
@@ -142,7 +155,7 @@ require("lazy").setup({
         version = "*",
         config = function()
             require("toggleterm").setup({
-                size=15,
+                size = 15,
                 open_mapping = [[<C-`>]],
             })
         end,
@@ -424,4 +437,20 @@ require("lazy").setup({
             })
         end,
     },
+
+    {
+        "famiu/bufdelete.nvim",
+        event = "VeryLazy",
+        config = function()
+            vim.keymap.set("n", "<C-w>", function()
+                local buffers = vim.fn.getbufinfo({ buflisted = 1 })
+                if #buffers == 1 then
+                    vim.cmd("Bdelete")
+                    require("nvim-tree.api").tree.focus()
+                else
+                    vim.cmd("Bdelete")
+                end
+            end, { desc = "Close buffer (BufDelete)" })
+        end,
+    }
 })
