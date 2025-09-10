@@ -27,15 +27,7 @@ return {
         "famiu/bufdelete.nvim",
         event = "VeryLazy",
         config = function()
-            vim.keymap.set("n", "<C-w>", function()
-                local buffers = vim.fn.getbufinfo({ buflisted = 1 })
-                if #buffers > 1 then
-                    vim.cmd("Bdelete")
-                else
-                    vim.cmd("Bdelete")
-                    require("nvim-tree.api").tree.focus()
-                end
-            end, { desc = "Close buffer (BufDelete)" })
+            vim.keymap.set("n", "<C-w>", function() vim.cmd("Bdelete") end)
         end,
     },
 }
