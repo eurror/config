@@ -5,13 +5,17 @@ return {
         event = { "BufReadPost", "BufNewFile" },
         opts = {
             ensure_installed = {
-                "python", "lua", "json", "html",
-                "css", "javascript", "bash", "markdown",
+                "python", "lua", "json", "html", "css",
             },
             highlight = { enable = true },
-            indent = {
-                enable = true,
-                disable = { "yaml", "python" },
+            indent = { enable = true },
+        },
+        incremental_selection = {
+            enable = true,
+            keymaps = {
+                init_selection = "<C-space>",
+                node_incremental = "<C-space>",
+                node_decremental = "<S-space>",
             },
         },
         config = function(_, opts)
@@ -33,17 +37,11 @@ return {
                 pyright = {
                     settings = {
                         python = {
-                            venvPath = ".",
-                            pythonPath = './venv/bin/python'
-                        }
-                    }
+                            pythonPath = vim.fn.exepath("python3"),
+                        },
+                    },
                 },
-                jsonls = {},
-                html = {},
-                cssls = {},
                 ruff = {},
-                bashls = {},
-                marksman = {},
                 lua_ls = {
                     settings = {
                         Lua = {
@@ -116,12 +114,20 @@ return {
             local null_ls = require("null-ls")
             null_ls.setup({
                 sources = {
+                    -- null_ls.builtins.diagnostics.ruff,
                     null_ls.builtins.formatting.black,
                     null_ls.builtins.formatting.isort,
-                    null_ls.builtins.diagnostics.ruff,
                     null_ls.builtins.formatting.stylua,
                     null_ls.builtins.formatting.prettier,
                 },
+                on_attach = function(client, bufnr)
+                    if client.supports_method("textDocument/formatting") then
+                        vim.api.nvim_create_autocmd("BufWritePre", {
+                            buffer = bufnr,
+                            callback = function() vim.lsp.buf.format({ bufnr = bufnr }) end,
+                        })
+                    end
+                end,
             })
         end,
     },
