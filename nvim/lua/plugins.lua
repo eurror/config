@@ -20,44 +20,7 @@ require("lazy").setup({
             vim.cmd("colorscheme vscode")
         end,
     },
-
-    {
-        "folke/neodev.nvim",
-        lazy = false,
-        priority = 900,
-    },
     { "nvim-lua/plenary.nvim" },
-    { "neovim/nvim-lspconfig" },
-    { "williamboman/mason.nvim" },
-    { "williamboman/mason-lspconfig.nvim" },
-    {
-        "hrsh7th/nvim-cmp",
-        dependencies = {
-            "hrsh7th/cmp-cmdline",
-        },
-        config = function()
-            local cmp = require("cmp")
-
-            cmp.setup.cmdline(":", {
-                mapping = cmp.mapping.preset.cmdline(),
-                sources = {
-                    { name = "cmdline" },
-                }
-            })
-
-            cmp.setup.cmdline({ "/", "?" }, {
-                mapping = cmp.mapping.preset.cmdline(),
-                sources = {
-                    { name = "buffer" },
-                }
-            })
-        end,
-    },
-    { "hrsh7th/cmp-nvim-lsp" },
-    { "hrsh7th/cmp-buffer" },
-    { "hrsh7th/cmp-path" },
-    { "L3MON4D3/LuaSnip" },
-    { "saadparwaiz1/cmp_luasnip" },
     { 'b0o/schemastore.nvim' },
 
     {
@@ -355,9 +318,13 @@ require("lazy").setup({
     {
         "neovim/nvim-lspconfig",
         dependencies = {
+            {
+                "folke/neodev.nvim",
+                lazy = false,
+                priority = 900,
+            },
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
-            "folke/neodev.nvim",
             "hrsh7th/cmp-nvim-lsp",
         },
         config = function()
@@ -418,6 +385,7 @@ require("lazy").setup({
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
             "rafamadriz/friendly-snippets",
+            "hrsh7th/cmp-cmdline",
         },
         config = function()
             local cmp = require("cmp")
@@ -439,6 +407,20 @@ require("lazy").setup({
                 mapping = cmp.mapping.preset.insert({
                     ["<CR>"] = cmp.mapping.confirm({ select = false }),
                 }),
+            })
+
+            cmp.setup.cmdline(":", {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = {
+                    { name = "cmdline" },
+                }
+            })
+
+            cmp.setup.cmdline({ "/", "?" }, {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = {
+                    { name = "buffer" },
+                }
             })
         end,
     },
