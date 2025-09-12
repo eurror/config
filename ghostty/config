@@ -37,7 +37,7 @@ adjust-box-thickness =
 grapheme-width-method = unicode
 freetype-load-flags = hinting,force-autohint,monochrome,autohint
 
-theme = "vscode"
+theme =
 
 background = "#000000"
 #background = "#1E1E1E"
