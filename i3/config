@@ -17,7 +17,7 @@ smart_borders on
 # i3
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym ctrl+$alt+Delete exec --no-startup-id "echo '󰍃 Lock\n󰗼 Logout\n󰜉 Reboot\n⏻ Shutdown' | rofi -dmenu -i -p 'System Action:' -theme-str 'window {location: center;}' | xargs -I {} sh -c 'case {} in Logout) i3-msg exit;; Lock) i3lock -c 04090e;; Reboot) systemctl reboot;; Shutdown) systemctl poweroff;; esac'"
+bindsym ctrl+$alt+Delete exec --no-startup-id ~/.config/rofi/powermenu.sh
 
 # app shortcuts
 bindsym $mod+Shift+x exec --no-startup-id i3lock -c 04090e
