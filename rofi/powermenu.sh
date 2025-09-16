@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 chosen=$(echo -e "󰍃 Lock\n󰗼 Logout\n󰜉 Reboot\n⏻ Shutdown" \
-  | rofi -dmenu -i -p "System Action:" \
+  | rofi -dmenu -i -p " System Action" \
     -theme-str 'window {location: center;}')
 
 case "$chosen" in
