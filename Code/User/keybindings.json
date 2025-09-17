@@ -1,12 +1,7 @@
 [
     {
-        "key": "ctrl+[IntlBackslash]",
-        "command": "workbench.action.terminal.toggleTerminal",
-        "when": "terminal.active"
-    },
-    {
         "key": "ctrl+`",
-        "command": "-workbench.action.terminal.toggleTerminal",
+        "command": "workbench.action.terminal.toggleTerminal",
         "when": "terminal.active"
     },
     {
@@ -20,24 +15,24 @@
         "when": "textInputFocus"
     },
     {
-        "key": "shift+cmd+d",
+        "key": "shift+ctrl+d",
         "command": "-workbench.view.debug",
         "when": "viewContainer.workbench.view.debug.enabled"
     },
     {
-        "key": "cmd+p",
+        "key": "ctrl+p",
         "command": "workbench.action.showAllSymbols"
     },
     {
-        "key": "cmd+t",
+        "key": "ctrl+t",
         "command": "-workbench.action.showAllSymbols"
     },
     {
-        "key": "cmd+t",
+        "key": "ctrl+t",
         "command": "workbench.action.quickOpen"
     },
     {
-        "key": "cmd+p",
+        "key": "ctrl+p",
         "command": "-workbench.action.quickOpen"
     },
     {
@@ -121,7 +116,7 @@
         "command": "-workbench.action.openEditorAtIndex9"
     },
     {
-        "key": "shift+cmd+r",
+        "key": "shift+ctrl+r",
         "command": "workbench.view.scm",
         "when": "workbench.scm.active"
     },
@@ -131,17 +126,17 @@
         "when": "workbench.scm.active"
     },
     {
-        "key": "cmd+r",
+        "key": "ctrl+r",
         "command": "workbench.action.gotoSymbol",
         "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
     },
     {
-        "key": "shift+cmd+o",
+        "key": "shift+ctrl+o",
         "command": "-workbench.action.gotoSymbol",
         "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
     },
     {
-        "key": "cmd+j",
+        "key": "ctrl+j",
         "command": "workbench.action.togglePanel"
     },
     {
@@ -204,6 +199,7 @@
     {
         "key": "shift+cmd+b",
         "command": "outline.focus",
+        "when": "isMac",
     },
     {
         "key": "shift+cmd+g",
