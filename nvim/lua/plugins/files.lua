@@ -55,6 +55,24 @@ return {
                         },
                     },
                 },
+                actions = {
+                    open_file = {
+                        quit_on_open = true,
+                        window_picker = { enable = false },
+                    },
+                    change_dir = {
+                        enable = true,
+                        global = true,
+                    },
+                },
+                update_focused_file = {
+                    enable = true,
+                    update_cwd = true,
+                    ignore_list = {},
+                },
+                system_open = {
+                    cmd = "open",
+                },
             })
             vim.api.nvim_create_autocmd("QuitPre", {
                 callback = function()
@@ -79,12 +97,24 @@ return {
                 defaults = {
                     prompt_prefix = " ",
                     selection_caret = " ",
-                    file_ignore_patterns = { "venv", ".venv", "node_modules", ".git" },
+                    file_ignore_patterns = {
+                        "venv", ".venv", "node_modules", ".git",
+                        "__pycache__", "*.pyc", ".pytest_cache",
+                        "target", "build", "dist"
+                    },
                     layout_config = { prompt_position = "top" },
                     sorting_strategy = "ascending",
                     winblend = 10,
                     preview = {
                         filesize_limit = 1,
+                    },
+                    file_sorter = require("telescope.sorters").get_fuzzy_file,
+                    generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
+                    path_display = { "truncate" },
+                    dynamic_preview_title = true,
+                    results_title = false,
+                    cache_picker = {
+                        num_pickers = 5,
                     },
                 },
                 extensions = {

@@ -32,7 +32,7 @@ return {
     },
     {
 	'oribarilan/lensline.nvim',
-	tag = '1.1.2', -- or: branch = 'release/1.x' for latest non-breaking updates
+	tag = '1.1.2',
 	event = 'LspAttach',
 	config = function()
 		require("lensline").setup()
