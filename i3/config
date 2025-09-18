@@ -20,7 +20,8 @@ bindsym $mod+Shift+r restart
 bindsym ctrl+$alt+Delete exec --no-startup-id ~/.config/rofi/powermenu.sh
 
 # app shortcuts
-bindsym $mod+Shift+x exec --no-startup-id i3lock -c 04090e
+bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3/lock.sh
+# bindsym $mod+Shift+x exec --no-startup-id i3lock -c 04090e
 bindsym $mod+Return exec $term
 bindsym $alt+space exec --no-startup-id rofi -show drun
 bindsym $alt+Tab exec --no-startup-id rofi -show window
@@ -183,7 +184,8 @@ exec --no-startup-id dex --autostart --environment i3
 #exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 exec --no-startup-id rog-control-center
 exec --no-startup-id redshift
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock -- ~/.config/i3/lock.sh
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id picom --vsync --backend glx --glx-no-stencil --glx-no-rebind-pixmap

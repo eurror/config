@@ -98,8 +98,6 @@
   "files.associations": {
     "*.html": "django-html"
   },
-  "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
@@ -451,5 +449,6 @@
   ],
   "http.experimental.systemCertificatesV2": true,
   "http.proxyStrictSSL": false,
-  "terminal.integrated.macOptionIsMeta": true
+  "terminal.integrated.macOptionIsMeta": true,
+  "files.trimFinalNewlines": true
 }

@@ -5,13 +5,13 @@
 !dunst/dunstrc
 !ghostty/config
 !gtk-3.0/settings.ini
-!i3/
+!i3/*
 !kitty/kitty.conf
 !nvim/init.lua
 !nvim/theme.ini
 !nvim/lua/
-!picom/
-!polybar/
+!picom/*
+!polybar/*
 !pulse/
 !rofi/powermenu.sh
 !zed/keymap.json
