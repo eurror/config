@@ -1,0 +1,73 @@
+[[language]]
+name = "python"
+roots = ["pyproject.toml", "setup.py", "Pipfile", "requirements.txt", ".git"]
+scope = "source.python"
+injection-regex = "python"
+file-types = ["py"]
+shebangs = ["python"]
+language-id = "python"
+comment-token = "#"
+language-servers = ["pyright", "ruff"]
+formatter = { command = "ruff", args = [
+  "format",
+  "--stdin-filename",
+  "file.py",
+  "-",
+] }
+auto-format = false
+diagnostic-severity = "error"
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+config = {}
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[tool.pyright]
+venvPath = "."
+venv = "venv"
+
+[[language]]
+name = "dockerfile"
+language-servers = ["docker-langserver"]
+formatter = { command = "dockfmt", args = ["-"] }
+auto-format = false
+
+[language-server.docker-langserver]
+command = "docker-langserver"
+args = ["--stdio"]
+
+[[language]]
+name = "yaml"
+language-servers = ["yaml-language-server"]
+formatter = { command = "prettier", args = ["--parser", "yaml"] }
+auto-format = true
+
+[language-server.yaml-language-server]
+command = "yaml-language-server"
+args = ["--stdio"]
+config.yaml = { format = { enable = true }, validation = true, hover = true, completion = true }
+
+[[language]]
+name = "json"
+language-servers = ["vscode-json-language-server"]
+formatter = { command = "prettier", args = ["--parser", "json"] }
+auto-format = true
+
+[language-server.vscode-json-language-server]
+command = "vscode-json-language-server"
+args = ["--stdio"]
+config = { provideFormatter = true, json = { validate = { enable = true } } }
+
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["fmt", "-"] }
+auto-format = true
+
+[[language]]
+name = "markdown"
+formatter = { command = "prettier", args = ["--parser", "markdown"] }
+auto-format = false
