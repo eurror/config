@@ -1,0 +1,115 @@
+# VSCode Default Dark theme for Helix Editor
+# Replicates the classic VSCode Dark+ theme
+
+"ui.background" = { bg = "#1e1e1e" }
+"ui.background.separator" = "#454545"
+"ui.cursor" = { fg = "#1e1e1e", bg = "#aeafad" }
+"ui.cursor.insert" = { fg = "#1e1e1e", bg = "#4ec9b0" }
+"ui.cursor.select" = { fg = "#1e1e1e", bg = "#569cd6" }
+"ui.cursor.match" = { fg = "#1e1e1e", bg = "#ffd700" }
+"ui.cursor.primary" = { fg = "#1e1e1e", bg = "#aeafad" }
+"ui.cursor.secondary" = { fg = "#1e1e1e", bg = "#858585" }
+"ui.cursorline.primary" = { bg = "#2d2d30" }
+"ui.cursorline.secondary" = { bg = "#252526" }
+"ui.selection" = { bg = "#264f78" }
+"ui.selection.primary" = { bg = "#264f78" }
+"ui.linenr" = { fg = "#858585" }
+"ui.linenr.selected" = { fg = "#c6c6c6", modifiers = ["bold"] }
+# "ui.statusline" = { fg = "#cccccc", bg = "#007acc" }
+"ui.statusline" = { fg = "#cccccc", bg = "#2d2d30" }
+"ui.statusline.inactive" = { fg = "#cccccc", bg = "#68217a" }
+"ui.statusline.normal" = { fg = "#ffffff", bg = "#007acc" }
+"ui.statusline.insert" = { fg = "#ffffff", bg = "#4ec9b0" }
+"ui.statusline.select" = { fg = "#ffffff", bg = "#c586c0" }
+"ui.popup" = { fg = "#cccccc", bg = "#252526" }
+"ui.window" = { fg = "#454545" }
+"ui.help" = { fg = "#cccccc", bg = "#252526" }
+"ui.text" = { fg = "#cccccc" }
+"ui.text.focus" = { fg = "#ffffff" }
+"ui.text.inactive" = { fg = "#858585" }
+"ui.virtual.ruler" = { bg = "#373739" }
+"ui.virtual.whitespace" = { fg = "#404040" }
+"ui.virtual.indent-guide" = { fg = "#404040" }
+"ui.virtual.inlay-hint" = { fg = "#858585" }
+"ui.menu" = { fg = "#cccccc", bg = "#252526" }
+"ui.menu.selected" = { fg = "#ffffff", bg = "#094771" }
+"ui.menu.scroll" = { fg = "#858585", bg = "#252526" }
+
+"error" = { fg = "#f48771" }
+"warning" = { fg = "#ffcc02" }
+"info" = { fg = "#75beff" }
+"hint" = { fg = "#eeeeeeb3" }
+
+"diagnostic" = { modifiers = ["underlined"] }
+"diagnostic.error" = { fg = "#f48771", modifiers = ["underlined"] }
+"diagnostic.warning" = { fg = "#ffcc02", modifiers = ["underlined"] }
+"diagnostic.info" = { fg = "#75beff", modifiers = ["underlined"] }
+"diagnostic.hint" = { fg = "#eeeeeeb3", modifiers = ["underlined"] }
+
+# Syntax highlighting - VSCode Dark+ colors
+"type" = { fg = "#4ec9b0" }
+"type.builtin" = { fg = "#4ec9b0" }
+"constructor" = { fg = "#4ec9b0" }
+"constant" = { fg = "#569cd6" }
+"constant.builtin" = { fg = "#569cd6" }
+"constant.builtin.boolean" = { fg = "#569cd6" }
+"constant.character" = { fg = "#ce9178" }
+"constant.character.escape" = { fg = "#d7ba7d" }
+"constant.numeric" = { fg = "#b5cea8" }
+"string" = { fg = "#ce9178" }
+"string.regexp" = { fg = "#d16969" }
+"string.special" = { fg = "#d7ba7d" }
+"comment" = { fg = "#6a9955", modifiers = ["italic"] }
+"variable" = { fg = "#9cdcfe" }
+"variable.builtin" = { fg = "#569cd6" }
+"variable.parameter" = { fg = "#9cdcfe" }
+"variable.other.member" = { fg = "#9cdcfe" }
+"label" = { fg = "#c8c8c8" }
+"punctuation" = { fg = "#d4d4d4" }
+"punctuation.delimiter" = { fg = "#d4d4d4" }
+"punctuation.bracket" = { fg = "#ffd700" }
+"keyword" = { fg = "#569cd6" }
+"keyword.control" = { fg = "#c586c0" }
+"keyword.control.conditional" = { fg = "#c586c0" }
+"keyword.control.repeat" = { fg = "#c586c0" }
+"keyword.control.import" = { fg = "#c586c0" }
+"keyword.control.return" = { fg = "#c586c0" }
+"keyword.control.exception" = { fg = "#c586c0" }
+"keyword.operator" = { fg = "#d4d4d4" }
+"keyword.directive" = { fg = "#c586c0" }
+"keyword.function" = { fg = "#569cd6" }
+"keyword.storage" = { fg = "#569cd6" }
+"keyword.storage.modifier" = { fg = "#569cd6" }
+"operator" = { fg = "#d4d4d4" }
+"function" = { fg = "#dcdcaa" }
+"function.builtin" = { fg = "#dcdcaa" }
+"function.method" = { fg = "#dcdcaa" }
+"function.macro" = { fg = "#dcdcaa" }
+"function.special" = { fg = "#dcdcaa" }
+"tag" = { fg = "#569cd6" }
+"namespace" = { fg = "#4ec9b0" }
+"markup" = { fg = "#d4d4d4" }
+"markup.heading" = { fg = "#569cd6", modifiers = ["bold"] }
+"markup.list" = { fg = "#6796e6" }
+"markup.bold" = { fg = "#d4d4d4", modifiers = ["bold"] }
+"markup.italic" = { fg = "#d4d4d4", modifiers = ["italic"] }
+"markup.link.url" = { fg = "#3794ff", modifiers = ["underlined"] }
+"markup.link.text" = { fg = "#d4d4d4" }
+"markup.quote" = { fg = "#6a9955" }
+"markup.raw" = { fg = "#ce9178" }
+
+"diff.plus" = { fg = "#4ec9b0" }
+"diff.delta" = { fg = "#ffcc02" }
+"diff.minus" = { fg = "#f48771" }
+
+# Git gutter
+"ui.gutter" = { bg = "#1e1e1e" }
+"diff.plus.gutter" = { fg = "#4ec9b0" }
+"diff.minus.gutter" = { fg = "#f48771" }
+"diff.delta.gutter" = { fg = "#ffcc02" }
+
+# Special elements
+"special" = { fg = "#c586c0" }
+"attribute" = { fg = "#9cdcfe" }
+"property" = { fg = "#9cdcfe" }
+"module" = { fg = "#4ec9b0" }

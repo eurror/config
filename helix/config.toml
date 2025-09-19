@@ -1,0 +1,67 @@
+theme = "vscode-default"
+
+[editor]
+line-number = "relative"
+scrolloff = 8
+cursorline = true
+completion-timeout = 5
+completion-replace = true
+bufferline = "always"
+color-modes = true
+text-width = 125
+insert-final-newline = false
+trim-final-newlines = true
+trim-trailing-whitespace = true
+popup-border = "all"
+gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+end-of-line-diagnostics = "hint"
+
+[editor.statusline]
+left = [
+  "mode",
+  "spinner",
+  "read-only-indicator",
+  "file-modification-indicator",
+  "version-control",
+]
+center = ["file-name"]
+right = [
+  "diagnostics",
+  "selections",
+  "register",
+  "position",
+  "file-encoding",
+  "file-indent-style",
+  "file-type",
+]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+display-inlay-hints = true
+inlay-hints-length-limit = 50
+
+[editor.auto-save]
+after-delay.enable = true
+after-delay.timeout = 0
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+nbsp = "none"
+nnbsp = "none"
+newline = "none"
+
+[editor.indent-guides]
+render = true
+
+[editor.soft-wrap]
+enable = true
+wrap-at-text-width = true
+
+# [editor.inline-diagnostics]
+# cursor-line = "warning"
+
+[editor.file-picker]
+hidden = false
