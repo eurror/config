@@ -18,3 +18,5 @@
 !zed/settings.json
 !Brewfile
 !awesome-mac-apps.md
+!helix/*
+!helix/themes/*
