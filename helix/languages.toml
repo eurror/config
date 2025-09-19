@@ -1,27 +1,66 @@
 [[language]]
 name = "python"
-language-servers = ["pyright", "ruff", "ruff-lsp"]
+language-servers = ["pyright", "ruff"]
 formatter = { command = "ruff", args = [
-  "format",
-  "--stdin-filename",
-  "file.py",
-  "-",
+    "format",
+    "--stdin-filename",
+    "file.py",
+    "-",
 ] }
 diagnostic-severity = "error"
 auto-format = false
+injection-regex = "python"
+file-types = ["py"]
+shebangs = ["python"]
+scope = "source.python"
 
 [language-server.pyright]
 command = "pyright-langserver"
 args = ["--stdio"]
-config.python.analysis = { autoSearchPaths = true, useLibraryCodeForTypes = true, diagnosticMode = "workspace" }
-config.python.pythonPath = "./venv/bin/python"
+
+[language-server.pyright.config]
+python.analysis.autoSearchPaths = true
+python.analysis.useLibraryCodeForTypes = true
+python.analysis.diagnosticMode = "workspace"
+python.analysis.autoImportCompletions = true
+python.analysis.includeFileSpecs = ["**/*.py"]
+python.analysis.exclude = ["**/node_modules", "**/__pycache__", ".git"]
+python.analysis.typeCheckingMode = "basic"
+python.analysis.completeFunctionParens = true
+python.analysis.indexing = true
+python.pythonPath = "./venv/bin/python"
+reportMissingImports = "error"
+reportMissingTypeStubs = false
 
 [language-server.ruff]
 command = "ruff"
 args = ["server", "--preview"]
 
-[language-server.ruff-lsp]
-command = "ruff-lsp"
+[language-server.pylsp]
+command = "pylsp"
+args = []
+
+[language-server.pylsp.config.pylsp.plugins]
+pycodestyle.enabled = false
+pyflakes.enabled = false
+mccabe.enabled = false
+yapf.enabled = false
+autopep8.enabled = false
+pylint.enabled = false
+rope_completion.enabled = true
+jedi_completion.enabled = true
+jedi_completion.fuzzy = true
+jedi_completion.include_params = true
+jedi_hover.enabled = true
+jedi_references.enabled = true
+jedi_signature_help.enabled = true
+jedi_completion.include_class_objects = true
+jedi_completion.include_function_objects = true
+jedi_symbols.enabled = true
+
+[language-server.ty]
+command = "ty"
+args = ["lsp"]
 
 [[language]]
 name = "dockerfile"
