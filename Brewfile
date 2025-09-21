@@ -118,8 +118,6 @@ cask "homerow"
 cask "itsycal"
 # File archiver
 cask "keka"
-# Agent-centric IDE with spec-driven development
-cask "kiro"
 # GPU-based terminal emulator
 cask "kitty"
 # Utility that shows the latest app updates
@@ -142,18 +140,13 @@ cask "tomatobar"
 cask "trae"
 # Open-source BitTorrent client
 cask "transmission"
-# Virtual machines UI using QEMU
-cask "utm"
 # AI code editor
 cask "void"
 # Rust-based terminal
 cask "warp"
-# Agentic IDE powered by AI Flow paradigm
-cask "windsurf"
 # Multiplayer code editor
 cask "zed"
 mas "AdGuard Mail", id: 6499493699
-mas "BBEdit", id: 404009241
 mas "Boop", id: 1518425043
 mas "DevHub", id: 6476452351
 mas "Jiffy reader", id: 6444754311
@@ -172,7 +165,6 @@ mas "TestFlight", id: 899247664
 mas "uBlock Origin Lite", id: 6745342698
 mas "Userscripts", id: 1463298887
 mas "WhatsApp", id: 310633997
-mas "Windows App", id: 1295203466
 mas "Wipr", id: 1662217862
 mas "WireGuard", id: 1451685025
 vscode "amazonwebservices.amazon-q-vscode"
