@@ -7,12 +7,8 @@ formatter = { command = "ruff", args = [
     "file.py",
     "-",
 ] }
-diagnostic-severity = "error"
+#diagnostic-severity = "error"
 auto-format = false
-injection-regex = "python"
-file-types = ["py"]
-shebangs = ["python"]
-scope = "source.python"
 
 [language-server.pyright]
 command = "pyright-langserver"
@@ -21,13 +17,11 @@ args = ["--stdio"]
 [language-server.pyright.config]
 python.analysis.autoSearchPaths = true
 python.analysis.useLibraryCodeForTypes = true
-python.analysis.diagnosticMode = "workspace"
+python.analysis.diagnosticMode = "openFilesOnly"
 python.analysis.autoImportCompletions = true
-python.analysis.includeFileSpecs = ["**/*.py"]
-python.analysis.exclude = ["**/node_modules", "**/__pycache__", ".git"]
 python.analysis.typeCheckingMode = "basic"
 python.analysis.completeFunctionParens = true
-python.analysis.indexing = true
+python.analysis.indexing = false
 python.pythonPath = "./venv/bin/python"
 reportMissingImports = "error"
 reportMissingTypeStubs = false
@@ -35,71 +29,3 @@ reportMissingTypeStubs = false
 [language-server.ruff]
 command = "ruff"
 args = ["server", "--preview"]
-
-[language-server.pylsp]
-command = "pylsp"
-args = []
-
-[language-server.pylsp.config.pylsp.plugins]
-pycodestyle.enabled = false
-pyflakes.enabled = false
-mccabe.enabled = false
-yapf.enabled = false
-autopep8.enabled = false
-pylint.enabled = false
-rope_completion.enabled = true
-jedi_completion.enabled = true
-jedi_completion.fuzzy = true
-jedi_completion.include_params = true
-jedi_hover.enabled = true
-jedi_references.enabled = true
-jedi_signature_help.enabled = true
-jedi_completion.include_class_objects = true
-jedi_completion.include_function_objects = true
-jedi_symbols.enabled = true
-
-[language-server.ty]
-command = "ty"
-args = ["lsp"]
-
-[[language]]
-name = "dockerfile"
-language-servers = ["docker-langserver"]
-formatter = { command = "dockfmt", args = ["-"] }
-auto-format = false
-
-[language-server.docker-langserver]
-command = "docker-langserver"
-args = ["--stdio"]
-
-[[language]]
-name = "yaml"
-language-servers = ["yaml-language-server"]
-formatter = { command = "prettier", args = ["--parser", "yaml"] }
-auto-format = true
-
-[language-server.yaml-language-server]
-command = "yaml-language-server"
-args = ["--stdio"]
-config.yaml = { format = { enable = true }, validation = true, hover = true, completion = true }
-
-[[language]]
-name = "json"
-language-servers = ["vscode-json-language-server"]
-formatter = { command = "prettier", args = ["--parser", "json"] }
-auto-format = true
-
-[language-server.vscode-json-language-server]
-command = "vscode-json-language-server"
-args = ["--stdio"]
-config = { provideFormatter = true, json = { validate = { enable = true } } }
-
-[[language]]
-name = "toml"
-formatter = { command = "taplo", args = ["fmt", "-"] }
-auto-format = true
-
-[[language]]
-name = "markdown"
-formatter = { command = "prettier", args = ["--parser", "markdown"] }
-auto-format = false
