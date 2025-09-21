@@ -7,7 +7,6 @@ formatter = { command = "ruff", args = [
     "file.py",
     "-",
 ] }
-#diagnostic-severity = "error"
 auto-format = false
 
 [language-server.pyright]
@@ -15,16 +14,20 @@ command = "pyright-langserver"
 args = ["--stdio"]
 
 [language-server.pyright.config]
-python.analysis.autoSearchPaths = true
-python.analysis.useLibraryCodeForTypes = true
 python.analysis.diagnosticMode = "openFilesOnly"
-python.analysis.autoImportCompletions = true
+python.analysis.autoSearchPaths = true
+python.analysis.indexing = true
+
+python.analysis.useLibraryCodeForTypes = true
 python.analysis.typeCheckingMode = "basic"
-python.analysis.completeFunctionParens = true
-python.analysis.indexing = false
-python.pythonPath = "./venv/bin/python"
 reportMissingImports = "error"
+reportUnboundVariable = "error"
 reportMissingTypeStubs = false
+
+python.analysis.autoImportCompletions = true
+python.analysis.completeFunctionParens = true
+
+python.pythonPath = "./venv/bin/python"
 
 [language-server.ruff]
 command = "ruff"
