@@ -41,6 +41,7 @@
 "hint" = { fg = "#eeeeeeb3" }
 
 "diagnostic" = { modifiers = ["underlined"] }
+"diagnostic.unused" = { fg = "#ff0000", modifiers = ["dim"] }
 "diagnostic.error" = { fg = "#f48771", modifiers = ["underlined"] }
 "diagnostic.warning" = { fg = "#ffcc02", modifiers = ["underlined"] }
 "diagnostic.info" = { fg = "#75beff", modifiers = ["underlined"] }
@@ -64,6 +65,7 @@
 "variable.builtin" = { fg = "#569cd6" }
 "variable.parameter" = { fg = "#9cdcfe" }
 "variable.other.member" = { fg = "#9cdcfe" }
+"comment.unused" = { fg = "gray", modifiers = ["dim"]}
 "label" = { fg = "#c8c8c8" }
 "punctuation" = { fg = "#d4d4d4" }
 "punctuation.delimiter" = { fg = "#d4d4d4" }
@@ -112,8 +114,8 @@
 # "diff.delta.gutter" = { fg = "#ffcc02" }
 
 "diff.plus.gutter" = { fg = "#12E62E" }
-"diff.minus.gutter" = { fg = "#0D24FA" }
-"diff.delta.gutter" = { fg = "#E45521" }
+"diff.minus.gutter" = { fg = "#E45521" }
+"diff.delta.gutter" = { fg = "#0D24FA" }
 
 # Special elements
 "special" = { fg = "#c586c0" }
