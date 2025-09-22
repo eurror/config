@@ -1,6 +1,7 @@
 theme = "vscode-default"
 
 [editor]
+default-yank-register = "+"
 line-number = "relative"
 scrolloff = 8
 cursorline = true
@@ -25,8 +26,9 @@ left = [
   "read-only-indicator",
   "file-modification-indicator",
   "version-control",
+  "file-name",
 ]
-center = ["file-name"]
+center = []
 right = [
   "diagnostics",
   "selections",
