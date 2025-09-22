@@ -8,13 +8,15 @@ completion-timeout = 5
 completion-replace = true
 bufferline = "always"
 color-modes = true
-text-width = 125
+text-width = 120
+#rulers = [120]
 insert-final-newline = false
 trim-final-newlines = true
 trim-trailing-whitespace = true
 popup-border = "all"
 gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
 end-of-line-diagnostics = "hint"
+completion-trigger-len = 1
 
 [editor.statusline]
 left = [
@@ -68,6 +70,17 @@ hidden = false
 
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
+C-ret = "open_below"
+C-S-ret = "open_above"
 
 [keys.select]
 esc = ["collapse_selection", "keep_primary_selection"]
+
+[keys.insert]
+A-h = "move_char_left"
+A-j = "move_line_down"
+A-k = "move_line_up"
+A-l = "move_char_right"
+C-ret = "open_below"
+C-S-ret = "open_above"
+C-space = "completion"
