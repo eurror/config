@@ -38,10 +38,10 @@ bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+q kill
 
 # change focus
-#bindsym $mod+h focus left
-#bindsym $mod+j focus down
-#bindsym $mod+k focus up
-#bindsym $mod+l focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -58,9 +58,9 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split orientation
-bindsym $mod+h split h
+bindsym $mod+t split h
 bindsym $mod+v split v
-bindsym $mod+t split toggle
+#bindsym $mod+t split toggle
 bindsym $mod+Shift+w sticky toggle
 
 # resize
