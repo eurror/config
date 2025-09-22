@@ -98,15 +98,22 @@
 "markup.quote" = { fg = "#6a9955" }
 "markup.raw" = { fg = "#ce9178" }
 
-"diff.plus" = { fg = "#4ec9b0" }
-"diff.delta" = { fg = "#ffcc02" }
-"diff.minus" = { fg = "#f48771" }
+#"diff.plus" = { fg = "#4ec9b0" }
+"diff.plus" = { fg = "#12E62E" }
+#"diff.delta" = { fg = "#ffcc02" }
+"diff.delta" = { fg = "0D24FA"}
+#"diff.minus" = { fg = "#f48771" }
+"diff.minus" = { fg = "#E45521" }
 
 # Git gutter
 "ui.gutter" = { bg = "#1e1e1e" }
-"diff.plus.gutter" = { fg = "#4ec9b0" }
-"diff.minus.gutter" = { fg = "#f48771" }
-"diff.delta.gutter" = { fg = "#ffcc02" }
+# "diff.plus.gutter" = { fg = "#4ec9b0" }
+# "diff.minus.gutter" = { fg = "#f48771" }
+# "diff.delta.gutter" = { fg = "#ffcc02" }
+
+"diff.plus.gutter" = { fg = "#12E62E" }
+"diff.minus.gutter" = { fg = "#0D24FA" }
+"diff.delta.gutter" = { fg = "#E45521" }
 
 # Special elements
 "special" = { fg = "#c586c0" }
