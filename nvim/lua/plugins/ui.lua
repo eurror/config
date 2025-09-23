@@ -1,47 +1,54 @@
 return {
-    {
-        "Mofiqul/vscode.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            vim.o.background = "dark"
-            vim.cmd.colorscheme("vscode")
-        end,
-    },
-    {
-        "nvim-lualine/lualine.nvim",
-        event = "VeryLazy",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-        config = function()
-            require("lualine").setup({
-                options = {
-                    theme = "vscode",
-                    section_separators = "",
-                    component_separators = "|",
-                },
-            })
-        end,
-    },
-    {
-        "akinsho/bufferline.nvim",
-        event = "BufAdd",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-        config = function()
-            require("bufferline").setup({
-                options = {
-                    diagnostics = "nvim_lsp",
-                    show_duplicate_prefix = true,
-                    offsets = {
-                        {
-                            filetype = "NvimTree",
-                            text = "File Explorer",
-                            text_align = "left",
-                            separator = true,
-                            highlight = "Directory",
-                        },
-                    },
-                },
-            })
-        end,
-    },
+  {
+    "Mofiqul/vscode.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.o.background = "dark"
+      vim.cmd.colorscheme("vscode")
+    end,
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    event = "VeryLazy",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("lualine").setup({
+        options = {
+          theme = "vscode",
+          section_separators = "",
+          component_separators = "|",
+        },
+      })
+    end,
+  },
+  {
+    "akinsho/bufferline.nvim",
+    event = "BufAdd",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("bufferline").setup({
+        options = {
+          diagnostics = "nvim_lsp",
+          show_duplicate_prefix = true,
+          offsets = {
+            {
+              filetype = "NvimTree",
+              text = "File Explorer",
+              text_align = "left",
+              separator = true,
+              highlight = "Directory",
+            },
+          },
+        },
+      })
+    end,
+  },
+  {
+    "retran/meow.yarn.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    config = function()
+      require("meow.yarn").setup({})
+    end,
+  },
 }
