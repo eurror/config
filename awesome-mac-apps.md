@@ -266,3 +266,11 @@ Awesome apps:
 - [x] rigrep
 - [x] tmux
 - [x] tree
+- [x] tldr
+- [x] zoxide
+- [x] exa
+- [x] duf
+- [x] aria2
+- [x] diff-so-fancy
+- [x] dive
+- [x] ctop

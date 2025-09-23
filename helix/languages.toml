@@ -32,3 +32,11 @@ python.pythonPath = "./venv/bin/python"
 [language-server.ruff]
 command = "ruff"
 args = ["server", "--preview"]
+
+[[language]]
+name = "markdown"
+language-servers = ["marksman"]
+
+[language-server.marksman]
+command = "marksman"
+args = ["server"]
