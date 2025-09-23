@@ -509,92 +509,12 @@ gtk-tabs-location = top
 gtk-titlebar-hide-when-maximized = false
 adw-toolbar-style = raised
 gtk-wide-tabs = true
-
-# If `true` (default), Ghostty will enable Adwaita theme support. This
-# will make `window-theme` work properly and will also allow Ghostty to
-# properly respond to system theme changes, light/dark mode changing, etc.
-# This requires a GTK4 desktop with a GTK4 theme.
-#
-# If you are running GTK3 or have a GTK3 theme, you may have to set this
-# to false to get your theme picked up properly. Having this set to true
-# with GTK3 should not cause any problems, but it may not work exactly as
-# expected.
-#
-# This configuration only has an effect if Ghostty was built with
-# Adwaita support.
-#gtk-adwaita = true
-
-# Custom CSS files to be loaded.
-#
-# This configuration can be repeated multiple times to load multiple files.
-# Prepend a ? character to the file path to suppress errors if the file does
-# not exist. If you want to include a file that begins with a literal ?
-# character, surround the file path in double quotes (").
-# The file size limit for a single stylesheet is 5MiB.
+gtk-adwaita = true
 gtk-custom-css =
-
-# If `true` (default), applications running in the terminal can show desktop
-# notifications using certain escape sequences such as OSC 9 or OSC 777.
 desktop-notifications = true
-
-# If `true`, the bold text will use the bright color palette.
 bold-is-bright = false
 
-# This will be used to set the `TERM` environment variable.
-# HACK: We set this with an `xterm` prefix because vim uses that to enable key
-# protocols (specifically this will enable `modifyOtherKeys`), among other
-# features. An option exists in vim to modify this: `:set
-# keyprotocol=ghostty:kitty`, however a bug in the implementation prevents it
-# from working properly. https://github.com/vim/vim/pull/13211 fixes this.
 term = xterm-ghostty
-
-# String to send when we receive `ENQ` (`0x05`) from the command that we are
-# running. Defaults to an empty string if not set.
 enquiry-response =
-
-# Control the auto-update functionality of Ghostty. This is only supported
-# on macOS currently, since Linux builds are distributed via package
-# managers that are not centrally controlled by Ghostty.
-#
-# Checking or downloading an update does not send any information to
-# the project beyond standard network information mandated by the
-# underlying protocols. To put it another way: Ghostty doesn't explicitly
-# add any tracking to the update process. The update process works by
-# downloading information about the latest version and comparing it
-# client-side to the current version.
-#
-# Valid values are:
-#
-#  * `off` - Disable auto-updates.
-#  * `check` - Check for updates and notify the user if an update is
-#    available, but do not automatically download or install the update.
-#  * `download` - Check for updates, automatically download the update,
-#    notify the user, but do not automatically install the update.
-#
-# If unset, we defer to Sparkle's default behavior, which respects the
-# preference stored in the standard user defaults (`defaults(1)`).
-#
-# Changing this value at runtime works after a small delay.
 auto-update =
-
-# The release channel to use for auto-updates.
-#
-# The default value of this matches the release channel of the currently
-# running Ghostty version. If you download a pre-release version of Ghostty
-# then this will be set to `tip` and you will receive pre-release updates.
-# If you download a stable version of Ghostty then this will be set to
-# `stable` and you will receive stable updates.
-#
-# Valid values are:
-#
-#  * `stable` - Stable, tagged releases such as "1.0.0".
-#  * `tip` - Pre-release versions generated from each commit to the
-#    main branch. This is the version that was in use during private
-#    beta testing by thousands of people. It is generally stable but
-#    will likely have more bugs than the stable channel.
-#
-# Changing this configuration requires a full restart of
-# Ghostty to take effect.
-#
-# This only works on macOS since only macOS has an auto-update feature.
 auto-update-channel =
