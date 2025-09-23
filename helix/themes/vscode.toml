@@ -1,8 +1,11 @@
 inherits = "dark_plus"
 
-#"ui.background" = {bg = "#000000" }
-"ui.statusline" = { fg = "#ffffff", bg = "#2d2d30" }
-"ui.statusline.inactive" = { bg = "#68217a" }
-"ui.statusline.normal" = { bg = "#007acc" }
-"ui.statusline.insert" = { bg = "#4ec9b0" }
-"ui.statusline.select" = { bg = "#c586c0" }
+# "ui.background" = {bg = "background" }
+"ui.background" = {bg = "#000000" }
+"ui.statusline" = { bg = "widget" }
+# "ui.statusline" = { bg = "background" }
+"ui.statusline.inactive" = { bg = "widget" }
+# "ui.statusline.inactive" = { bg = "background" }
+"ui.statusline.normal" = { bg = "blue" }
+"ui.statusline.insert" = { bg = "dark_green" }
+"ui.statusline.select" = { bg = "magenta" }
