@@ -1,7 +1,7 @@
 inherits = "dark_plus"
 
-# "ui.background" = {bg = "background" }
-"ui.background" = {bg = "#000000" }
+"ui.background" = {bg = "background" }
+# "ui.background" = {bg = "#000000" }
 "ui.statusline" = { bg = "widget" }
 # "ui.statusline" = { bg = "background" }
 "ui.statusline.inactive" = { bg = "widget" }
