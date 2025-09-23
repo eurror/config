@@ -74,9 +74,13 @@ hidden = false
 esc = ["collapse_selection", "keep_primary_selection"]
 C-ret = "open_below"
 C-S-ret = "open_above"
+D = "delete_char_backward"
 
 [keys.select]
 esc = ["collapse_selection", "keep_primary_selection"]
+C-ret = ["collapse_selection", "keep_primary_selection", "open_below"]
+C-S-ret = ["collapse_selection", "keep_primary_selection", "open_above"]
+D = "delete_char_backward"
 
 [keys.insert]
 A-h = "move_char_left"
@@ -86,3 +90,4 @@ A-l = "move_char_right"
 C-ret = "open_below"
 C-S-ret = "open_above"
 C-space = "completion"
+D = "delete_char_backward"
