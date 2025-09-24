@@ -94,5 +94,5 @@
     "git_panel.default_width": 300,
     "notification_panel.default_width": 300,
     "agent.default_width": 300,
-    "terminal.default_height": 300
+    "terminal.default_height": 300,
 }
