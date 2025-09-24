@@ -76,6 +76,9 @@ esc = ["collapse_selection", "keep_primary_selection"]
 A-ret = "open_below"
 A-S-ret = "open_above"
 D = "delete_char_backward"
+"^" = "search_selection"
+"#" = "@miw^N"
+"*" = "@miw^n"
 
 [keys.select]
 esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
