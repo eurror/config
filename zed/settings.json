@@ -78,7 +78,7 @@
         "pyright": {
             "settings": {
                 "python.analysis": {
-                    "diagnosticMode": "workspace",
+                    "diagnosticMode": "openFilesOnly",
                     "typeCheckingMode": "off"
                 },
                 "python": {
