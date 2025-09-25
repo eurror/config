@@ -1,39 +1,11 @@
 [
   {
-    "key": "ctrl+`",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
-  {
-    "key": "ctrl+f",
-    "command": "-cursorRight",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "ctrl+b",
-    "command": "-cursorLeft",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "shift+ctrl+d",
-    "command": "-workbench.view.debug",
-    "when": "viewContainer.workbench.view.debug.enabled"
-  },
-  {
     "key": "ctrl+p",
     "command": "workbench.action.showAllSymbols"
   },
   {
     "key": "ctrl+t",
-    "command": "-workbench.action.showAllSymbols"
-  },
-  {
-    "key": "ctrl+t",
     "command": "workbench.action.quickOpen"
-  },
-  {
-    "key": "ctrl+p",
-    "command": "-workbench.action.quickOpen"
   },
   {
     "key": "ctrl+tab",
@@ -48,161 +20,55 @@
     "command": "workbench.action.openEditorAtIndex1"
   },
   {
-    "key": "ctrl+1",
-    "command": "-workbench.action.openEditorAtIndex1"
-  },
-  {
     "key": "cmd+2",
     "command": "workbench.action.openEditorAtIndex2"
-  },
-  {
-    "key": "ctrl+2",
-    "command": "-workbench.action.openEditorAtIndex2"
   },
   {
     "key": "cmd+3",
     "command": "workbench.action.openEditorAtIndex3"
   },
   {
-    "key": "ctrl+3",
-    "command": "-workbench.action.openEditorAtIndex3"
-  },
-  {
     "key": "cmd+4",
     "command": "workbench.action.openEditorAtIndex4"
-  },
-  {
-    "key": "ctrl+4",
-    "command": "-workbench.action.openEditorAtIndex4"
   },
   {
     "key": "cmd+5",
     "command": "workbench.action.openEditorAtIndex5"
   },
   {
-    "key": "ctrl+5",
-    "command": "-workbench.action.openEditorAtIndex5"
-  },
-  {
     "key": "cmd+6",
     "command": "workbench.action.openEditorAtIndex6"
-  },
-  {
-    "key": "ctrl+6",
-    "command": "-workbench.action.openEditorAtIndex6"
   },
   {
     "key": "cmd+7",
     "command": "workbench.action.openEditorAtIndex7"
   },
   {
-    "key": "ctrl+7",
-    "command": "-workbench.action.openEditorAtIndex7"
-  },
-  {
     "key": "cmd+8",
     "command": "workbench.action.openEditorAtIndex8"
-  },
-  {
-    "key": "ctrl+8",
-    "command": "-workbench.action.openEditorAtIndex8"
   },
   {
     "key": "cmd+9",
     "command": "workbench.action.openEditorAtIndex9"
   },
   {
-    "key": "ctrl+9",
-    "command": "-workbench.action.openEditorAtIndex9"
-  },
-  {
     "key": "shift+ctrl+r",
     "command": "workbench.view.scm",
-    "when": "workbench.scm.active"
-  },
-  {
-    "key": "ctrl+shift+g",
-    "command": "-workbench.view.scm",
-    "when": "workbench.scm.active"
   },
   {
     "key": "ctrl+r",
     "command": "workbench.action.gotoSymbol",
-    "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
   },
   {
-    "key": "shift+ctrl+o",
-    "command": "-workbench.action.gotoSymbol",
-    "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "workbench.action.togglePanel"
-  },
-  {
-    "key": "cmd+j",
-    "command": "-workbench.action.togglePanel"
-  },
-  {
-    "key": "shift+cmd+d",
-    "command": "workbench.view.debug"
-  },
-  {
-    "key": "shift+cmd+a",
-    "command": "-codeium.openChatView",
-    "when": "true"
-  },
-  {
-    "key": "shift+cmd+c",
+    "key": "ctrl+shift+c",
     "command": "workbench.panel.chat",
-    "when": "workbench.panel.chat.view.copilot.active"
   },
   {
-    "key": "ctrl+cmd+i",
-    "command": "-workbench.panel.chat",
-    "when": "workbench.panel.chat.view.copilot.active"
-  },
-  {
-    "key": "shift+cmd+i",
-    "command": "-workbench.panel.chatEditing",
-    "when": "workbench.panel.chat.view.edits.active"
-  },
-  {
-    "key": "shift+cmd+a",
-    "command": "toggleVim"
-  },
-  {
-    "key": "shift+cmd+i",
-    "command": "-workbench.action.chat.openEditSession",
-    "when": "chatEditingParticipantRegistered && view != 'workbench.panel.chat.view.edits'"
-  },
-  {
-    "key": "cmd+k cmd+k",
-    "command": "workbench.action.focusRightGroup"
-  },
-  {
-    "key": "cmd+k cmd+right",
-    "command": "-workbench.action.focusRightGroup"
-  },
-  {
-    "key": "cmd+k cmd+j",
-    "command": "workbench.action.focusLeftGroup"
-  },
-  {
-    "key": "cmd+k cmd+left",
-    "command": "-workbench.action.focusLeftGroup"
-  },
-  {
-    "key": "cmd+n",
-    "command": "explorer.newFile"
-  },
-  {
-    "key": "shift+cmd+b",
+    "key": "ctrl+shift+b",
     "command": "outline.focus",
-    "when": "isMac"
   },
   {
-    "key": "shift+cmd+g",
+    "key": "ctrl+shift+g",
     "command": "workbench.view.extension.augment-chat"
   },
   {
