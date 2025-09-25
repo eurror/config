@@ -344,5 +344,6 @@
     "*.nonpci-kp.bc",
     "*.test-lb.bc",
     "gl.hq.bc"
-  ]
+  ],
+  "editor.lineNumbers": "relative"
 }
