@@ -16,25 +16,32 @@
     "source.fixAll": "always",
     "source.organizeImports": "always"
   },
+  "editor.codeLensFontFamily": "'JetBrains Mono', Menlo, monospace",
   "editor.cursorBlinking": "solid",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorStyle": "block",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "'JetBrains Mono', Menlo, monospace",
   "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modifications",
   "editor.fontLigatures": true,
   "editor.guides.bracketPairs": "active",
   "editor.inlayHints.enabled": "onUnlessPressed",
   "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.fontFamily": "'JetBrains Mono', Menlo, monospace",
   "editor.inlineSuggest.suppressSuggestions": true,
   "editor.largeFileOptimizations": true,
+  "editor.lineNumbers": "relative",
   "editor.linkedEditing": true,
   "editor.minimap.renderCharacters": false,
   "editor.minimap.size": "fill",
+  "editor.minimap.showSlider": "always",
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.quickSuggestions": {
-    "other": false,
-    "comments": false,
-    "strings": false
+    "other": true,
+    "comments": true,
+    "strings": true
   },
   "editor.renderWhitespace": "none",
   "editor.smoothScrolling": true,
@@ -87,12 +94,12 @@
   // Explorer / Files
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 0,
+  "files.autoSave": "onFocusChange",
+  "files.autoSaveDelay": 1000,
   "files.exclude": {
     "**/.git": true,
     "**/.DS_Store": true,
-    "**/.vscode": true,
+    // "**/.vscode": true,
     "**/__pycache__": true,
     "**/.pytest_cache": true,
     "**/node_modules": true,
@@ -130,19 +137,22 @@
     "**/venv": true
   },
   "search.followSymlinks": true,
-  "search.useGlobalIgnoreFiles": false,
+  "search.useGlobalIgnoreFiles": true,
+  "search.smartCase": true,
 
   // Git
   "git.autofetch": true,
+  "git.autofetchPeriod": 180,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
+  "git.openRepositoryInParentFolders": "always",
 
   // Diff Editor
   "diffEditor.codeLens": true,
   "diffEditor.experimental.showMoves": true,
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.ignoreTrimWhitespace": true,
-  "diffEditor.renderSideBySide": false,
+  "diffEditor.renderSideBySide": true,
 
   // Terminal
   "terminal.integrated.cursorStyleInactive": "block",
@@ -151,6 +161,11 @@
     "FIG_NEW_SESSION": "1",
     "PYTHONUNBUFFERED": "1"
   },
+  "terminal.integrated.env.linux": {
+    "FIG_NEW_SESSION": "1",
+    "PYTHONUNBUFFERED": "1"
+  },
+  "terminal.integrated.fontLigatures.enabled": true,
   "terminal.integrated.localEchoExcludePrograms": [
     "vim",
     "vi",
@@ -162,6 +177,7 @@
   "terminal.integrated.macOptionIsMeta": true,
 
   // Debug
+  "debug.console.fontFamily": "'JetBrains Mono', Menlo, monospace",
   "debug.console.wordWrap": true,
   "debug.inlineValues": "on",
 
@@ -184,8 +200,12 @@
   "security.workspace.trust.untrustedFiles": "open",
 
   // Extensions / Features
+  "scm.inputFontFamily": "editor",
+
   "amazonQ.workspaceIndex": true,
   "chat.editor.wordWrap": "on",
+  "chat.editor.fontFamily": "'JetBrains Mono', Menlo, monospace",
+  "chat.fontFamily": "'JetBrains Mono', Menlo, monospace",
 
   "codeium.aggressiveShutdown": true,
   "codeium.enableConfig": {
@@ -197,6 +217,8 @@
   "codeium.languageServerStartupTimeout": 30,
   "continue.enableTabAutocomplete": false,
 
+  "errorLens.fontFamily": "'JetBrains Mono', Menlo, monospace",
+
   "geminicodeassist.project": "gen-lang-client-0356026420",
 
   "github.copilot.advanced": {
@@ -205,7 +227,7 @@
   "github.copilot.chat.codesearch.enabled": true,
   "github.copilot.chat.localeOverride": "en",
   "github.copilot.enable": {
-    "*": false,
+    "*": true,
     "plaintext": false,
     "markdown": false,
     "scminput": false
@@ -244,7 +266,13 @@
   "go.lintTool": "golangci-lint",
   "go.useLanguageServer": true,
 
+  "outline.showVariables": false,
+
   "python.analysis.autoImportCompletions": true,
+  "python.analysis.inlayHints.callArgumentNames": "all",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.analysis.inlayHints.variableTypes": true,
   "roo-cline.allowedCommands": [
     "npm test",
     "npm install",
@@ -344,6 +372,5 @@
     "*.nonpci-kp.bc",
     "*.test-lb.bc",
     "gl.hq.bc"
-  ],
-  "editor.lineNumbers": "relative"
+  ]
 }
