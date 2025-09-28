@@ -18,30 +18,30 @@ smart_borders on
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym ctrl+$alt+Delete exec --no-startup-id ~/.config/rofi/powermenu.sh
+bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3/lock.sh
 
 # app shortcuts
-bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3/lock.sh
-# bindsym $mod+Shift+x exec --no-startup-id i3lock -c 04090e
 bindsym $mod+Return exec $term
-bindsym $alt+space exec --no-startup-id rofi -show drun
-bindsym $alt+Tab exec --no-startup-id rofi -show window
-bindsym Print exec --no-startup-id flameshot gui
-bindsym $mod+Shift+s exec --no-startup-id flameshot gui
 bindsym $mod+b exec --no-startup-id firefox
+#bindsym Print exec --no-startup-id flameshot gui
+#bindsym $mod+Shift+s exec --no-startup-id flameshot gui
 #bindsym $mod+t exec --no-startup-id thunar
 
 # other shortcuts
+bindsym $alt+space exec --no-startup-id rofi -show drun
+bindsym $alt+Tab exec --no-startup-id rofi -show window
 #bindsym $mod+l exec "setxkbmap -layout us && sleep 0.1 && setxkbmap -option grp:caps_toggle 'us,ru' -option grp_led:caps && sleep 0.1 && i3lock --blur 5"
 #exec_always setxkbmap -option grp:caps_toggle "us,ru" -option "grp:caps_toggle,grp_led:caps"
 
 # windows management
-bindsym $mod+q kill
+bindsym $mod+Shift+q kill
 
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -52,6 +52,7 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -184,10 +185,8 @@ exec --no-startup-id dex --autostart --environment i3
 #exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 #exec --no-startup-id rog-control-center
 #exec --no-startup-id redshift
-exec --no-startup-id xss-lock -- ~/.config/i3/lock.sh
-# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
+#exec --no-startup-id xfce4-power-manager
 exec --no-startup-id picom --vsync --backend glx --glx-no-stencil --glx-no-rebind-pixmap
 exec --no-startup-id dunst
 #exec --no-startup-id copyq
