@@ -509,7 +509,6 @@ gtk-tabs-location = top
 gtk-titlebar-hide-when-maximized = false
 adw-toolbar-style = raised
 gtk-wide-tabs = true
-gtk-adwaita = true
 gtk-custom-css =
 desktop-notifications = true
 bold-is-bright = false
