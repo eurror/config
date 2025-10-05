@@ -48,8 +48,9 @@ display-inlay-hints = true
 inlay-hints-length-limit = 50
 
 [editor.auto-save]
-after-delay.enable = true
-after-delay.timeout = 0
+focus-lost = true
+# after-delay.enable = true
+# after-delay.timeout = 0
 
 [editor.whitespace.render]
 space = "all"
