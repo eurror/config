@@ -40,3 +40,12 @@ language-servers = ["marksman"]
 [language-server.marksman]
 command = "marksman"
 args = ["server"]
+
+[[language]]
+name = "lua"
+language-servers = ["lua-language-server"]
+formatter = { command = "stylua", args = ["-"] }
+auto-format = true
+
+[language-server.lua]
+command = "lua-language-server"
