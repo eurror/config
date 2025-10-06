@@ -5,6 +5,7 @@
 !dunst/dunstrc
 !ghostty/config
 !gtk-3.0/settings.ini
+!gtk-4.0/settings.ini
 !i3/*
 !kitty/kitty.conf
 !nvim/init.lua
