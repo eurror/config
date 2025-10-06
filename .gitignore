@@ -11,6 +11,7 @@
 !nvim/init.lua
 !nvim/theme.ini
 !nvim/lua/
+!nvim/lua/plugins/*
 !picom/*
 !polybar/*
 !pulse/
