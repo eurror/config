@@ -94,6 +94,7 @@
   // Explorer / Files
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  "explorer.sortOrder": "type",
   "files.autoSave": "onFocusChange",
   "files.autoSaveDelay": 1000,
   "files.exclude": {
@@ -372,5 +373,8 @@
     "*.nonpci-kp.bc",
     "*.test-lb.bc",
     "gl.hq.bc"
+  ],
+  "Lua.diagnostics.globals": [
+    "vim"
   ]
 }
