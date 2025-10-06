@@ -1,29 +1,13 @@
 return {
-    {
-        "williamboman/mason.nvim",
-        cmd = "Mason",
-        build = ":MasonUpdate",
-        config = function()
-            require("mason").setup({
-                ui = {
-                    border = "rounded",
-                    icons = {
-                        package_installed = "✓",
-                        package_pending = "➜",
-                        package_uninstalled = "✗",
-                    },
-                },
-            })
-        end,
-    },
-
     -- Treesitter
     {
         "nvim-treesitter/nvim-treesitter",
         branch = "main",
         build = ":TSUpdateSync",
-        lazy = vim.fn.argc(-1) == 0,
-        event = "VeryLazy",
+        event = { "BufReadPost", "BufNewFile" },
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter-textobjects",
+        },
         opts = {
             ensure_installed = {
                 "python", "lua", "json",
@@ -69,58 +53,50 @@ return {
         "nvim-treesitter/nvim-treesitter-textobjects",
         dependencies = "nvim-treesitter/nvim-treesitter",
         branch = "main",
-        event = "VeryLazy",
+        event = { "BufReadPost", "BufNewFile" },
         config = function()
             require("nvim-treesitter.configs").setup({
                 textobjects = {
                     select = {
                         enable = true,
-                        lookahead = true, -- автоматически прыгает к следующему textobject
+                        lookahead = true,
                         keymaps = {
-                            -- Функции
                             ["af"] = "@function.outer",
                             ["if"] = "@function.inner",
-                            -- Классы
                             ["at"] = "@class.outer",
                             ["it"] = "@class.inner",
-                            -- Параметры/аргументы
                             ["aa"] = "@parameter.outer",
                             ["ia"] = "@parameter.inner",
-                            -- Условия (if/else)
                             ["ai"] = "@conditional.outer",
                             ["ii"] = "@conditional.inner",
-                            -- Циклы
                             ["al"] = "@loop.outer",
                             ["il"] = "@loop.inner",
-                            -- Блоки кода
                             ["ab"] = "@block.outer",
                             ["ib"] = "@block.inner",
-                            -- Комментарии
                             ["a/"] = "@comment.outer",
-                            -- Вызовы функций
                             ["aF"] = "@call.outer",
                             ["iF"] = "@call.inner",
                         },
                         selection_modes = {
-                            ["@parameter.outer"] = "m", -- charwise
-                            ["@function.outer"] = "m",  -- linewise
-                            ["@class.outer"] = "m",     -- linewise
+                            ["@parameter.outer"] = "m",
+                            ["@function.outer"] = "m",
+                            ["@class.outer"] = "m",
                         },
                     },
                     swap = {
                         enable = true,
                         swap_next = {
-                            ["<leader>a"] = "@parameter.inner", -- swap с следующим параметром
-                            ["<leader>fn"] = "@function.outer", -- swap с следующей функцией
+                            ["<leader>a"] = "@parameter.inner",
+                            ["<leader>fn"] = "@function.outer",
                         },
                         swap_previous = {
-                            ["<leader>A"] = "@parameter.inner", -- swap с предыдущим параметром
-                            ["<leader>fp"] = "@function.outer", -- swap с предыдущей функцией
+                            ["<leader>A"] = "@parameter.inner",
+                            ["<leader>fp"] = "@function.outer",
                         },
                     },
                     move = {
                         enable = true,
-                        set_jumps = true, -- добавляет в jumplist (Ctrl-o для возврата)
+                        set_jumps = true,
                         goto_next_start = {
                             ["]f"] = "@function.outer",
                             ["]c"] = "@class.outer",
@@ -157,11 +133,10 @@ return {
                     },
                 },
             })
-            -- Repeatable движения с помощью ; и ,
+
             local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
             vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
             vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
-            -- Делаем f, F, t, T тоже repeatable через ; и ,
             vim.keymap.set({ "n", "x", "o" }, "f", ts_repeat_move.builtin_f_expr, { expr = true })
             vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F_expr, { expr = true })
             vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t_expr, { expr = true })
@@ -171,28 +146,46 @@ return {
 
     {
         "windwp/nvim-ts-autotag",
-        event = "VeryLazy",
         opts = {},
     },
     {
+        "folke/lazydev.nvim",
+        ft = "lua",
+        opts = {
+            library = {
+                { path = "luvit-meta/library", words = { "vim%.uv" } },
+            },
+        },
+    },
+    { "Bilal2453/luvit-meta", lazy = true },
+    {
         "neovim/nvim-lspconfig",
-        event = "VeryLazy",
         dependencies = {
-            { "folke/neodev.nvim", ft = "lua" },
+            "folke/lazydev.nvim",
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
             "hrsh7th/cmp-nvim-lsp",
         },
         config = function()
-            require("neodev").setup({})
+            require("mason").setup({
+                ui = {
+                    border = "rounded",
+                    icons = {
+                        package_installed = "✓",
+                        package_pending = "➜",
+                        package_uninstalled = "✗",
+                    },
+                },
+            })
             local servers = {
-                pyright = {
+                basedpyright = {
                     settings = {
-                        python = {
+                        basedpyright = {
                             analysis = {
                                 autoSearchPaths = true,
                                 diagnosticMode = "openFilesOnly",
                                 useLibraryCodeForTypes = true,
+                                typeCheckingMode = "strict",
                             }
                         },
                     },
@@ -200,20 +193,46 @@ return {
                 lua_ls = {
                     settings = {
                         Lua = {
-                            diagnostics = { globals = { "vim" } },
-                            workspace = { checkThirdParty = false },
+                            diagnostics = {
+                                globals = { "vim" },
+                                disable = { "missing-fields" },
+                            },
+                            workspace = {
+                                checkThirdParty = false,
+                            },
+                            telemetry = { enable = false },
                         },
                     },
                 },
-                ruff = {
-                    settings = {
-                        workspace = vim.fn.expand(".")
-                    }
-                },
             }
+
             require("mason-lspconfig").setup({
                 ensure_installed = vim.tbl_keys(servers),
                 automatic_installation = true,
+                handlers = {
+                    function(server_name)
+                        local server = servers[server_name] or {}
+                        server.capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+                        server.on_attach = function(client, bufnr)
+                            local opts = { buffer = bufnr, silent = true }
+                            vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, opts)
+                            vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+                            vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+                            vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+                            vim.keymap.set("n", "go", vim.lsp.buf.type_definition, opts)
+                            vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+                            vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, opts)
+                            vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
+                            vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, opts)
+                            vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
+                            vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+                            vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+                        end
+
+                        require("lspconfig")[server_name].setup(server)
+                    end,
+                },
             })
 
             vim.diagnostic.config({
@@ -225,59 +244,91 @@ return {
                         [vim.diagnostic.severity.INFO]  = " ",
                     },
                 },
-                virtual_text = true,
+                virtual_text = {
+                    spacing = 4,
+                    prefix = "●",
+                    severity = { min = vim.diagnostic.severity.WARN },
+                },
                 underline = true,
                 update_in_insert = false,
                 severity_sort = true,
+                float = {
+                    border = "rounded",
+                    source = "if_many",
+                    header = "",
+                    prefix = "",
+                },
             })
 
-            local capabilities = require("cmp_nvim_lsp").default_capabilities()
-            local lspconfig = require("lspconfig")
-            capabilities.textDocument.positionEncoding = { "utf-8" }
+            vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+                vim.lsp.diagnostic.on_publish_diagnostics, {
+                    update_in_insert = false,
+                    debounce = 300,
+                }
+            )
 
-
-            local on_attach = function(_, bufnr)
-                local opts = { buffer = bufnr, silent = true }
-                vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-                vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-                vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-                vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-                vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-            end
-
-            for server, config in pairs(servers) do
-                lspconfig[server].setup(vim.tbl_deep_extend("force", {
-                    capabilities = capabilities,
-                    on_attach = on_attach,
-                }, config))
+            local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+            function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+                opts = opts or {}
+                opts.border = opts.border or "rounded"
+                return orig_util_open_floating_preview(contents, syntax, opts, ...)
             end
         end,
     },
 
-    -- {
-    --     "stevearc/conform.nvim",
-    --     event = { "BufReadPre", "BufNewFile" },
-    --     dependencies = { "williamboman/mason.nvim" },
-    --     opts = {
-    --         formatters_by_ft = {
-    --             python = { "isort", "black", "ruff" },
-    --             lua = { "stylua" },
-    --         },
-    --         format_on_save = {
-    --             timeout_ms = 500,
-    --             lsp_fallback = true,
-    --         },
-    --         formatters = {
-    --             black = {
-    --                 prepend_args = { "--fast" },
-    --             },
-    --             isort = {
-    --                 prepend_args = { "--profile", "black" },
-    --             },
-    --         },
-    --     },
-    --     config = function(_, opts)
-    --         require("conform").setup(opts)
-    --     end,
-    -- }
+    {
+        "stevearc/conform.nvim",
+        event = { "BufWritePre" },
+        cmd = { "ConformInfo" },
+        dependencies = { "williamboman/mason.nvim" },
+        opts = {
+            formatters_by_ft = {
+                python = { "ruff_format", "ruff_organize_imports" },
+                lua = { "stylua" },
+                json = { "jq" },
+                yaml = { "yamlfmt" },
+            },
+            format_on_save = {
+                timeout_ms = 3000,
+                lsp_fallback = true,
+                async = false,
+            },
+            formatters = {
+                ruff_format = {
+                    command = "ruff",
+                    args = { "format", "--force-exclude", "--stdin-filename", "$FILENAME", "-" },
+                },
+                ruff_organize_imports = {
+                    command = "ruff",
+                    args = { "check", "--select", "I", "--fix", "--force-exclude", "--stdin-filename", "$FILENAME", "-" },
+                },
+            },
+        },
+        keys = {
+            {
+                "<leader>=",
+                function()
+                    require("conform").format({ async = true, lsp_fallback = true })
+                end,
+                mode = { "n", "v" },
+                desc = "Format buffer",
+            },
+        },
+        init = function()
+            vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+        end,
+    },
+
+    {
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        dependencies = { "williamboman/mason.nvim" },
+        opts = {
+            ensure_installed = {
+                "stylua",
+                "ruff",
+            },
+            auto_update = false,
+            run_on_start = true,
+        },
+    },
 }
