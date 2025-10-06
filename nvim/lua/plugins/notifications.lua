@@ -61,8 +61,11 @@ return {
         },
         config = function()
             require("trouble").setup({
+                mode = "quickfix",
                 auto_preview = false,
                 auto_jump = { "lsp_definitions" },
+                auto_open = false,
+                auto_close = true,
             })
         end,
     },
