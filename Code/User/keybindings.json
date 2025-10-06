@@ -60,7 +60,7 @@
     "command": "workbench.action.gotoSymbol",
   },
   {
-    "key": "ctrl+shift+c",
+    "key": "ctrl+meta+c",
     "command": "workbench.panel.chat",
   },
   {
