@@ -143,20 +143,21 @@ local function setup_keymaps(_, bufnr)
   local map = function(mode, lhs, rhs, desc)
     vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, silent = true, desc = desc })
   end
-
+  local telescope = require("telescope.builtin")
   map("n", "<leader>k", vim.lsp.buf.hover, "Hover Documentation")
-  map("n", "gd", vim.lsp.buf.definition, "Go to Definition")
-  map("n", "gD", vim.lsp.buf.declaration, "Go to Declaration")
-  map("n", "gi", vim.lsp.buf.implementation, "Go to Implementation")
-  map("n", "go", vim.lsp.buf.type_definition, "Go to Type Definition")
-  map("n", "gr", vim.lsp.buf.references, "References")
+  map("n", "gd", telescope.lsp_definitions, "Go to Definition")
+  map("n", "gD", telescope.lsp_definitions, "Go to Declaration")
+  map("n", "gi", telescope.lsp_implementations, "Go to Implementation")
+  map("n", "go", telescope.lsp_type_definitions, "Go to Type Definition")
+  map("n", "gr", telescope.lsp_references, "References")
+
   map("n", "gs", vim.lsp.buf.signature_help, "Signature Help")
   map("n", "<leader>r", vim.lsp.buf.rename, "Rename")
   map({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, "Code Action")
   map("n", "gl", vim.diagnostic.open_float, "Line Diagnostics")
   map("n", "[d", vim.diagnostic.goto_prev, "Previous Diagnostic")
   map("n", "]d", vim.diagnostic.goto_next, "Next Diagnostic")
-  map("n", "<leader>q", vim.diagnostic.setloclist, "Quickfix Diagnostics")
+  map("n", "<leader>q", telescope.diagnostics, "Quickfix Diagnostics")
 
   -- Performance: Refresh codelens on attach and cursor hold
   if vim.lsp.buf.code_lens then
