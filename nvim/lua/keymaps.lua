@@ -1,18 +1,19 @@
 local map = vim.keymap.set
 local cmd = vim.cmd
 
+-- Neotree
 map({ "n", "v" }, "<leader>e", function()
 	cmd("Neotree focus filesystem left")
 end, { desc = "NeoTree: filesystem" })
+
 map({ "n", "v" }, "<leader>b", function()
 	cmd("Neotree focus buffers left")
 end, { desc = "NeoTree: buffers" })
+
 map({ "n", "v" }, "<leader>g", function()
 	cmd("Neotree focus git_status left")
 end, { desc = "NeoTree: git status" })
-map({ "n", "v" }, "<C-b>", function()
-	cmd("Neotree toggle last")
-end, { desc = "NeoTree: toggle" })
+
 map({"n", "v"}, "<leader>s", function()
 	cmd("Neotree toggle lsp_document_symbols")
 end, {desc = "Symbols in buffer"})

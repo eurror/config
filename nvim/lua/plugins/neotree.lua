@@ -52,13 +52,20 @@ return {
 				},
 				close_if_last_window = true,
 				auto_clean_after_session_restore = true,
+				enable_cursor_hijack = true,
+				sources = {
+					"filesystem",
+					"buffers",
+					"git_status",
+					"document_symbols",
+				},
 				source_selector = {
 					winbar = true,
 					sources = {
 						{ source = "filesystem" },
 						{ source = "buffers" },
 						{ source = "git_status" },
-						{ source = "lsp_document_symbols" },
+						{ source = "document_symbols" },
 					},
 				},
 				follow_current_file = {
