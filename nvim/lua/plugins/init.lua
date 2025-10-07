@@ -16,9 +16,10 @@ local plugins = {}
 local plugin_files = {
 	"plugins.neotree",
 	"plugins.telescope",
-	-- "plugins.ui",
+	"plugins.treesitter",
 	"plugins.lsp",
-	"plugins.cmp",
+	-- "plugins.cmp",
+	-- "plugins.ui",
 	-- "plugins.git",
 	-- "plugins.files",
 	-- "plugins.debug",
