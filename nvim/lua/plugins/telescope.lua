@@ -1,36 +1,63 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
+    cmd = "Telescope",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "BurntSushi/ripgrep",
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
       "nvim-telescope/telescope-ui-select.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "sharkdp/fd",
+      "nvim-tree/nvim-web-devicons",
+      "neovim/nvim-lspconfig"
     },
     config = function()
       require("telescope").setup {
         defaults = {
-          prompt_prefix = " ",
-          selection_caret = " ",
-          file_ignore_patterns = {
-            "venv", ".venv", "node_modules", ".git",
-            "__pycache__", "*.pyc", ".pytest_cache",
-            "target", "build", "dist"
+          vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+            "--hidden",
+            "--glob=!.git/",
+            "--no-follow",
+            "--max-depth=10",
           },
-          layout_config = { prompt_position = "top" },
-          sorting_strategy = "ascending",
-          winblend = 10,
+          file_ignore_patterns = {
+            "^.git/",
+            "^node_modules/",
+            "^venv/",
+            "^%.venv/",
+            "^__pycache__/",
+            "%.pyc$",
+            "^%.pytest_cache/",
+            "^%.mypy_cache/",
+            "^target/",
+            "^build/",
+            "^dist/",
+            "^coverage/",
+          },
           preview = {
             filesize_limit = 1,
+            treesitter = false,
           },
-          file_sorter = require("telescope.sorters").get_fuzzy_file,
-          generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
           path_display = { "truncate" },
           dynamic_preview_title = true,
           results_title = false,
           cache_picker = {
             num_pickers = 5,
           },
+          pickers = {
+            find_files = {
+              find_command = { "fd", "--type", "f", "--hidden", "--follow", "--exclude", ".git" },
+              hidden = true,
+              follow = false,
+            }, },
         },
         extensions = {
           fzf = {

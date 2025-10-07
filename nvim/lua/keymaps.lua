@@ -14,9 +14,22 @@ map({ "n", "v" }, "<leader>g", function()
 	cmd("Neotree focus git_status left")
 end, { desc = "NeoTree: git status" })
 
-map({"n", "v"}, "<leader>s", function()
+map({ "n", "v" }, "<leader>s", function()
 	cmd("Neotree toggle lsp_document_symbols")
-end, {desc = "Symbols in buffer"})
+end, { desc = "Symbols in buffer" })
+
+-- Telescope
+local telescope = require("telescope.builtin")
+map("", "<leader>f", telescope.find_files, { desc = "Find Files" })
+map("", "<leader>/", telescope.live_grep, { desc = "Live grep" })
+map("n", "<leader>fs", telescope.lsp_document_symbols, { desc = "Search symbol" })
+map("", "<leader>?", telescope.commands, { desc = "Find commands" })
+map("n", "<leader>fb", telescope.buffers, { desc = "Find buffers" })
+map("n", "<leader>fh", telescope.help_tags, { desc = "Find help" })
+map("n", "<leader>fg", telescope.git_files, { desc = "Find Git files" })
+map("n", "<leader>fd", telescope.diagnostics, { desc = "Find diagnostics" })
+map("n", "<leader>fr", telescope.oldfiles, { desc = "Find recent files" })
+map("n", "<leader>S", telescope.grep_string, { desc = "Find string under cursor" })
 
 -- local function select_python_interpreter()
 --     local venv_python = vim.fn.getcwd() .. "/venv/bin/python"
@@ -29,7 +42,6 @@ end, {desc = "Symbols in buffer"})
 -- end
 
 -- local map = vim.keymap.set
--- local telescope = require("telescope.builtin")
 -- local nvim_tree = require("nvim-tree.api")
 
 -- -- Navigation - Line movement
@@ -45,20 +57,6 @@ end, {desc = "Symbols in buffer"})
 -- -- General file operations
 -- map("n", "<C-s>", ":w<CR>", { silent = true, desc = "Save file" })
 -- -- map("n", "<C-w>", function() vim.cmd("bd") end, { desc = "Close buffer" })
-
--- -- Telescope (only if available)
--- if telescope then
---     map("", "<C-t>", telescope.find_files, { desc = "Find Files" })
---     map("", "<C-p>", telescope.live_grep, { desc = "Live grep" })
---     map("n", "<C-r>", telescope.lsp_document_symbols, { desc = "Search symbol" })
---     map("", "<leader>p", telescope.commands, { desc = "Find commands" })
---     map("n", "<leader>fb", telescope.buffers, { desc = "Find buffers" })
---     map("n", "<leader>fh", telescope.help_tags, { desc = "Find help" })
---     map("n", "<leader>fp", telescope.git_files, { desc = "Find Git files" })
---     map("n", "<leader>fd", telescope.diagnostics, { desc = "Find diagnostics" })
---     map("n", "<leader>fr", telescope.oldfiles, { desc = "Find recent files" })
---     map("n", "<leader>fs", telescope.grep_string, { desc = "Find string under cursor" })
--- end
 
 -- -- Yazi
 -- map("n", "<leader>y", "<cmd>TermExec cmd='yazi' direction=float<CR>", { desc = "Open Yazi file manager" })
