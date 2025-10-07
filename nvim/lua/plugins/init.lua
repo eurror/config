@@ -26,7 +26,7 @@ local plugin_files = {
 	"plugins.lualine",
 	"plugins.bufferline",
 	"plugins.mew-yarn",
-	-- "plugins.git",
+	"plugins.git",
 	-- "plugins.files",
 	-- "plugins.debug",
 	-- "plugins.notifications",
