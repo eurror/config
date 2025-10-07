@@ -18,7 +18,7 @@ local plugin_files = {
 	"plugins.telescope",
 	"plugins.treesitter",
 	"plugins.lsp",
-	-- "plugins.cmp",
+	"plugins.cmp",
 	-- "plugins.ui",
 	-- "plugins.git",
 	-- "plugins.files",

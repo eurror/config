@@ -15,7 +15,7 @@ map({ "n", "v" }, "<leader>g", function()
 end, { desc = "NeoTree: git status" })
 
 map({ "n", "v" }, "<leader>s", function()
-	cmd("Neotree toggle lsp_document_symbols")
+	cmd("Neotree toggle document_symbols")
 end, { desc = "Symbols in buffer" })
 
 -- Telescope
@@ -30,16 +30,6 @@ map("n", "<leader>fg", telescope.git_files, { desc = "Find Git files" })
 map("n", "<leader>fd", telescope.diagnostics, { desc = "Find diagnostics" })
 map("n", "<leader>fr", telescope.oldfiles, { desc = "Find recent files" })
 map("n", "<leader>S", telescope.grep_string, { desc = "Find string under cursor" })
-
--- local function select_python_interpreter()
---     local venv_python = vim.fn.getcwd() .. "/venv/bin/python"
---     if vim.fn.filereadable(venv_python) == 1 then
---         vim.g.python3_host_prog = venv_python
---         vim.notify("Python interpreter set to: " .. venv_python, vim.log.levels.INFO)
---     else
---         vim.notify("No venv Python interpreter found", vim.log.levels.WARN)
---     end
--- end
 
 -- local map = vim.keymap.set
 -- local nvim_tree = require("nvim-tree.api")
