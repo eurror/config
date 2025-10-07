@@ -14,11 +14,14 @@ vim.opt.rtp:prepend(lazypath)
 -- Собираем все модули из папки plugins
 local plugins = {}
 local plugin_files = {
+	-- Files
 	"plugins.neotree",
 	"plugins.telescope",
+	-- LSP & completions
 	"plugins.treesitter",
 	"plugins.lsp",
 	"plugins.cmp",
+	-- UI
 	"plugins.vscode",
 	"plugins.lualine",
 	"plugins.bufferline",
