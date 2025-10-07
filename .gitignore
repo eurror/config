@@ -8,10 +8,10 @@
 !gtk-4.0/settings.ini
 !i3/*
 !kitty/kitty.conf
-!nvim/init.lua
-!nvim/theme.ini
-!nvim/lua/
+!nvim/*
+!nvim/lua/*
 !nvim/lua/plugins/*
+nvim/*.json
 !picom/*
 !polybar/*
 !pulse/
