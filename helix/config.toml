@@ -10,7 +10,7 @@ completion-replace = true
 bufferline = "always"
 color-modes = true
 text-width = 120
-#rulers = [120]
+# rulers = [80, 120]
 insert-final-newline = false
 trim-final-newlines = true
 trim-trailing-whitespace = true
@@ -19,6 +19,9 @@ gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
 end-of-line-diagnostics = "hint"
 completion-trigger-len = 1
 continue-comments = false
+
+[editor.search]
+smart-case = false
 
 [editor.statusline]
 left = [
@@ -95,4 +98,3 @@ A-l = "move_char_right"
 A-ret = "open_below"
 A-S-ret = "open_above"
 C-space = "completion"
-D = "delete_char_backward"
