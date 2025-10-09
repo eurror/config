@@ -1,6 +1,7 @@
 *
 !*/
-!Code/User/
+!Code/User/keybindings.json
+!Code/User/settings.json
 !alacritty/alacritty.toml
 !dunst/dunstrc
 !ghostty/config
