@@ -193,6 +193,6 @@ exec --no-startup-id dunst
 #exec --no-startup-id udiskie -t
 exec --no-startup-id feh --bg-scale ~/.config/i3/wallpaper.png
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id setxkbmap -layout us,ru -option grp:alt_shift_toggle
+exec_always setxkbmap -layout us,ru -option grp:alt_shift_toggle
 exec_always mkfifo /tmp/xobpipe && tail -f /tmp/xobpipe | xob -t 2170 & disown
 exec_always --no-startup-id ~/.config/polybar/launch.sh
