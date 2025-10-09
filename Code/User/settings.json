@@ -16,12 +16,12 @@
     "source.fixAll": "always",
     "source.organizeImports": "always"
   },
-  "editor.codeLensFontFamily": "'Red Hat Mono', Menlo, monospace",
+  "editor.codeLensFontFamily": "'JetBrains Mono', Menlo, monospace",
   "editor.cursorBlinking": "solid",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorStyle": "block",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "'Red Hat Mono', Menlo, monospace",
+  "editor.fontFamily": "'JetBrains Mono', Menlo, monospace",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnSaveMode": "modifications",
@@ -29,7 +29,7 @@
   "editor.guides.bracketPairs": "active",
   "editor.inlayHints.enabled": "onUnlessPressed",
   "editor.inlineSuggest.enabled": true,
-  "editor.inlineSuggest.fontFamily": "'Red Hat Mono', Menlo, monospace",
+  "editor.inlineSuggest.fontFamily": "'JetBrains Mono', Menlo, monospace",
   "editor.inlineSuggest.suppressSuggestions": true,
   "editor.largeFileOptimizations": true,
   "editor.lineNumbers": "relative",
@@ -178,7 +178,7 @@
   "terminal.integrated.macOptionIsMeta": true,
 
   // Debug
-  "debug.console.fontFamily": "'Red Hat Mono', Menlo, monospace",
+  "debug.console.fontFamily": "'JetBrains Mono', Menlo, monospace",
   "debug.console.wordWrap": true,
   "debug.inlineValues": "on",
 
@@ -205,8 +205,8 @@
 
   "amazonQ.workspaceIndex": true,
   "chat.editor.wordWrap": "on",
-  "chat.editor.fontFamily": "'Red Hat Mono', Menlo, monospace",
-  "chat.fontFamily": "'Red Hat Mono', Menlo, monospace",
+  "chat.editor.fontFamily": "'JetBrains Mono', Menlo, monospace",
+  "chat.fontFamily": "'JetBrains Mono', Menlo, monospace",
 
   "codeium.aggressiveShutdown": true,
   "codeium.enableConfig": {
@@ -218,7 +218,7 @@
   "codeium.languageServerStartupTimeout": 30,
   "continue.enableTabAutocomplete": false,
 
-  "errorLens.fontFamily": "'Red Hat Mono', Menlo, monospace",
+  "errorLens.fontFamily": "'JetBrains Mono', Menlo, monospace",
 
   "geminicodeassist.project": "gen-lang-client-0356026420",
 
