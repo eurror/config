@@ -36,11 +36,16 @@ Awesome apps:
 ### Blink
 - [ ] [Brave](https://brave.com)
 - [ ] [Arc](https://arc.net)
+- [ ] [Dia Browser](https://www.diabrowser.com/)
 - [ ] [Thorium](https://thorium.rocks)
 - [ ] [Chromium](https://www.chromium.org/chromium-projects/)
 - [x] [Google Chrome](https://www.google.com/chrome/)
 - [ ] [Edge](https://www.microsoft.com/en-us/edge/download)
 - [ ] [Min](https://minbrowser.org)
+- [x] [Helium](https://helium.computer/)
+- [ ] [Comet](https://www.perplexity.ai/comet)
+- [ ] [Deta](https://deta.surf/)
+- [ ] [Strawberry](https://strawberrybrowser.com/)
 
 ---
 ## Security
