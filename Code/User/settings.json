@@ -16,20 +16,16 @@
     "source.fixAll": "always",
     "source.organizeImports": "always"
   },
-  "editor.codeLensFontFamily": "'LigaSF Mono', Menlo, monospace",
   "editor.cursorBlinking": "solid",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorStyle": "block",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "'LigaSF Mono', Menlo, monospace",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnSaveMode": "modifications",
-  "editor.fontLigatures": true,
   "editor.guides.bracketPairs": "active",
   "editor.inlayHints.enabled": "onUnlessPressed",
   "editor.inlineSuggest.enabled": true,
-  "editor.inlineSuggest.fontFamily": "'LigaSF Mono', Menlo, monospace",
   "editor.inlineSuggest.suppressSuggestions": true,
   "editor.largeFileOptimizations": true,
   "editor.lineNumbers": "relative",
@@ -166,7 +162,6 @@
     "FIG_NEW_SESSION": "1",
     "PYTHONUNBUFFERED": "1"
   },
-  "terminal.integrated.fontLigatures.enabled": true,
   "terminal.integrated.localEchoExcludePrograms": [
     "vim",
     "vi",
@@ -178,7 +173,6 @@
   "terminal.integrated.macOptionIsMeta": true,
 
   // Debug
-  "debug.console.fontFamily": "'LigaSF Mono', Menlo, monospace",
   "debug.console.wordWrap": true,
   "debug.inlineValues": "on",
 
@@ -201,12 +195,8 @@
   "security.workspace.trust.untrustedFiles": "open",
 
   // Extensions / Features
-  "scm.inputFontFamily": "editor",
-
   "amazonQ.workspaceIndex": true,
   "chat.editor.wordWrap": "on",
-  "chat.editor.fontFamily": "'LigaSF Mono', Menlo, monospace",
-  "chat.fontFamily": "'LigaSF Mono', Menlo, monospace",
 
   "codeium.aggressiveShutdown": true,
   "codeium.enableConfig": {
@@ -217,8 +207,6 @@
   "codeium.indexingRetentionPeriod": 5,
   "codeium.languageServerStartupTimeout": 30,
   "continue.enableTabAutocomplete": false,
-
-  "errorLens.fontFamily": "'LigaSF Mono', Menlo, monospace",
 
   "geminicodeassist.project": "gen-lang-client-0356026420",
 
@@ -374,7 +362,5 @@
     "*.test-lb.bc",
     "gl.hq.bc"
   ],
-  "Lua.diagnostics.globals": [
-    "vim"
-  ]
+  "Lua.diagnostics.globals": ["vim"]
 }
