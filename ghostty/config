@@ -2,33 +2,37 @@ font-family = "Liga SFMono Nerd Font"
 font-family-bold = "Liga SFMono Nerd Font"
 font-family-italic = "Liga SFMono Nerd Font"
 font-family-bold-italic = "Liga SFMono Nerd Font"
+font-size = 13
+
+background = "#000000"
+foreground = "#D4D4D4"
+
+background-opacity = 0.85
+background-blur = true
+unfocused-split-opacity = 0.7
+split-divider-color = "#000000"
+
+cursor-style = block
+cursor-style-blink = false
+
+window-vsync = true
+wait-after-command = false
 
 alpha-blending = native
 theme =
 
-background = "#000000"
-#background = "#1E1E1E"
-foreground = "#D4D4D4"
 selection-foreground = "#1E1E2E"
 selection-background = "#264F78"
 selection-invert-fg-bg = false
 minimum-contrast = 1
 
-cursor-style = block
-cursor-style-blink = false
 
 mouse-hide-while-typing = false
 mouse-shift-capture = false
 mouse-scroll-multiplier = 1.2
 
-background-opacity = 0.85
-background-blur = true
 
-unfocused-split-opacity = 0.7
-unfocused-split-fill =
-split-divider-color = "#000000"
 
-wait-after-command = false
 abnormal-command-exit-runtime = 250
 scrollback-limit = 10000
 
@@ -40,7 +44,6 @@ window-padding-x = 1
 window-padding-y = 1
 window-padding-balance = true
 window-padding-color = background
-window-vsync = true
 
 window-inherit-working-directory = true
 window-inherit-font-size = true
@@ -87,9 +90,9 @@ macos-secure-input-indication = true
 
 gtk-titlebar = false
 gtk-tabs-location = top
+gtk-wide-tabs = true
 gtk-titlebar-hide-when-maximized = true
 adw-toolbar-style = raised
-gtk-wide-tabs = true
 desktop-notifications = true
 
 term = xterm-ghostty
