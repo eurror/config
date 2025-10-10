@@ -1,6 +1,6 @@
 configuration {
     modi: "run,drun,window,filebrowser";
-    font: "JetBrainsMono Nerd Font Mono 12";
+    font: "LigaSF Mono Nerd Font 12";
     icon-theme: "Oranchelo";
     show-icons: true;
     terminal: "alacritty";
