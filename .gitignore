@@ -12,7 +12,7 @@
 !picom/*
 !polybar/*
 !pulse/
-!rofi/powermenu.sh
+!rofi/*
 !zed/keymap.json
 !zed/settings.json
 !Brewfile
