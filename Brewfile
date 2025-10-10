@@ -37,6 +37,8 @@ brew "lazygit"
 brew "libffi"
 # LLM inference in C/C++
 brew "llama.cpp"
+# Language Server for the Lua language
+brew "lua-language-server"
 # Tool for linting and static analysis of Lua code
 brew "luacheck"
 # Utility for directing compilation
@@ -55,6 +57,8 @@ brew "readline"
 brew "sqlite"
 # Platform built on V8 to build network applications
 brew "node"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
 # Tool for managing OCI containers and pods
 brew "podman"
 # Object-relational database system
@@ -73,6 +77,8 @@ brew "ripgrep"
 brew "ruff"
 # Universal proxy platform
 brew "sing-box"
+# Opinionated Lua code formatter
+brew "stylua"
 # Tool Command Language
 brew "tcl-tk"
 # Simplified and community-driven man pages
@@ -99,17 +105,18 @@ brew "koekeishiya/formulae/skhd"
 cask "aldente"
 # Create and run Linux containers using lightweight virtual machines
 cask "container"
-# Write, edit, and chat about your code with AI
-cask "cursor"
 # Web browser
 cask "firefox"
 cask "font-jetbrains-mono-nerd-font"
+cask "font-sf-mono-nerd-font-ligaturized"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Web browser
 cask "google-chrome"
 # Desktop automation application
 cask "hammerspoon"
+# Chromium-based web browser
+cask "helium-browser"
 # Utility to hide menu bar items
 cask "hiddenbar"
 # Keyboard shortcuts for every button on your screen
@@ -136,17 +143,12 @@ cask "shortcat"
 cask "swift-quit"
 # Menu bar pomodoro timer
 cask "tomatobar"
-# Adaptive AI IDE
-cask "trae"
 # Open-source BitTorrent client
 cask "transmission"
-# AI code editor
-cask "void"
 # Rust-based terminal
 cask "warp"
 # Multiplayer code editor
 cask "zed"
-mas "AdGuard Mail", id: 6499493699
 mas "Boop", id: 1518425043
 mas "DevHub", id: 6476452351
 mas "Jiffy reader", id: 6444754311
@@ -165,6 +167,7 @@ mas "TestFlight", id: 899247664
 mas "uBlock Origin Lite", id: 6745342698
 mas "Userscripts", id: 1463298887
 mas "WhatsApp", id: 310633997
+mas "Windows App", id: 1295203466
 mas "Wipr", id: 1662217862
 mas "WireGuard", id: 1451685025
 vscode "amazonwebservices.amazon-q-vscode"
@@ -172,7 +175,6 @@ vscode "anthropic.claude-code"
 vscode "augment.vscode-augment"
 vscode "charliermarsh.ruff"
 vscode "christian-kohler.path-intellisense"
-vscode "codeium.codeium"
 vscode "continue.continue"
 vscode "esbenp.prettier-vscode"
 vscode "franzgollhammer.jb-fleet-dark"
@@ -182,12 +184,12 @@ vscode "gitlab.gitlab-workflow"
 vscode "golang.go"
 vscode "google.geminicodeassist"
 vscode "googlecloudtools.cloudcode"
+vscode "jasew.vscode-helix-emulation"
 vscode "kevinrose.vsc-python-indent"
-vscode "marscode.marscode-extension"
+vscode "mattflower.aider"
 vscode "ms-azuretools.vscode-containers"
 vscode "ms-azuretools.vscode-docker"
 vscode "ms-dotnettools.vscode-dotnet-runtime"
-vscode "ms-pyright.pyright"
 vscode "ms-python.debugpy"
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
@@ -202,10 +204,6 @@ vscode "rooveterinaryinc.roo-cline"
 vscode "saoudrizwan.claude-dev"
 vscode "sumneko.lua"
 vscode "supermaven.supermaven"
-vscode "tabbyml.vscode-tabby"
 vscode "usernamehw.errorlens"
 vscode "visualstudioexptteam.intellicode-api-usage-examples"
 vscode "visualstudioexptteam.vscodeintellicode"
-vscode "visualstudioexptteam.vscodeintellicode-completions"
-vscode "visualstudioexptteam.vscodeintellicode-insiders"
-vscode "vscodevim.vim"
