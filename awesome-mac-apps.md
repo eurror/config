@@ -260,6 +260,11 @@ Awesome apps:
 
 
 ### CLI
+- [x] aider
+- [x] claude
+- [x] codex
+- [x] gemini
+
 - [x] btop
 - [x] lazygit
 - [x] lazydocker
