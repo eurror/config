@@ -13,6 +13,9 @@
 !polybar/*
 !pulse/
 !rofi/*
+!nvim/init.lua
+!nvim/lua/plugins/*
+!nvim/lua/config/*
 !zed/keymap.json
 !zed/settings.json
 !Brewfile
