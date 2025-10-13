@@ -139,20 +139,20 @@ Awesome apps:
 ---
 ## Developer tools
 ### Code editors
-- [x] [Cursor](https://cursor.com)
+- [ ] [Cursor](https://cursor.com)
 - [ ] [Aurora Editor](https://auroraeditor.com)
 - [ ] [BBEdit](https://www.barebones.com/products/bbedit/)
 - [ ] [CodeEdit](https://www.codeedit.app)
 - [ ] [CodeRunner](https://apps.apple.com/kz/app/coderunner-4/id955297617?mt=12)
 - [ ] [CotEditor](https://coteditor.com)
 - [x] [Kiro Editor](https://kiro.dev/downloads/)
-- [x] [PearAI](https://trypear.ai)
+- [ ] [PearAI](https://trypear.ai)
 - [ ] [SubEthaEdit](https://apps.apple.com/kz/app/subethaedit/id728530824?mt=12)
 - [ ] [TextMate](https://macromates.com)
-- [x] [Trae](https://www.trae.ai)
+- [ ] [Trae](https://www.trae.ai)
 - [x] [Visual Studio Code](https://code.visualstudio.com/)
-- [x] [Void](https://voideditor.com)
-- [x] [Windsurf](https://windsurf.com/editor)
+- [ ] [Void](https://voideditor.com)
+- [ ] [Windsurf](https://windsurf.com/editor)
 - [ ] [Xcode](https://apps.apple.com/kz/app/xcode/id497799835?mt=12)
 - [x] [Zed](https://zed.dev)
 - [ ] [PyCharm](https://www.jetbrains.com/pycharm/download/)
@@ -264,6 +264,7 @@ Awesome apps:
 - [x] lazygit
 - [x] lazydocker
 - [x] fastfetch
+- [x] helix
 - [x] neovim
 - [x] yazi
 - [x] fzf
