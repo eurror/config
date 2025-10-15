@@ -13,6 +13,8 @@ brew "cmake"
 brew "xz"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # User-friendly command-line shell for UNIX-like operating systems
@@ -45,8 +47,6 @@ brew "luacheck"
 brew "make"
 # Mac App Store command-line interface
 brew "mas"
-# Fast, highly customisable system info script
-brew "neofetch"
 # Incremental parsing library
 brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -87,6 +87,8 @@ brew "tldr"
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Parser generator tool
+brew "tree-sitter-cli"
 # Maintained ctags implementation
 brew "universal-ctags"
 # Extraction utility for .zip compressed archives
@@ -111,8 +113,6 @@ cask "font-jetbrains-mono-nerd-font"
 cask "font-sf-mono-nerd-font-ligaturized"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-# Web browser
-cask "google-chrome"
 # Desktop automation application
 cask "hammerspoon"
 # Chromium-based web browser
@@ -125,6 +125,8 @@ cask "homerow"
 cask "itsycal"
 # File archiver
 cask "keka"
+# Agent-centric IDE with spec-driven development
+cask "kiro"
 # GPU-based terminal emulator
 cask "kitty"
 # Utility that shows the latest app updates
@@ -160,7 +162,6 @@ mas "Pages", id: 409201541
 mas "Portal", id: 1436994560
 mas "Regex Mate", id: 6479819388
 mas "RunCat", id: 1429033973
-mas "Sink It", id: 6449873635
 mas "SnippetsLab", id: 1006087419
 mas "Telegram", id: 747648890
 mas "TestFlight", id: 899247664
