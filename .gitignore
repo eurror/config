@@ -8,7 +8,7 @@
 !gtk-3.0/settings.ini
 !gtk-4.0/settings.ini
 !i3/*
-!kitty/kitty.conf
+!kitty/*.conf
 !picom/*
 !polybar/*
 !pulse/
