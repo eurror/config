@@ -22,6 +22,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
+  "editor.fontFamily": "'JetBrains Mono', 'monospace', monospace",
+  "editor.fontLigatures": true,
   "editor.formatOnSaveMode": "modifications",
   "editor.guides.bracketPairs": "active",
   "editor.inlayHints.enabled": "onUnlessPressed",
@@ -362,5 +364,10 @@
     "*.test-lb.bc",
     "gl.hq.bc"
   ],
-  "Lua.diagnostics.globals": ["vim"]
+  "Lua.diagnostics.globals": [
+    "vim"
+  ],
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
 }
