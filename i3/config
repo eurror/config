@@ -1,7 +1,7 @@
 # global variables
 set $mod Mod4
 set $alt Mod1
-set $term ghostty
+set $term alacritty
 font pango:LigaSF Mono Nerd Font 9
 floating_modifier $mod
 default_border pixel 0
@@ -162,6 +162,6 @@ exec --no-startup-id picom --vsync --backend glx --glx-no-stencil --glx-no-rebin
 exec --no-startup-id dunst
 exec --no-startup-id feh --bg-scale ~/.config/i3/wallpaper.png
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec_always setxkbmap -layout us,ru -option grp:alt_shift_toggle
+exec --no-startup-id setxkbmap -layout us,ru -option grp:alt_shift_toggle
 exec_always mkfifo /tmp/xobpipe && tail -f /tmp/xobpipe | xob -t 2170 & disown
 exec_always --no-startup-id ~/.config/polybar/launch.sh
