@@ -26,6 +26,11 @@
 !helix/*
 !helix/
 
+!hypr/config/*
+!hypr/config/
+!hypr/*
+!hypr/
+
 !i3/*
 !i3/
 
