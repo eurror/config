@@ -7,6 +7,9 @@
 !Code/User/
 !Code/
 
+!Kvantum/*
+!Kvantum/
+
 !alacritty/*
 !alacritty/
 
@@ -37,6 +40,11 @@
 !kitty/*.conf
 !kitty/
 
+!mako/*
+!mako/
+
+!micro/
+
 !nvim/lua/config/*
 !nvim/lua/config/
 !nvim/lua/plugins/*
@@ -44,6 +52,9 @@
 !nvim/lua/
 !nvim/*.lua
 !nvim/
+
+!qt5ct/*
+!qt5ct/
 
 !picom/*
 !picom/
@@ -53,11 +64,25 @@
 !polybar/*
 !polybar/
 
-!pulse/*
-!pulse
-
 !rofi/*
 !rofi/
+
+!rog/*
+!rog/
+
+!swaylock/*
+!swaylock/
+
+!waybar/modules/*
+!waybar/modules/
+!waybar/*
+!waybar/
+
+!wlogout/*
+!wlogout/
+
+!wofi/*
+!wofi/
 
 !zed/keymap.json
 !zed/settings.json
