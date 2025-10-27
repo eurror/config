@@ -46,6 +46,7 @@ Awesome apps:
 - [ ] [Comet](https://www.perplexity.ai/comet)
 - [ ] [Deta](https://deta.surf/)
 - [ ] [Strawberry](https://strawberrybrowser.com/)
+- [ ] [Atlas](https://openai.com/index/introducing-chatgpt-atlas/)
 
 ---
 ## Security
@@ -156,10 +157,12 @@ Awesome apps:
 - [ ] [Xcode](https://apps.apple.com/kz/app/xcode/id497799835?mt=12)
 - [x] [Zed](https://zed.dev)
 - [ ] [PyCharm](https://www.jetbrains.com/pycharm/download/)
+- [ ] [Intelij IDEA](https://www.jetbrains.com/idea/)
 
 ### Database
 - [ ] [Postico 2](https://apps.apple.com/kz/app/postico-2/id6446933691?mt=12)
 - [x] [TablePlus](https://tableplus.com)
+- [ ] [DataGrip](https://www.jetbrains.com/datagrip/)
 - [ ] [Sequel Ace](https://sequel-ace.com/)
 
 ### API
