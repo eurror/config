@@ -7,13 +7,13 @@
 
     "position": "top",
 
-    "height": 20,
+    "height": 10,
 
-    "margin-left": 10,
+    "margin-left": 5,
     "margin-bottom": 0,
-    "margin-right": 10,
+    "margin-right": 5,
 
-    "spacing": 5, // Gaps between modules (4px)
+    "spacing": 0, // Gaps between modules (4px)
 
     "modules-left": [
         //"custom/rofi",
@@ -31,6 +31,7 @@
         //"custom/gammastep"
     ],
     "modules-right": [
+        "tray",
         "backlight",
         "custom/storage",
         "memory",
@@ -39,7 +40,6 @@
         //"pulseaudio",
         "wireplumber",
         "custom/screenshot_t",
-        "tray",
         "custom/power"
     ],
 
