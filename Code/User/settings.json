@@ -67,6 +67,9 @@
       "strings": true
     }
   },
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
   "[json]": {
     "editor.tabSize": 2,
     "editor.quickSuggestions": {
@@ -88,11 +91,6 @@
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
   },
-
-  "[xml]": {
-    "editor.defaultFormatter": "redhat.vscode-xml"
-  },
-
   "html.format.indentHandlebars": true,
   "html.format.indentInnerHtml": true,
   "html.format.templating": true,
@@ -376,7 +374,13 @@
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
-  "[java]": {
-    "editor.defaultFormatter": "redhat.java"
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true,
+    "/tmp/postman-collections-post-response.instructions.md": true,
+    "/tmp/postman-collections-pre-request.instructions.md": true,
+    "/tmp/postman-folder-post-response.instructions.md": true,
+    "/tmp/postman-folder-pre-request.instructions.md": true,
+    "/tmp/postman-http-request-post-response.instructions.md": true,
+    "/tmp/postman-http-request-pre-request.instructions.md": true
   }
 }
