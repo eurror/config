@@ -1,0 +1,305 @@
+{
+  // Application / Telemetry and Updates
+  "extensions.autoUpdate": "onlyEnabledExtensions",
+  "redhat.telemetry.enabled": false,
+  "telemetry.telemetryLevel": "off",
+
+  // Editor
+  "editor.accessibilitySupport": "off",
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingComments": "always",
+  "editor.autoClosingDelete": "always",
+  "editor.autoClosingOvertype": "always",
+  "editor.autoClosingQuotes": "always",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.organizeImports": "always"
+  },
+  "editor.cursorBlinking": "solid",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorStyle": "block",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "'JetBrains Mono', 'monospace', monospace",
+  "editor.fontLigatures": true,
+  "editor.formatOnSaveMode": "modifications",
+  "editor.guides.bracketPairs": "active",
+  "editor.inlayHints.enabled": "onUnlessPressed",
+  "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "editor.largeFileOptimizations": true,
+  "editor.lineNumbers": "relative",
+  "editor.linkedEditing": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.size": "fill",
+  "editor.minimap.showSlider": "always",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "editor.renderWhitespace": "none",
+  "editor.smoothScrolling": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.suggest.insertMode": "replace",
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "on",
+  "editor.unicodeHighlight.allowedLocales": { "ru": true },
+  "editor.wordWrap": "on",
+
+  // Editor Formatting (Language Specific)
+  "[css]": {
+    "editor.tabSize": 2,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
+  },
+  "[html]": {
+    "editor.tabSize": 2,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
+  },
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "[json]": {
+    "editor.tabSize": 2,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
+  },
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.tabSize": 2
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "html.format.indentHandlebars": true,
+  "html.format.indentInnerHtml": true,
+  "html.format.templating": true,
+
+  // Explorer / Files
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.sortOrder": "type",
+  "files.autoSave": "onFocusChange",
+  "files.autoSaveDelay": 1000,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    // "**/.vscode": true,
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/node_modules": true,
+    "venv": true,
+    "*.sublime-*": true,
+    "env*": true,
+    "**/.idea": true,
+    "**/.ruff_cache": true,
+    "**/.ropeproject": true,
+    "**/.mypy_cache": true
+  },
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/.git/**": true,
+    "**/target/**": true,
+    "**/.cache/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/env/**": true,
+    "**/venv/**": true,
+    "env-*": true
+  },
+
+  // Search
+  "search.exclude": {
+    "**/node_modules/**": true,
+    "**/.git/**": true,
+    "**/target/**": true,
+    "**/.cache/**": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/env": true,
+    "**/venv": true
+  },
+  "search.followSymlinks": true,
+  "search.useGlobalIgnoreFiles": true,
+  "search.smartCase": true,
+
+  // Git
+  "git.autofetch": true,
+  "git.autofetchPeriod": 180,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.openRepositoryInParentFolders": "always",
+
+  // Diff Editor
+  "diffEditor.codeLens": true,
+  "diffEditor.experimental.showMoves": true,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.renderSideBySide": true,
+
+  // Terminal
+  "terminal.integrated.cursorStyleInactive": "block",
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1",
+    "PYTHONUNBUFFERED": "1"
+  },
+  "terminal.integrated.env.linux": {
+    "FIG_NEW_SESSION": "1",
+    "PYTHONUNBUFFERED": "1"
+  },
+  "terminal.integrated.localEchoExcludePrograms": [
+    "vim",
+    "vi",
+    "nano",
+    "tmux",
+    "nvim",
+    "hx"
+  ],
+  "terminal.integrated.macOptionIsMeta": true,
+
+  // Debug
+  "debug.console.wordWrap": true,
+  "debug.inlineValues": "on",
+
+  // Window
+  "window.openFilesInNewWindow": "off",
+
+  // Workbench
+  "workbench.activityBar.location": "top",
+  "workbench.commandPalette.history": 3,
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.editor.enablePreview": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.localHistory.maxFileEntries": 10,
+  "workbench.panel.showLabels": false,
+  "workbench.secondarySideBar.showLabels": false,
+  "workbench.startupEditor": "none",
+
+  // Security
+  "security.promptForLocalFileProtocolHandling": false,
+  "security.workspace.trust.untrustedFiles": "open",
+
+  // Extensions / Features
+  "amazonQ.workspaceIndex": true,
+  "chat.editor.wordWrap": "on",
+
+  "codeium.aggressiveShutdown": true,
+  "codeium.enableConfig": {
+    "*": true,
+    "properties": true
+  },
+  "codeium.enableSearch": true,
+  "codeium.indexingRetentionPeriod": 5,
+  "codeium.languageServerStartupTimeout": 30,
+  "continue.enableTabAutocomplete": false,
+
+  "geminicodeassist.project": "gen-lang-client-0356026420",
+
+  "github.copilot.advanced": {
+    "useLanguageServer": true
+  },
+  "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.chat.localeOverride": "en",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+
+  "gitlab.duoChat.enabled": false,
+  "gitlab.duoCodeSuggestions.enabled": false,
+  "gitlab.duoCodeSuggestions.enabledSupportedLanguages": {
+    "c": true,
+    "cpp": true,
+    "csharp": true,
+    "go": true,
+    "haml": true,
+    "handlebars": true,
+    "java": true,
+    "javascript": true,
+    "javascriptreact": true,
+    "kotlin": true,
+    "python": true,
+    "php": true,
+    "ruby": true,
+    "rust": true,
+    "scala": true,
+    "shellscript": true,
+    "sql": true,
+    "swift": true,
+    "typescript": true,
+    "typescriptreact": true,
+    "svelte": true,
+    "terraform": true,
+    "terragrunt": true,
+    "vue": true
+  },
+
+  "go.formatTool": "goimports",
+  "go.lintTool": "golangci-lint",
+  "go.useLanguageServer": true,
+
+  "outline.showVariables": false,
+
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.inlayHints.callArgumentNames": "all",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "roo-cline.allowedCommands": [
+    "npm test",
+    "npm install",
+    "tsc",
+    "git log",
+    "git diff",
+    "git show"
+  ],
+  "ruff.enable": true,
+  "vim.cursorStylePerMode": {
+    "normal": "block",
+    "insert": "block",
+    "visual": "block",
+    "visualline": "block",
+    "visualblock": "block",
+    "replace": "block",
+    "inactive": "block"
+  },
+
+  "Lua.diagnostics.globals": ["vim"],
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true,
+    "/tmp/postman-collections-post-response.instructions.md": true,
+    "/tmp/postman-collections-pre-request.instructions.md": true,
+    "/tmp/postman-folder-post-response.instructions.md": true,
+    "/tmp/postman-folder-pre-request.instructions.md": true,
+    "/tmp/postman-http-request-post-response.instructions.md": true,
+    "/tmp/postman-http-request-pre-request.instructions.md": true
+  }
+}
