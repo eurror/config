@@ -279,6 +279,7 @@
     "git show"
   ],
   "ruff.enable": true,
+
   "vim.cursorStylePerMode": {
     "normal": "block",
     "insert": "block",
@@ -288,6 +289,14 @@
     "replace": "block",
     "inactive": "block"
   },
+  "vim.useSystemClipboard": true,
+  "vim.enableNeovim": true,
+  "vim.highlightedyank.color": "rgba(212, 212, 212, 1)",
+  "vim.highlightedyank.enable": true,
+  "vim.hlsearch": true,
+  "vim.leader": "space",
+  "vim.replaceWithRegister": true,
+  "vim.showMarksInGutter": true,
 
   "Lua.diagnostics.globals": ["vim"],
   "extensions.experimental.affinity": {
