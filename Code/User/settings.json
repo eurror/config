@@ -5,6 +5,13 @@
   "telemetry.telemetryLevel": "off",
 
   // Editor
+  "editor.autoIndentOnPaste": true,
+  "editor.foldingImportsByDefault": true,
+  "editor.gotoLocation.alternativeImplementationCommand": "editor.action.peekImplementation",
+  "editor.gotoLocation.alternativeReferenceCommand": "editor.action.referenceSearch.trigger",
+  "editor.maxTokenizationLineLength": 2500,
+  "editor.trimWhitespaceOnDelete": true,
+  "editor.wrapOnEscapedLineFeeds": true,
   "editor.accessibilitySupport": "off",
   "editor.autoClosingBrackets": "always",
   "editor.autoClosingComments": "always",
@@ -160,6 +167,7 @@
   "diffEditor.renderSideBySide": true,
 
   // Terminal
+  "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.cursorStyleInactive": "block",
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.env.osx": {
@@ -186,6 +194,7 @@
 
   // Window
   "window.openFilesInNewWindow": "off",
+  "window.customTitleBarVisibility": "auto",
 
   // Workbench
   "workbench.activityBar.location": "top",
@@ -197,6 +206,7 @@
   "workbench.panel.showLabels": false,
   "workbench.secondarySideBar.showLabels": false,
   "workbench.startupEditor": "none",
+  "workbench.enableExperiments": false,
 
   // Security
   "security.promptForLocalFileProtocolHandling": false,
@@ -263,6 +273,22 @@
   "go.lintTool": "golangci-lint",
   "go.useLanguageServer": true,
 
+  "jdk.telemetry.enabled": false,
+  "spring.initializr.defaultLanguage": "Java",
+  "java.dependency.packagePresentation": "hierarchical",
+  "java.implementationCodeLens": "all",
+  "java.referencesCodeLens.enabled": true,
+  "java.symbols.includeSourceMethodDeclarations": true,
+  "java.inlayHints.parameterNames.enabled": "all",
+  "java.inlayHints.parameterTypes.enabled": true,
+  "java.inlayHints.variableTypes.enabled": true,
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.format.settings.profile": "GoogleStyle",
+  "java.codeGeneration.hashCodeEquals.useJava7Objects": true,
+  "java.codeGeneration.useBlocks": true,
+  "java.maxConcurrentBuilds": 2,
+
   "outline.showVariables": false,
 
   "python.analysis.autoImportCompletions": true,
@@ -310,5 +336,6 @@
     "/tmp/postman-folder-pre-request.instructions.md": true,
     "/tmp/postman-http-request-post-response.instructions.md": true,
     "/tmp/postman-http-request-pre-request.instructions.md": true
-  }
+  },
+  "kiroAgent.modelSelection": "claude-sonnet-4.5",
 }
