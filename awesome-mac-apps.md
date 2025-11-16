@@ -39,10 +39,10 @@ Awesome apps:
 - [ ] [Dia Browser](https://www.diabrowser.com/)
 - [ ] [Thorium](https://thorium.rocks)
 - [ ] [Chromium](https://www.chromium.org/chromium-projects/)
-- [x] [Google Chrome](https://www.google.com/chrome/)
+- [ ] [Google Chrome](https://www.google.com/chrome/)
 - [ ] [Edge](https://www.microsoft.com/en-us/edge/download)
 - [ ] [Min](https://minbrowser.org)
-- [x] [Helium](https://helium.computer/)
+- [ ] [Helium](https://helium.computer/)
 - [ ] [Comet](https://www.perplexity.ai/comet)
 - [ ] [Deta](https://deta.surf/)
 - [ ] [Strawberry](https://strawberrybrowser.com/)
@@ -54,7 +54,7 @@ Awesome apps:
 - [ ] [AdGuard VPN](https://adguard-vpn.com/en/welcome.html)
 - [ ] [Cloudflare WARP](https://one.one.one.one)
 - [ ] [Orbot](https://apps.apple.com/kz/app/orbot/id1609461599)
-- [x] [ProtonVPN](https://protonvpn.com/?srsltid=AfmBOooraD9iRoxIohdmFnRXZ382hR_K7cu5TaBpvQSKt7Bz2ibHYKim)
+- [ ] [ProtonVPN](https://protonvpn.com/?srsltid=AfmBOooraD9iRoxIohdmFnRXZ382hR_K7cu5TaBpvQSKt7Bz2ibHYKim)
 - [ ] [Vpnify](https://apps.apple.com/kz/app/vpnify-unlimited-vpn/id1503251395)
 - [x] [WireGuard](https://apps.apple.com/kz/app/wireguard/id1451685025?mt=12)
 - [ ] [sing-box](https://sing-box.sagernet.org/)
@@ -83,7 +83,7 @@ Awesome apps:
 ### Mac optimization
 - [x] [AlDente](https://apphousekitchen.com/)
 - [x] [Caffeine](https://www.caffeine-app.net)
-- [x] [Swift Quit](https://github.com/onebadidea/swiftquit)
+- [ ] [Swift Quit](https://github.com/onebadidea/swiftquit)
 - [ ] [Mac Mouse Fix](https://macmousefix.com/en/)
 - [ ] [Mos](https://mos.caldis.me)
 - [ ] [MonitorControl](https://github.com/MonitorControl/MonitorControl)
@@ -92,22 +92,22 @@ Awesome apps:
 
 ### File downloading, management & sharing
 - [x] [Free Download Manager](https://www.freedownloadmanager.org)
-- [x] [Keka](https://www.keka.io/en/)
+- [ ] [Keka](https://www.keka.io/en/)
 - [ ] [PPTube](https://pptube.org)
 - [ ] [SiteSucker Pro](https://ricks-apps.com/osx/sitesucker/index.html)
 - [ ] [The Unarchiver](https://theunarchiver.com)
-- [x] [Transmission](https://transmissionbt.com)
+- [ ] [Transmission](https://transmissionbt.com)
 - [x] [LocalSend](https://localsend.org)
 - [ ] [NetNewsWire](https://netnewswire.com)
 
 ### Keyboard
 - [ ] [KeyCastr](https://github.com/keycastr/keycastr)
 - [x] [Homerow](https://www.homerow.app)
-- [x] [Hyperkey](https://hyperkey.app)
+- [ ] [Hyperkey](https://hyperkey.app)
 - [ ] [Keyborg](https://github.com/microsoft/keyborg)
 - [ ] [AltTab](https://alt-tab-macos.netlify.app)
 - [ ] [Pieoneer](https://apps.apple.com/kz/app/pieoneer/id6739781207?mt=12)
-- [x] [Shortcat](https://shortcat.app/)
+- [ ] [Shortcat](https://shortcat.app/)
 
 ### Mac service
 - [x] [App Cleaner & Uninstaller](https://app-cleaner.com)
@@ -146,7 +146,7 @@ Awesome apps:
 - [ ] [CodeEdit](https://www.codeedit.app)
 - [ ] [CodeRunner](https://apps.apple.com/kz/app/coderunner-4/id955297617?mt=12)
 - [ ] [CotEditor](https://coteditor.com)
-- [x] [Kiro Editor](https://kiro.dev/downloads/)
+- [ ] [Kiro Editor](https://kiro.dev/downloads/)
 - [ ] [PearAI](https://trypear.ai)
 - [ ] [SubEthaEdit](https://apps.apple.com/kz/app/subethaedit/id728530824?mt=12)
 - [ ] [TextMate](https://macromates.com)
@@ -157,7 +157,7 @@ Awesome apps:
 - [ ] [Xcode](https://apps.apple.com/kz/app/xcode/id497799835?mt=12)
 - [x] [Zed](https://zed.dev)
 - [ ] [PyCharm](https://www.jetbrains.com/pycharm/download/)
-- [ ] [Intelij IDEA](https://www.jetbrains.com/idea/)
+- [x] [Intelij IDEA](https://www.jetbrains.com/idea/)
 
 ### Database
 - [ ] [Postico 2](https://apps.apple.com/kz/app/postico-2/id6446933691?mt=12)
@@ -254,13 +254,11 @@ Awesome apps:
 
 ---
 ### Other
-- [x] NCALayer
 - [x] [Telegram](https://apps.apple.com/kz/app/telegram/id747648890?mt=12)
 - [x] [WhatsApp](https://apps.apple.com/kz/app/whatsapp-messenger/id310633997)
 
 ### Virtualization
 - [x] [UTM](https://mac.getutm.app)
-
 
 ### CLI
 - [x] aider
@@ -288,3 +286,4 @@ Awesome apps:
 - [x] diff-so-fancy
 - [x] dive
 - [x] ctop
+- [x] bfg
