@@ -29,7 +29,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "editor.fontFamily": "'JetBrains Mono', 'monospace', monospace",
+  "editor.fontFamily": "JetBrainsMono Nerd Font, JetBrainsMono NF, JetBrains Mono",
   "editor.fontLigatures": true,
   "editor.formatOnSaveMode": "modifications",
   "editor.guides.bracketPairs": "active",
