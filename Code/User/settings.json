@@ -328,14 +328,13 @@
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
+
   "chat.instructionsFilesLocations": {
-    ".github/instructions": true,
-    "/tmp/postman-collections-post-response.instructions.md": true,
-    "/tmp/postman-collections-pre-request.instructions.md": true,
-    "/tmp/postman-folder-post-response.instructions.md": true,
-    "/tmp/postman-folder-pre-request.instructions.md": true,
-    "/tmp/postman-http-request-post-response.instructions.md": true,
-    "/tmp/postman-http-request-pre-request.instructions.md": true
+    ".github/instructions": true
   },
   "kiroAgent.modelSelection": "claude-sonnet-4.5",
+  "trae.notification.enableFeedbackAndSurveys": false,
+  "trae.notification.enableAccountNotifications": false,
+  "trae.notification.enableTipsAndSuggestions": false,
+  "trae.notification.enableOffersAndPromotions": false
 }
