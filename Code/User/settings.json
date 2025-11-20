@@ -292,7 +292,7 @@
   "outline.showVariables": false,
 
   "python.analysis.autoImportCompletions": true,
-  "python.analysis.inlayHints.callArgumentNames": "all",
+  "python.analysis.inlayHints.callArgumentNames": "partial",
   "python.analysis.inlayHints.functionReturnTypes": true,
   "python.analysis.inlayHints.pytestParameters": true,
   "python.analysis.inlayHints.variableTypes": true,
@@ -308,7 +308,7 @@
 
   "vim.cursorStylePerMode": {
     "normal": "block",
-    "insert": "block",
+    "insert": "line",
     "visual": "block",
     "visualline": "block",
     "visualblock": "block",
