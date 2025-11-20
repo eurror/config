@@ -56,7 +56,7 @@
     "command": "workbench.view.scm",
   },
   {
-    "key": "ctrl+r",
+    "key": "ctrl+s",
     "command": "workbench.action.gotoSymbol",
   },
   {
@@ -74,5 +74,10 @@
   {
     "key": "ctrl+e",
     "command": "workbench.action.openRecent"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "-extension.vim_ctrl+b",
+    "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
   }
 ]

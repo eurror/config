@@ -1,37 +1,72 @@
 {
+    "collaboration_panel": {
+        "button": false
+    },
+    "tabs": {
+        "git_status": true
+    },
+    "diagnostics": {
+        "button": true
+    },
+    "status_bar": {
+        "cursor_position_button": true,
+        "active_language_button": true
+    },
+    "project_panel": {
+        "button": true,
+        "indent_guides": {
+            "show": "always"
+        }
+    },
+    "outline_panel": {
+        "indent_guides": {
+            "show": "always"
+        }
+    },
+    "hard_tabs": false,
+    "inlay_hints": {
+        "enabled": true
+    },
+    "minimap": {
+        "max_width_columns": 80,
+        "current_line_highlight": "all",
+        "thumb_border": "none",
+        "thumb": "always",
+        "display_in": "active_editor",
+        "show": "always"
+    },
+    "scroll_beyond_last_line": "off",
+    "base_keymap": "VSCode",
+    "buffer_line_height": "comfortable",
+    "buffer_font_family": "JetBrainsMono Nerd Font",
     "edit_predictions": {
         "mode": "eager",
         "copilot": {
             "proxy": null,
             "proxy_no_verify": null
         },
-        "enabled_in_assistant": false
+        "enabled_in_text_threads": false
     },
     "vim_mode": true,
-    "icon_theme": "VSCode Great Icons Theme",
+    "icon_theme": "Material Icon Theme",
     "terminal": {
+        "button": true,
         "dock": "bottom",
         "font_size": 14,
         "env": {
             "PYTHONUNBUFFERED": "1"
         }
     },
-    "buffer_font_size": 13,
-    "theme": {
-        "dark": "VSCode Dark Modern",
-        "light": "VSCode Dark Modern",
-        "font_size": 13,
-        "font_family": "JetBrains Mono, Menlo, Monaco, Courier New, monospace"
-    },
+    "buffer_font_size": 14.0,
+    "theme": "VSCode Dark Modern",
     "features": {
         "edit_prediction_provider": "zed"
     },
-    "assistant": {
+    "agent": {
         "default_model": {
             "provider": "zed.dev",
             "model": "claude-3-5-sonnet-latest"
-        },
-        "version": "2"
+        }
     },
     "telemetry": {
         "metrics": false,
@@ -39,60 +74,28 @@
     },
     "cursor_blink": false,
     "cursor_shape": "block",
-    "autosave": { "after_delay": { "milliseconds": 0 } },
+    "autosave": "on_focus_change",
     "soft_wrap": "editor_width",
-    "relative_line_numbers": true,
+    "relative_line_numbers": "enabled",
     "indent_guides": {
+        "active_line_width": 1,
+        "line_width": 1,
         "enabled": true,
         "coloring": "indent_aware",
         "background_coloring": "indent_aware"
     },
-    "format_on_paste": true,
     "format_on_save": "on",
     "tab_size": 4,
     "preferred_line_length": 100,
     "show_whitespaces": "none",
-    "show_indent_guide": true,
-    "language_overrides": {
-        "Python": {
-            "format_on_save": true,
-            "tab_size": 4
-        },
-        "HTML": {
-            "tab_size": 2
-        },
-        "CSS": {
-            "tab_size": 2
-        },
-        "JavaScript": {
-            "tab_size": 4
-        },
-        "JSON": {
-            "tab_size": 4
-        },
-        "YAML": {
-            "tab_size": 4
-        }
-    },
     "lsp": {
-        "pyright": {
+        "basedpyright": {
             "settings": {
                 "python.analysis": {
                     "diagnosticMode": "openFilesOnly",
                     "typeCheckingMode": "off"
-                },
-                "python": {
-                    "pythonPath": ".venv/bin/python"
                 }
             }
         }
-    },
-    "project_panel.default_width": 300,
-    "outline_panel.default_width": 300,
-    "collaboration_panel.default_width": 300,
-    "chat_panel.default_width": 300,
-    "git_panel.default_width": 300,
-    "notification_panel.default_width": 300,
-    "agent.default_width": 300,
-    "terminal.default_height": 300,
+    }
 }
