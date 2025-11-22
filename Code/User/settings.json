@@ -336,5 +336,6 @@
   "trae.notification.enableFeedbackAndSurveys": false,
   "trae.notification.enableAccountNotifications": false,
   "trae.notification.enableTipsAndSuggestions": false,
-  "trae.notification.enableOffersAndPromotions": false
+  "trae.notification.enableOffersAndPromotions": false,
+  "kiroAgent.agentAutonomy": "Autopilot"
 }

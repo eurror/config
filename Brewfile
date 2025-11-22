@@ -5,14 +5,18 @@ tap "microsoft/git"
 brew "openssl@3"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# General-purpose data compression with high compression ratio
+brew "xz"
+# Remove large files or passwords from Git history like git-filter-branch
+brew "bfg"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
 # Cross-platform make
 brew "cmake"
-# General-purpose data compression with high compression ratio
-brew "xz"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# Good-lookin' diffs with diff-highlight and more
+brew "diff-so-fancy"
 # Like neofetch, but much faster because written mostly in C
 brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
@@ -47,6 +51,12 @@ brew "luacheck"
 brew "make"
 # Mac App Store command-line interface
 brew "mas"
+# Java-based project management
+brew "maven"
+# Bash completion for Maven
+brew "maven-completion"
+# Shell for Maven
+brew "maven-shell"
 # Incremental parsing library
 brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -55,8 +65,12 @@ brew "neovim"
 brew "readline"
 # Command-line interface for SQLite
 brew "sqlite"
-# Platform built on V8 to build network applications
+# Open-source, cross-platform JavaScript runtime environment
 brew "node"
+# Manage multiple Node.js versions
+brew "nvm"
+# AI coding agent, built for the terminal
+brew "opencode"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
 # Tool for managing OCI containers and pods
@@ -105,14 +119,24 @@ brew "zsh-fast-syntax-highlighting"
 brew "koekeishiya/formulae/skhd"
 # Menu bar tool to limit maximum charging percentage
 cask "aldente"
+# OpenAI's official browser with ChatGPT built in
+cask "chatgpt-atlas"
 # Create and run Linux containers using lightweight virtual machines
 cask "container"
+# Write, edit, and chat about your code with AI
+cask "cursor"
+# Databases and SQL IDE
+cask "datagrip"
 # Web browser
 cask "firefox"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-sf-mono-nerd-font-ligaturized"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Go (golang) IDE
+cask "goland"
+# Web browser
+cask "google-chrome"
 # Desktop automation application
 cask "hammerspoon"
 # Chromium-based web browser
@@ -121,6 +145,8 @@ cask "helium-browser"
 cask "hiddenbar"
 # Keyboard shortcuts for every button on your screen
 cask "homerow"
+# Java IDE by JetBrains
+cask "intellij-idea"
 # Menu bar calendar
 cask "itsycal"
 # File archiver
@@ -131,6 +157,8 @@ cask "kiro"
 cask "kitty"
 # Utility that shows the latest app updates
 cask "latest"
+# Discover, download, and run local LLMs
+cask "lm-studio"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
 # Replacement for Docker Desktop
@@ -139,16 +167,24 @@ cask "orbstack"
 cask "pearcleaner"
 # VPN client focusing on security
 cask "protonvpn"
+# IDE for professional Python development
+cask "pycharm"
 # App that enables mouse-free UI interaction
 cask "shortcat"
 # Enable Windows-like program quitting when all windows are closed
 cask "swift-quit"
 # Menu bar pomodoro timer
 cask "tomatobar"
+# Adaptive AI IDE
+cask "trae"
 # Open-source BitTorrent client
 cask "transmission"
+# AI code editor
+cask "void"
 # Rust-based terminal
 cask "warp"
+# Agentic IDE powered by AI Flow paradigm
+cask "windsurf"
 # Multiplayer code editor
 cask "zed"
 mas "Boop", id: 1518425043
@@ -177,28 +213,39 @@ vscode "augment.vscode-augment"
 vscode "charliermarsh.ruff"
 vscode "christian-kohler.path-intellisense"
 vscode "continue.continue"
+vscode "dbaeumer.vscode-eslint"
+vscode "dgileadi.java-decompiler"
+vscode "docker.docker"
+vscode "ecmel.vscode-html-css"
 vscode "esbenp.prettier-vscode"
-vscode "franzgollhammer.jb-fleet-dark"
+vscode "formulahendry.auto-rename-tag"
 vscode "github.copilot"
 vscode "github.copilot-chat"
 vscode "gitlab.gitlab-workflow"
 vscode "golang.go"
+vscode "google.gemini-cli-vscode-ide-companion"
 vscode "google.geminicodeassist"
-vscode "googlecloudtools.cloudcode"
+vscode "igorsbitnev.error-gutters"
 vscode "jasew.vscode-helix-emulation"
 vscode "kevinrose.vsc-python-indent"
-vscode "mattflower.aider"
+vscode "kilocode.kilo-code"
 vscode "ms-azuretools.vscode-containers"
 vscode "ms-azuretools.vscode-docker"
-vscode "ms-dotnettools.vscode-dotnet-runtime"
+vscode "ms-kubernetes-tools.vscode-kubernetes-tools"
 vscode "ms-python.debugpy"
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
 vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vscode-remote.remote-ssh"
+vscode "ms-vscode-remote.remote-ssh-edit"
 vscode "ms-vscode.makefile-tools"
+vscode "ms-vscode.remote-explorer"
 vscode "oderwat.indent-rainbow"
 vscode "openai.chatgpt"
+vscode "oracle.oracle-java"
 vscode "pkief.material-icon-theme"
+vscode "redhat.java"
 vscode "redhat.vscode-xml"
 vscode "redhat.vscode-yaml"
 vscode "rooveterinaryinc.roo-cline"
@@ -206,5 +253,15 @@ vscode "saoudrizwan.claude-dev"
 vscode "sumneko.lua"
 vscode "supermaven.supermaven"
 vscode "usernamehw.errorlens"
-vscode "visualstudioexptteam.intellicode-api-usage-examples"
-vscode "visualstudioexptteam.vscodeintellicode"
+vscode "vmware.vscode-boot-dev-pack"
+vscode "vmware.vscode-spring-boot"
+vscode "vscjava.vscode-gradle"
+vscode "vscjava.vscode-java-debug"
+vscode "vscjava.vscode-java-dependency"
+vscode "vscjava.vscode-java-pack"
+vscode "vscjava.vscode-java-test"
+vscode "vscjava.vscode-lombok"
+vscode "vscjava.vscode-maven"
+vscode "vscjava.vscode-spring-boot-dashboard"
+vscode "vscjava.vscode-spring-initializr"
+vscode "vscodevim.vim"

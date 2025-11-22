@@ -152,8 +152,10 @@ Awesome apps:
 - [ ] [TextMate](https://macromates.com)
 - [ ] [Trae](https://www.trae.ai)
 - [x] [Visual Studio Code](https://code.visualstudio.com/)
+- [ ] [Monaco Editor](https://microsoft.github.io/monaco-editor/)
 - [ ] [Void](https://voideditor.com)
 - [ ] [Windsurf](https://windsurf.com/editor)
+- [ ] [Antigravity](https://antigravity.google/)
 - [ ] [Xcode](https://apps.apple.com/kz/app/xcode/id497799835?mt=12)
 - [x] [Zed](https://zed.dev)
 - [ ] [PyCharm](https://www.jetbrains.com/pycharm/download/)
@@ -265,8 +267,13 @@ Awesome apps:
 - [x] claude
 - [x] codex
 - [x] gemini
+- [ ] roo
+- [ ] cline
+- [ ] kilo
+- [ ] opencode
 
 - [x] btop
+- [x] ruff
 - [x] lazygit
 - [x] lazydocker
 - [x] fastfetch
