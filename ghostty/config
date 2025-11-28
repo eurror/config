@@ -37,7 +37,7 @@ abnormal-command-exit-runtime = 250
 scrollback-limit = 10000
 
 link-url = true
-maximize = true
+maximize = false
 fullscreen = false
 
 window-padding-x = 1
