@@ -271,6 +271,9 @@ Awesome apps:
 - [ ] cline
 - [ ] kilo
 - [ ] opencode
+- [ ] continue
+- [ ] augment
+- [ ] supermaven
 
 - [x] btop
 - [x] ruff
