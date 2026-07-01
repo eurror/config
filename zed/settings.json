@@ -1,18 +1,61 @@
 {
+    "preview_tabs": {
+        "enable_preview_from_file_finder": false
+    },
+    "title_bar": {
+        "show_menus": true,
+        "show_branch_status_icon": false
+    },
+    "prettier": {
+        "allowed": true
+    },
+    "colorize_brackets": true,
+    "code_lens": "on",
+    "vim": {
+        "cursor_shape": {
+            "replace": "block"
+        }
+    },
+    "toolbar": {
+        "breadcrumbs": true,
+        "code_actions": true
+    },
+    "which_key": {
+        "enabled": true
+    },
+    "current_line_highlight": "all",
+    "multi_cursor_modifier": "cmd_or_ctrl",
+    "ui_font_size": 15.0,
+    "auto_update": false,
+    "session": {
+        "trust_all_worktrees": true
+    },
+    "diff_view_style": "unified",
+    "git_panel": {
+        "dock": "left"
+    },
     "collaboration_panel": {
         "button": false
     },
     "tabs": {
+        "file_icons": true,
         "git_status": true
     },
     "diagnostics": {
+        "inline": {
+            "enabled": true
+        },
         "button": true
     },
     "status_bar": {
+        "show_active_file": false,
+        "active_encoding_button": "non_utf8",
+        "line_endings_button": true,
         "cursor_position_button": true,
         "active_language_button": true
     },
     "project_panel": {
+        "dock": "left",
         "button": true,
         "indent_guides": {
             "show": "always"
@@ -38,8 +81,9 @@
     "scroll_beyond_last_line": "off",
     "base_keymap": "VSCode",
     "buffer_line_height": "comfortable",
-    "buffer_font_family": "JetBrainsMono Nerd Font",
+    "buffer_font_family": "Liga SFMono Nerd Font",
     "edit_predictions": {
+        "provider": "zed",
         "mode": "eager",
         "copilot": {
             "proxy": null,
@@ -48,7 +92,11 @@
         "enabled_in_text_threads": false
     },
     "vim_mode": true,
-    "icon_theme": "Material Icon Theme",
+    "icon_theme": {
+        "mode": "system",
+        "light": "Material Icon Theme",
+        "dark": "Material Icon Theme"
+    },
     "terminal": {
         "button": true,
         "dock": "bottom",
@@ -57,20 +105,23 @@
             "PYTHONUNBUFFERED": "1"
         }
     },
-    "buffer_font_size": 14.0,
-    "theme": "VSCode Dark Modern",
-    "features": {
-        "edit_prediction_provider": "zed"
+    "buffer_font_size": 13.0,
+    "theme": {
+        "mode": "system",
+        "light": "VSCode Dark Modern",
+        "dark": "VSCode Dark Modern"
     },
     "agent": {
+        "sidebar_side": "right",
+        "dock": "right",
         "default_model": {
             "provider": "zed.dev",
             "model": "claude-3-5-sonnet-latest"
         }
     },
     "telemetry": {
-        "metrics": false,
-        "diagnostics": false
+        "metrics": true,
+        "diagnostics": true
     },
     "cursor_blink": false,
     "cursor_shape": "block",
@@ -78,16 +129,16 @@
     "soft_wrap": "editor_width",
     "relative_line_numbers": "enabled",
     "indent_guides": {
-        "active_line_width": 1,
-        "line_width": 1,
+        "active_line_width": 0,
+        "line_width": 0,
         "enabled": true,
         "coloring": "indent_aware",
         "background_coloring": "indent_aware"
     },
     "format_on_save": "on",
     "tab_size": 4,
-    "preferred_line_length": 100,
-    "show_whitespaces": "none",
+    "preferred_line_length": 120,
+    "show_whitespaces": "all",
     "lsp": {
         "basedpyright": {
             "settings": {

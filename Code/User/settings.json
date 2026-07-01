@@ -337,5 +337,11 @@
   "trae.notification.enableAccountNotifications": false,
   "trae.notification.enableTipsAndSuggestions": false,
   "trae.notification.enableOffersAndPromotions": false,
-  "kiroAgent.agentAutonomy": "Autopilot"
+  "kiroAgent.agentAutonomy": "Autopilot",
+  "terminal.integrated.commandsToSkipShell": [
+    "kilo-code.new.agentManagerOpen",
+    "kilo-code.new.agentManager.showTerminal",
+    "kilo-code.new.agentManager.runScript"
+  ],
+  "workbench.colorTheme": "Dark Modern"
 }
