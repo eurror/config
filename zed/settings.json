@@ -81,7 +81,7 @@
     "scroll_beyond_last_line": "off",
     "base_keymap": "VSCode",
     "buffer_line_height": "comfortable",
-    "buffer_font_family": "Liga SFMono Nerd Font",
+    "buffer_font_family": "JetBrainsMono Nerd Font",
     "edit_predictions": {
         "provider": "zed",
         "mode": "eager",
@@ -92,11 +92,7 @@
         "enabled_in_text_threads": false
     },
     "vim_mode": true,
-    "icon_theme": {
-        "mode": "system",
-        "light": "Material Icon Theme",
-        "dark": "Material Icon Theme"
-    },
+    "icon_theme": "Material Icon Theme",
     "terminal": {
         "button": true,
         "dock": "bottom",
@@ -105,12 +101,8 @@
             "PYTHONUNBUFFERED": "1"
         }
     },
-    "buffer_font_size": 13.0,
-    "theme": {
-        "mode": "system",
-        "light": "VSCode Dark Modern",
-        "dark": "VSCode Dark Modern"
-    },
+    "buffer_font_size": 14.0,
+    "theme": "VSCode Dark Modern",
     "agent": {
         "sidebar_side": "right",
         "dock": "right",
@@ -124,7 +116,7 @@
         "diagnostics": true
     },
     "cursor_blink": false,
-    "cursor_shape": "block",
+    "cursor_shape": "bar",
     "autosave": "on_focus_change",
     "soft_wrap": "editor_width",
     "relative_line_numbers": "enabled",
