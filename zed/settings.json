@@ -1,74 +1,74 @@
 {
     "preview_tabs": {
-        "enable_preview_from_file_finder": false
+        "enable_preview_from_file_finder": false,
     },
     "title_bar": {
         "show_menus": true,
-        "show_branch_status_icon": false
+        "show_branch_status_icon": false,
     },
     "prettier": {
-        "allowed": true
+        "allowed": true,
     },
     "colorize_brackets": true,
     "code_lens": "on",
     "vim": {
         "cursor_shape": {
-            "replace": "block"
-        }
+            "replace": "block",
+        },
     },
     "toolbar": {
         "breadcrumbs": true,
-        "code_actions": true
+        "code_actions": true,
     },
     "which_key": {
-        "enabled": true
+        "enabled": true,
     },
     "current_line_highlight": "all",
     "multi_cursor_modifier": "cmd_or_ctrl",
     "ui_font_size": 15.0,
     "auto_update": false,
     "session": {
-        "trust_all_worktrees": true
+        "trust_all_worktrees": true,
     },
     "diff_view_style": "unified",
     "git_panel": {
-        "dock": "left"
+        "dock": "left",
     },
     "collaboration_panel": {
-        "button": false
+        "button": false,
     },
     "tabs": {
         "file_icons": true,
-        "git_status": true
+        "git_status": true,
     },
     "diagnostics": {
         "inline": {
-            "enabled": true
+            "enabled": true,
         },
-        "button": true
+        "button": true,
     },
     "status_bar": {
         "show_active_file": false,
         "active_encoding_button": "non_utf8",
         "line_endings_button": true,
         "cursor_position_button": true,
-        "active_language_button": true
+        "active_language_button": true,
     },
     "project_panel": {
         "dock": "left",
         "button": true,
         "indent_guides": {
-            "show": "always"
-        }
+            "show": "always",
+        },
     },
     "outline_panel": {
         "indent_guides": {
-            "show": "always"
-        }
+            "show": "always",
+        },
     },
     "hard_tabs": false,
     "inlay_hints": {
-        "enabled": true
+        "enabled": true,
     },
     "minimap": {
         "max_width_columns": 80,
@@ -76,7 +76,7 @@
         "thumb_border": "none",
         "thumb": "always",
         "display_in": "active_editor",
-        "show": "always"
+        "show": "always",
     },
     "scroll_beyond_last_line": "off",
     "base_keymap": "VSCode",
@@ -87,9 +87,9 @@
         "mode": "eager",
         "copilot": {
             "proxy": null,
-            "proxy_no_verify": null
+            "proxy_no_verify": null,
         },
-        "enabled_in_text_threads": false
+        "enabled_in_text_threads": false,
     },
     "vim_mode": true,
     "icon_theme": "Material Icon Theme",
@@ -98,8 +98,8 @@
         "dock": "bottom",
         "font_size": 14,
         "env": {
-            "PYTHONUNBUFFERED": "1"
-        }
+            "PYTHONUNBUFFERED": "1",
+        },
     },
     "buffer_font_size": 14.0,
     "theme": "VSCode Dark Modern",
@@ -108,12 +108,12 @@
         "dock": "right",
         "default_model": {
             "provider": "zed.dev",
-            "model": "claude-3-5-sonnet-latest"
-        }
+            "model": "claude-3-5-sonnet-latest",
+        },
     },
     "telemetry": {
         "metrics": true,
-        "diagnostics": true
+        "diagnostics": true,
     },
     "cursor_blink": false,
     "cursor_shape": "bar",
@@ -125,7 +125,7 @@
         "line_width": 0,
         "enabled": true,
         "coloring": "indent_aware",
-        "background_coloring": "indent_aware"
+        "background_coloring": "indent_aware",
     },
     "format_on_save": "on",
     "tab_size": 4,
@@ -136,9 +136,9 @@
             "settings": {
                 "python.analysis": {
                     "diagnosticMode": "openFilesOnly",
-                    "typeCheckingMode": "off"
-                }
-            }
-        }
-    }
+                    "typeCheckingMode": "off",
+                },
+            },
+        },
+    },
 }
