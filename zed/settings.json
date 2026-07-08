@@ -1,60 +1,29 @@
 {
-  "git_panel": {
-    "dock": "left"
+  // Panels
+  "terminal": {
+    "flexible": false
   },
   "agent": {
+    "flexible": false,
     "dock": "right",
-    "sidebar_side": "left",
+    "sidebar_side": "right",
     "favorite_models": [],
     "model_parameters": []
   },
+  "outline_panel": {
+    "dock": "right",
+  },
+  "collaboration_panel": {
+    "button": false,
+    "dock": "left",
+  },
+  "git_panel": {
+    "dock": "left",
+  },
   "project_panel": {
-    "dock": "left"
+    "dock": "left",
   },
-  "which_key": {
-    "delay_ms": 0,
-    "enabled": true,
-  },
-  "multi_cursor_modifier": "cmd_or_ctrl",
-  "auto_update": false,
-  "session": {
-    "trust_all_worktrees": true,
-  },
-  "diff_view_style": "unified",
 
-  "tabs": {
-    "file_icons": true,
-    "git_status": true,
-  },
-  "inlay_hints": {
-    "enabled": true,
-  },
-  "minimap": {
-    "max_width_columns": 80,
-    "current_line_highlight": "all",
-    "thumb_border": "none",
-    "thumb": "always",
-    "display_in": "active_editor",
-    "show": "always",
-  },
-  "scroll_beyond_last_line": "off",
   "base_keymap": "VSCode",
   "buffer_font_family": "JetBrainsMono Nerd Font",
-  "vim_mode": true,
-  "icon_theme": "Material Icon Theme",
-  "theme": "VSCode Dark Modern",
-  "cursor_blink": false,
-  "autosave": "on_focus_change",
-  "soft_wrap": "editor_width",
-  "relative_line_numbers": "enabled",
-  "lsp": {
-    "basedpyright": {
-      "settings": {
-        "python.analysis": {
-          "diagnosticMode": "openFilesOnly",
-          "typeCheckingMode": "off",
-        },
-      },
-    },
-  },
 }
