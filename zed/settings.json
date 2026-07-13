@@ -1,5 +1,36 @@
 {
-  // Panels
+  "inlay_hints": {
+    "enabled": false
+  },
+  "completions": {
+    "words_min_length": 2
+  },
+  "indent_guides": {
+    "background_coloring": "indent_aware"
+  },
+  "preferred_line_length": 80,
+  "soft_wrap": "editor_width",
+  "vim": {
+    "toggle_relative_line_numbers": false
+  },
+  "minimap": {
+    "show": "always"
+  },
+  "relative_line_numbers": "enabled",
+  "diff_view_style": "unified",
+  "which_key": {
+    "delay_ms": 0,
+    "enabled": true
+  },
+  "autosave": "on_focus_change",
+  "vim_mode": true,
+  "cursor_blink": false,
+  "theme": "VSCode Dark Modern",
+  "icon_theme": "Material Icon Theme",
+  "auto_update": true,
+  "session": {
+    "trust_all_worktrees": true
+  },
   "terminal": {
     "flexible": false
   },
