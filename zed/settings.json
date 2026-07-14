@@ -1,4 +1,9 @@
 {
+  "languages": {
+    "Lua": {
+      "tab_size": 2
+    }
+  },
   "tabs": {
     "git_status": true,
     "file_icons": true
