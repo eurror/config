@@ -4,3 +4,4 @@
 
 vim.g.autoformat = false
 vim.opt.wrap = true
+vim.opt.smoothscroll = true

@@ -1,35 +1,35 @@
 {
   "languages": {
     "Lua": {
-      "tab_size": 2
-    }
+      "tab_size": 2,
+    },
   },
   "tabs": {
     "git_status": true,
-    "file_icons": true
+    "file_icons": true,
   },
   "inlay_hints": {
-    "enabled": false
+    "enabled": false,
   },
   "completions": {
-    "words_min_length": 2
+    "words_min_length": 2,
   },
   "indent_guides": {
-    "background_coloring": "indent_aware"
+    "background_coloring": "indent_aware",
   },
   "preferred_line_length": 80,
   "soft_wrap": "editor_width",
   "vim": {
-    "toggle_relative_line_numbers": false
+    "toggle_relative_line_numbers": false,
   },
   "minimap": {
-    "show": "always"
+    "show": "always",
   },
   "relative_line_numbers": "enabled",
   "diff_view_style": "unified",
   "which_key": {
     "delay_ms": 0,
-    "enabled": true
+    "enabled": true,
   },
   "autosave": "on_focus_change",
   "vim_mode": true,
@@ -38,17 +38,17 @@
   "icon_theme": "Material Icon Theme",
   "auto_update": true,
   "session": {
-    "trust_all_worktrees": true
+    "trust_all_worktrees": true,
   },
   "terminal": {
-    "flexible": false
+    "flexible": false,
   },
   "agent": {
     "flexible": false,
     "dock": "right",
     "sidebar_side": "right",
     "favorite_models": [],
-    "model_parameters": []
+    "model_parameters": [],
   },
   "outline_panel": {
     "dock": "right",
@@ -66,4 +66,14 @@
 
   "base_keymap": "VSCode",
   "buffer_font_family": "JetBrainsMono Nerd Font",
+  "lsp": {
+    "basedpyright": {
+      "settings": {
+        "python.analysis": {
+          "diagnosticMode": "openFilesOnly",
+          "typeCheckingMode": "off",
+        },
+      },
+    },
+  },
 }
