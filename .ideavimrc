@@ -1,0 +1,16 @@
+set scrolloff=5
+set incsearch
+set clipboard=unnamedplus
+
+map Q gq
+map gi <Action>(GotoImplementation)
+
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'inkarkat/vim-ReplaceWithRegister'
+Plug 'tpope/vim-surround'
+set VimEverywhere
+set ideajoin
+set anyobject
+set which-key
+set notimeout
