@@ -1,16 +1,189 @@
-set scrolloff=5
+set number
+set relativenumber
+set ignorecase
+set smartcase
 set incsearch
-set clipboard=unnamedplus
+set hlsearch
+set scrolloff=4
+set sidescrolloff=8
+set showmode
+set history=1000
+set clipboard=ideaput,unnamedplus
+set notimeout
 
-map Q gq
-map gi <Action>(GotoImplementation)
+" IdeaVim specific
+set ideajoin
+set ideamarks
+set idearefactormode=keep
+set ideastatusicon=gray
+set VimEverywhere
+set anyobject
+set matchit
+set which-key
 
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
-Plug 'inkarkat/vim-ReplaceWithRegister'
 Plug 'tpope/vim-surround'
-set VimEverywhere
-set ideajoin
-set anyobject
-set which-key
-set notimeout
+Plug 'inkarkat/vim-ReplaceWithRegister'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'kana/vim-textobj-entire'
+Plug 'tommcdo/vim-exchange'
+Plug 'justinmk/vim-sneak'
+
+let mapleader = " "
+
+map Q gq
+nmap <Esc> :nohlsearch<CR>
+nmap <C-s> <Action>(SaveDocument)
+imap <C-s> <Esc><Action>(SaveDocument)
+nmap n nzzzv
+nmap N Nzzzv
+vmap < <gv
+vmap > >gv
+
+xnoremap R "_dP
+nmap <A-CR> <Esc>o
+imap <A-CR> <Esc>o
+vmap <A-CR> <Esc>o
+
+nmap <A-j> <Action>(MoveLineDown)
+nmap <A-k> <Action>(MoveLineUp)
+vmap <A-j> <Action>(MoveLineDown)
+vmap <A-k> <Action>(MoveLineUp)
+imap <A-j> <Action>(MoveLineDown)
+imap <A-k> <Action>(MoveLineUp)
+
+nmap gco o<Esc>gccA
+nmap gcO O<Esc>gccA
+
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+nmap <leader>ww <C-w>w
+nmap <leader>wd <Action>(Unsplit)
+nmap <leader>wm <Action>(MaximizeEditorInSplit)
+nmap <leader>w- <Action>(SplitHorizontally)
+nmap <leader>w\| <Action>(SplitVertically)
+nmap <leader>- <Action>(SplitHorizontally)
+nmap <leader>\| <Action>(SplitVertically)
+
+nmap <S-h> <Action>(PreviousTab)
+nmap <S-l> <Action>(NextTab)
+nmap [b <Action>(PreviousTab)
+nmap ]b <Action>(NextTab)
+nmap <leader>bb <Action>(Switcher)
+nmap <leader>bd <Action>(CloseContent)
+nmap <leader>bo <Action>(CloseAllEditorsButActive)
+nmap <leader>bp <Action>(PinActiveTabToggle)
+nmap <leader>` <Action>(Switcher)
+
+nmap <leader><space> <Action>(GotoFile)
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fF <Action>(GotoFile)
+nmap <leader>fr <Action>(RecentFiles)
+nmap <leader>fb <Action>(Switcher)
+nmap <leader>fn <Action>(NewElement)
+nmap <leader>fp <Action>(ManageRecentProjects)
+nmap <leader>fe <Action>(ActivateProjectToolWindow)
+nmap <leader>ft <Action>(ActivateTerminalToolWindow)
+nmap <leader>e <Action>(ActivateProjectToolWindow)
+nmap <leader>E <Action>(SelectInProjectView)
+
+nmap <leader>/ <Action>(FindInPath)
+nmap <leader>sg <Action>(FindInPath)
+nmap <leader>sr <Action>(ReplaceInPath)
+nmap <leader>sw <Action>(FindWordAtCaret)
+nmap <leader>ss <Action>(FileStructurePopup)
+nmap <leader>sS <Action>(GotoSymbol)
+nmap <leader>sc <Action>(GotoClass)
+nmap <leader>sa <Action>(GotoAction)
+nmap <leader>sd <Action>(ActivateProblemsViewToolWindow)
+nmap <leader>st <Action>(ActivateTODOToolWindow)
+nmap <leader>: <Action>(GotoAction)
+
+nmap gd <Action>(GotoDeclaration)
+nmap gD <Action>(GotoTypeDeclaration)
+nmap gy <Action>(GotoTypeDeclaration)
+nmap gi <Action>(GotoImplementation)
+nmap gI <Action>(GotoImplementation)
+nmap gK <Action>(ParameterInfo)
+nmap K <Action>(QuickJavaDoc)
+nmap <leader>ca <Action>(ShowIntentionActions)
+nmap <leader>cr <Action>(RenameElement)
+nmap <leader>cR <Action>(RenameFile)
+nmap <leader>cf <Action>(ReformatCode)
+vmap <leader>cf <Action>(ReformatCode)
+nmap <leader>co <Action>(OptimizeImports)
+nmap <leader>cd <Action>(ShowErrorDescription)
+nmap <leader>cs <Action>(ActivateStructureToolWindow)
+nmap <leader>cg <Action>(Generate)
+nmap <leader>ci <Action>(ImplementMethods)
+nmap <leader>cO <Action>(OverrideMethods)
+nmap <leader>cu <Action>(FindUsages)
+nmap <leader>cS <Action>(CallHierarchy)
+nmap <leader>ch <Action>(TypeHierarchy)
+nmap <leader>cv <Action>(IntroduceVariable)
+vmap <leader>cv <Action>(IntroduceVariable)
+nmap <leader>cm <Action>(ExtractMethod)
+vmap <leader>cm <Action>(ExtractMethod)
+nmap <leader>cx <Action>(Refactorings.QuickListPopupAction)
+vmap <leader>cx <Action>(Refactorings.QuickListPopupAction)
+
+nmap ]d <Action>(GotoNextError)
+nmap [d <Action>(GotoPreviousError)
+nmap ]e <Action>(GotoNextError)
+nmap [e <Action>(GotoPreviousError)
+nmap ]w <Action>(GotoNextError)
+nmap [w <Action>(GotoPreviousError)
+nmap ]c <Action>(VcsShowNextChangeMarker)
+nmap [c <Action>(VcsShowPrevChangeMarker)
+nmap ]m <Action>(MethodDown)
+nmap [m <Action>(MethodUp)
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
+
+nmap <leader>gg <Action>(Vcs.QuickListPopUp)
+nmap <leader>gs <Action>(ActivateVersionControlToolWindow)
+nmap <leader>gb <Action>(Annotate)
+nmap <leader>gB <Action>(Git.Branches)
+nmap <leader>gc <Action>(Vcs.Show.Log)
+nmap <leader>gd <Action>(Compare.SameVersion)
+nmap <leader>gh <Action>(Vcs.ShowTabbedFileHistory)
+nmap <leader>gp <Action>(Vcs.UpdateProject)
+nmap <leader>gP <Action>(Vcs.Push)
+
+nmap <leader>xx <Action>(ActivateProblemsViewToolWindow)
+nmap <leader>xX <Action>(ActivateProblemsViewToolWindow)
+nmap <leader>xt <Action>(ActivateTODOToolWindow)
+
+nmap <leader>db <Action>(ToggleLineBreakpoint)
+nmap <leader>dB <Action>(ViewBreakpoints)
+nmap <leader>dc <Action>(Resume)
+nmap <leader>di <Action>(StepInto)
+nmap <leader>do <Action>(StepOut)
+nmap <leader>dO <Action>(StepOver)
+nmap <leader>dd <Action>(Debug)
+nmap <leader>du <Action>(ActivateDebugToolWindow)
+nmap <leader>rr <Action>(Run)
+nmap <leader>rc <Action>(ChooseRunConfiguration)
+nmap <leader>rs <Action>(Stop)
+nmap <leader>rt <Action>(RunClass)
+
+nmap <leader>uz <Action>(ToggleZenMode)
+nmap <leader>uZ <Action>(ToggleDistractionFreeMode)
+nmap <leader>ul :set relativenumber!<CR>
+nmap <leader>uh <Action>(ToggleInlayHintsGloballyAction)
+nmap <leader>ur :nohlsearch<CR>
+nmap <leader>uf <Action>(ToggleFullScreen)
+nmap <leader>un <Action>(ClearAllNotifications)
+nmap <leader>uw <Action>(EditorToggleUseSoftWraps)
+nmap <leader>up <Action>(TogglePresentationMode)
+
+nmap <leader>aa <Action>(ActivateGitHubCopilotChatToolWindow)
+nmap <leader>ai <Action>(copilot.chat.inline.show)
+
+nmap <leader>p <Action>(PasteMultiple)
+nmap <leader>qq <Action>(Exit)
+nmap <C-`> <Action>(ActivateTerminalToolWindow)
+nmap <leader>, <Action>(ShowSettings)
