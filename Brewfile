@@ -216,3 +216,5 @@ npm "@openai/codex"
 npm "corepack"
 npm "pyright"
 npm "tree-sitter-cli"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
