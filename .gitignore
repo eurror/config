@@ -20,6 +20,9 @@
 !ghostty/*
 !ghostty/
 
+!git/*
+!git/
+
 !gtk-3.0/settings.ini
 !gtk-4.0/settings.ini
 !gtk-3.0/

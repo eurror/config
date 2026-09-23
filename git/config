@@ -1,0 +1,67 @@
+[user]
+	name = eurus
+	email = evr@gmx.us
+[init]
+	defaultBranch = master
+[column]
+  ui = auto
+[branch]
+  sort = -committerdate
+[tag]
+  sort = version:refname
+[core]
+  pager = delta
+  excludesfile = ~/.gitignore
+  fsmonitor = true
+  untrackedCache = true
+  editor = nvim
+[diff]
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+[merge]
+  conflictStyle = zdiff3
+[rerere]
+  enabled = true
+  autoupdate = true
+[push]
+  default = simple
+  autoSetupRemote = true
+  followTags = true
+[pull]
+  rebase = true
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
+  fsckObjects = true
+[help]
+  autoCorrect = prompt
+[commit]
+  verbose = true
+  gpgsign = true
+[rebase]
+  autoSquash = true
+  autoStash = true
+  updateRefs = true
+[transfer]
+  fsckObjects = true
+[receive]
+  fsckObjects = true
+[feature]
+  manyFiles = true
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
+  side-by-side = false
+  line-numbers = true
+  dark = true
+[gpg]
+  format = ssh
+[user]
+  signingkey = ~/.ssh/id_ed25519.pub
+
+[includeIf "gitdir:~/Developer/"]
+  path = ~/.gitconfig-work
