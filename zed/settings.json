@@ -1,5 +1,8 @@
 {
   "languages": {
+    "Java": {
+      "tab_size": 2
+    },
     "Lua": {
       "tab_size": 2,
     },
