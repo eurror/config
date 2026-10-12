@@ -218,3 +218,7 @@ npm "pyright"
 npm "tree-sitter-cli"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Run and Test HTTP Requests with plain text and curl
+brew "hurl"
+# Modern API client that lives in your terminal
+brew "posting"
