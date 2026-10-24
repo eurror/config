@@ -15,7 +15,6 @@ set notimeout
 set ideajoin
 set ideamarks
 set idearefactormode=keep
-set ideastatusicon=gray
 set VimEverywhere
 set anyobject
 set matchit

@@ -222,3 +222,5 @@ brew "git-delta"
 brew "hurl"
 # Modern API client that lives in your terminal
 brew "posting"
+# Simple API client (Postman-like) in your terminal
+brew "atac"

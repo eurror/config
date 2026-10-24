@@ -64,4 +64,5 @@
   signingkey = ~/.ssh/id_ed25519.pub
 
 [includeIf "gitdir:~/Developer/"]
-  path = ~/.gitconfig-work
+  path = ~/.gitconfig
+
