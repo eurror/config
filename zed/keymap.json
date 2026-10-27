@@ -1,0 +1,12 @@
+[
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "bindings": {
+      "space f": "file_finder::Toggle",
+      "space e": "project_panel::Toggle",
+      "space /": "pane::DeploySearch",
+      "space b": "tab_switcher::Toggle",
+      "space space g": "git_panel::Toggle"
+    }
+  }
+]
