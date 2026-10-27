@@ -1,17 +1,18 @@
 {
-    "git_panel": {
-        "group_by": "staging",
-        "dock": "left",
-    },
-    "project_panel": {
-        "dock": "left",
-    },
     "vim_mode": true,
+    "relative_line_numbers": "enabled",
+    "cursor_blink": false,
     "icon_theme": "VSCode Great Icons Theme",
     "theme": {
         "dark": "VSCode Dark Modern",
         "light": "VSCode Dark Modern",
     },
-    "cursor_blink": false,
-    "relative_line_numbers": "enabled",
+    "git_panel": {
+        "tree_view": true,
+        "group_by": "none",
+        "dock": "left",
+    },
+    "project_panel": {
+        "dock": "left",
+    },
 }
