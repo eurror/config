@@ -52,12 +52,7 @@
 
 !micro/
 
-!nvim/lua/config/*
-!nvim/lua/config/
-!nvim/lua/plugins/*
-!nvim/lua/plugins/
-!nvim/lua/
-!nvim/*.lua
+!nvim/**
 !nvim/
 
 !qt5ct/*

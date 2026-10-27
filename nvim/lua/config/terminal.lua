@@ -1,8 +1,8 @@
 local M = {}
 
 local function open_float(buf)
-  local width = math.floor(vim.o.columns * 0.9)
-  local height = math.floor(vim.o.lines * 0.85)
+  local width = math.floor(vim.o.columns * 0.99)
+  local height = math.floor(vim.o.lines * 0.99)
   return vim.api.nvim_open_win(buf, true, {
     relative = 'editor',
     width = width,
